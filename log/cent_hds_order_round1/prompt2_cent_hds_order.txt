@@ -1,0 +1,2386 @@
+Whole k-fold eval mode
+Source domain: 2, Target domain: 2, Cur_fold 0
+Corpus: TOEFL
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin HTTP/1.1" 200 0
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/20 ****
+Use CrossEntropyLoss
+15/33-(1.739)
+30/33-(1.144)
+12/33-(0.951)
+
+=== Evaluating Model ===
+accuracy on Valid 0.4358974358974359
+
+Best accuracy on Valid 0.4358974358974359
+Total valid loss 0.8878129154443741
+accuracy on Test 0.44551282051282054
+Best accuracy on Test 0.44551282051282054
+
+**** Epoch 0/20 ****
+27/33-(0.972)
+9/33-(0.999)
+24/33-(1.071)
+6/33-(0.647)
+
+=== Evaluating Model ===
+accuracy on Valid 0.5897435897435898
+
+Best accuracy on Valid 0.5897435897435898
+Total valid loss 0.7957114428281784
+accuracy on Test 0.6442307692307693
+Best accuracy on Test 0.6442307692307693
+
+**** Epoch 1/20 ****
+21/33-(0.846)
+3/33-(0.801)
+18/33-(1.060)
+0/33-(1.034)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6153846153846154
+
+Best accuracy on Valid 0.6153846153846154
+Total valid loss 0.6874477475881576
+accuracy on Test 0.6923076923076923
+Best accuracy on Test 0.6923076923076923
+
+**** Epoch 2/20 ****
+15/33-(0.758)
+30/33-(0.512)
+12/33-(0.885)
+27/33-(0.583)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7083333333333334
+
+Best accuracy on Valid 0.7083333333333334
+Total valid loss 0.6026561215519906
+accuracy on Test 0.7532051282051282
+Best accuracy on Test 0.7532051282051282
+
+**** Epoch 3/20 ****
+9/33-(0.992)
+24/33-(0.556)
+6/33-(0.616)
+21/33-(0.869)
+
+=== Evaluating Model ===
+accuracy on Valid 0.46474358974358976
+
+
+**** Epoch 4/20 ****
+3/33-(0.526)
+18/33-(0.880)
+0/33-(0.616)
+15/33-(0.829)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6826923076923077
+
+
+**** Epoch 5/20 ****
+30/33-(0.474)
+12/33-(0.460)
+27/33-(0.633)
+9/33-(0.419)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6858974358974359
+
+
+**** Epoch 6/20 ****
+24/33-(0.450)
+6/33-(1.468)
+21/33-(0.514)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6314102564102564
+
+
+**** Epoch 7/20 ****
+3/33-(0.628)
+18/33-(0.651)
+0/33-(0.890)
+15/33-(0.464)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6955128205128205
+
+
+**** Epoch 8/20 ****
+30/33-(0.302)
+12/33-(0.382)
+27/33-(0.478)
+9/33-(0.348)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6666666666666666
+
+
+**** Epoch 9/20 ****
+24/33-(0.648)
+6/33-(0.303)
+21/33-(0.226)
+3/33-(0.749)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7147435897435898
+
+Best accuracy on Valid 0.7147435897435898
+Total valid loss 0.6978538043797016
+accuracy on Test 0.7243589743589743
+Best accuracy on Test 0.7532051282051282
+
+**** Epoch 10/20 ****
+18/33-(0.413)
+0/33-(0.309)
+15/33-(0.936)
+30/33-(0.398)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6121794871794872
+
+
+**** Epoch 11/20 ****
+12/33-(0.843)
+27/33-(0.504)
+9/33-(0.556)
+24/33-(0.147)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7211538461538461
+
+Best accuracy on Valid 0.7211538461538461
+Total valid loss 0.6304154559969902
+accuracy on Test 0.7788461538461539
+Best accuracy on Test 0.7788461538461539
+
+**** Epoch 12/20 ****
+6/33-(0.629)
+21/33-(0.359)
+3/33-(0.401)
+18/33-(0.351)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6955128205128205
+
+
+**** Epoch 13/20 ****
+0/33-(0.714)
+15/33-(0.173)
+30/33-(1.128)
+12/33-(0.612)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6506410256410257
+
+
+**** Epoch 14/20 ****
+27/33-(0.192)
+9/33-(0.293)
+24/33-(0.375)
+
+=== Evaluating Model ===
+accuracy on Valid 0.657051282051282
+
+
+**** Epoch 15/20 ****
+6/33-(0.314)
+21/33-(0.421)
+3/33-(0.677)
+18/33-(0.546)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6346153846153846
+
+
+**** Epoch 16/20 ****
+0/33-(0.041)
+15/33-(0.321)
+30/33-(0.177)
+12/33-(0.473)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6442307692307693
+
+
+**** Epoch 17/20 ****
+27/33-(0.392)
+9/33-(1.171)
+24/33-(0.071)
+6/33-(0.405)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6826923076923077
+
+
+**** Epoch 18/20 ****
+21/33-(0.509)
+3/33-(0.134)
+18/33-(0.074)
+0/33-(0.478)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6826923076923077
+
+
+**** Epoch 19/20 ****
+15/33-(0.050)
+Best accuracy on Test 0.7788461538461539
+
+Source domain: 2, Target domain: 2, Cur_fold 1
+Corpus: TOEFL
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/20 ****
+Use CrossEntropyLoss
+15/33-(1.844)
+30/33-(1.097)
+12/33-(1.440)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6410256410256411
+
+Best accuracy on Valid 0.6410256410256411
+Total valid loss 0.7875765591859818
+accuracy on Test 0.6410256410256411
+Best accuracy on Test 0.6410256410256411
+
+**** Epoch 0/20 ****
+27/33-(1.016)
+9/33-(1.091)
+24/33-(0.945)
+6/33-(1.361)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7115384615384616
+
+Best accuracy on Valid 0.7115384615384616
+Total valid loss 0.7479750901460648
+accuracy on Test 0.6794871794871795
+Best accuracy on Test 0.6794871794871795
+
+**** Epoch 1/20 ****
+21/33-(0.696)
+3/33-(0.940)
+18/33-(0.680)
+0/33-(1.677)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6314102564102564
+
+
+**** Epoch 2/20 ****
+15/33-(0.874)
+30/33-(0.610)
+12/33-(0.796)
+27/33-(0.571)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7051282051282052
+
+
+**** Epoch 3/20 ****
+9/33-(1.936)
+24/33-(0.573)
+6/33-(0.876)
+21/33-(0.844)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6762820512820513
+
+
+**** Epoch 4/20 ****
+3/33-(0.602)
+18/33-(0.477)
+0/33-(0.328)
+15/33-(0.308)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7211538461538461
+
+Best accuracy on Valid 0.7211538461538461
+Total valid loss 0.7921976640820503
+accuracy on Test 0.6955128205128205
+Best accuracy on Test 0.6955128205128205
+
+**** Epoch 5/20 ****
+30/33-(0.532)
+12/33-(0.737)
+27/33-(0.250)
+9/33-(0.461)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6474358974358975
+
+
+**** Epoch 6/20 ****
+24/33-(0.775)
+6/33-(0.467)
+21/33-(0.769)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7371794871794872
+
+Best accuracy on Valid 0.7371794871794872
+Total valid loss 0.7622189596295357
+accuracy on Test 0.6955128205128205
+Best accuracy on Test 0.6955128205128205
+
+**** Epoch 7/20 ****
+3/33-(0.661)
+18/33-(0.315)
+0/33-(0.411)
+15/33-(0.619)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6346153846153846
+
+
+**** Epoch 8/20 ****
+30/33-(0.592)
+12/33-(0.590)
+27/33-(0.662)
+9/33-(0.308)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7371794871794872
+
+Best accuracy on Valid 0.7371794871794872
+Total valid loss 0.7734996736049652
+accuracy on Test 0.717948717948718
+Best accuracy on Test 0.717948717948718
+
+**** Epoch 9/20 ****
+24/33-(0.616)
+6/33-(0.286)
+21/33-(0.525)
+3/33-(0.419)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6858974358974359
+
+
+**** Epoch 10/20 ****
+18/33-(0.607)
+0/33-(0.353)
+15/33-(0.154)
+30/33-(0.473)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7019230769230769
+
+
+**** Epoch 11/20 ****
+12/33-(0.398)
+27/33-(0.184)
+9/33-(1.064)
+24/33-(0.220)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7467948717948718
+
+Best accuracy on Valid 0.7467948717948718
+Total valid loss 0.8442545369267463
+accuracy on Test 0.7051282051282052
+Best accuracy on Test 0.717948717948718
+
+**** Epoch 12/20 ****
+6/33-(0.487)
+21/33-(0.215)
+3/33-(0.328)
+18/33-(0.478)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7467948717948718
+
+Best accuracy on Valid 0.7467948717948718
+Total valid loss 0.8868240386247634
+accuracy on Test 0.6955128205128205
+Best accuracy on Test 0.717948717948718
+
+**** Epoch 13/20 ****
+0/33-(0.182)
+15/33-(0.600)
+30/33-(0.356)
+12/33-(0.539)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7596153846153846
+
+Best accuracy on Valid 0.7596153846153846
+Total valid loss 1.5108909621834754
+accuracy on Test 0.6955128205128205
+Best accuracy on Test 0.717948717948718
+
+**** Epoch 14/20 ****
+27/33-(0.345)
+9/33-(0.651)
+24/33-(0.539)
+
+=== Evaluating Model ===
+accuracy on Valid 0.717948717948718
+
+
+**** Epoch 15/20 ****
+6/33-(0.319)
+21/33-(0.629)
+3/33-(0.213)
+18/33-(0.698)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7083333333333334
+
+
+**** Epoch 16/20 ****
+0/33-(0.872)
+15/33-(0.797)
+30/33-(0.225)
+12/33-(0.204)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7339743589743589
+
+
+**** Epoch 17/20 ****
+27/33-(0.171)
+9/33-(0.534)
+24/33-(0.227)
+6/33-(0.049)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6987179487179487
+
+
+**** Epoch 18/20 ****
+21/33-(0.141)
+3/33-(0.151)
+18/33-(0.182)
+0/33-(0.796)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7403846153846154
+
+
+**** Epoch 19/20 ****
+15/33-(0.280)
+Best accuracy on Test 0.717948717948718
+
+Source domain: 2, Target domain: 2, Cur_fold 2
+Corpus: TOEFL
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin HTTP/1.1" 200 0
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/20 ****
+Use CrossEntropyLoss
+15/33-(1.662)
+30/33-(1.580)
+12/33-(1.205)
+
+=== Evaluating Model ===
+accuracy on Valid 0.5207667731629393
+
+Best accuracy on Valid 0.5207667731629393
+Total valid loss 0.8888032555580139
+accuracy on Test 0.5512820512820513
+Best accuracy on Test 0.5512820512820513
+
+**** Epoch 0/20 ****
+27/33-(0.915)
+9/33-(1.340)
+24/33-(0.673)
+6/33-(0.990)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6932907348242812
+
+Best accuracy on Valid 0.6932907348242812
+Total valid loss 0.6963909864425659
+accuracy on Test 0.7051282051282052
+Best accuracy on Test 0.7051282051282052
+
+**** Epoch 1/20 ****
+21/33-(0.620)
+3/33-(0.863)
+18/33-(1.051)
+0/33-(1.304)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6485623003194888
+
+
+**** Epoch 2/20 ****
+15/33-(0.663)
+30/33-(0.643)
+12/33-(1.310)
+27/33-(0.595)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6932907348242812
+
+Best accuracy on Valid 0.6932907348242812
+Total valid loss 0.6683559760451316
+accuracy on Test 0.7243589743589743
+Best accuracy on Test 0.7243589743589743
+
+**** Epoch 3/20 ****
+9/33-(0.451)
+24/33-(0.990)
+6/33-(0.523)
+21/33-(0.580)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6837060702875399
+
+
+**** Epoch 4/20 ****
+3/33-(0.430)
+18/33-(0.615)
+0/33-(1.562)
+15/33-(0.718)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6613418530351438
+
+
+**** Epoch 5/20 ****
+30/33-(1.217)
+12/33-(0.418)
+27/33-(0.790)
+9/33-(0.426)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7220447284345048
+
+Best accuracy on Valid 0.7220447284345048
+Total valid loss 0.5380799323320389
+accuracy on Test 0.7628205128205128
+Best accuracy on Test 0.7628205128205128
+
+**** Epoch 6/20 ****
+24/33-(0.645)
+6/33-(1.483)
+21/33-(0.308)
+
+=== Evaluating Model ===
+accuracy on Valid 0.744408945686901
+
+Best accuracy on Valid 0.744408945686901
+Total valid loss 0.5445591285824776
+accuracy on Test 0.7628205128205128
+Best accuracy on Test 0.7628205128205128
+
+**** Epoch 7/20 ****
+3/33-(0.597)
+18/33-(0.242)
+0/33-(0.287)
+15/33-(0.666)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6837060702875399
+
+
+**** Epoch 8/20 ****
+30/33-(1.017)
+12/33-(0.280)
+27/33-(0.430)
+9/33-(0.472)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6773162939297125
+
+
+**** Epoch 9/20 ****
+24/33-(0.449)
+6/33-(0.856)
+21/33-(0.379)
+3/33-(0.248)
+
+=== Evaluating Model ===
+accuracy on Valid 0.65814696485623
+
+
+**** Epoch 10/20 ****
+18/33-(0.921)
+0/33-(0.619)
+15/33-(0.525)
+30/33-(0.265)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7156549520766773
+
+
+**** Epoch 11/20 ****
+12/33-(0.898)
+27/33-(0.371)
+9/33-(0.523)
+24/33-(0.643)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7124600638977636
+
+
+**** Epoch 12/20 ****
+6/33-(0.262)
+21/33-(0.807)
+3/33-(0.740)
+18/33-(0.316)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7188498402555911
+
+
+**** Epoch 13/20 ****
+0/33-(0.244)
+15/33-(0.296)
+30/33-(0.410)
+12/33-(1.014)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6996805111821086
+
+
+**** Epoch 14/20 ****
+27/33-(1.169)
+9/33-(1.182)
+24/33-(0.613)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6357827476038339
+
+
+**** Epoch 15/20 ****
+6/33-(0.733)
+21/33-(0.113)
+3/33-(0.472)
+18/33-(0.093)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6741214057507987
+
+
+**** Epoch 16/20 ****
+0/33-(0.853)
+15/33-(0.069)
+30/33-(0.503)
+12/33-(0.177)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6741214057507987
+
+
+**** Epoch 17/20 ****
+27/33-(0.028)
+9/33-(0.214)
+24/33-(0.085)
+6/33-(0.115)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7124600638977636
+
+
+**** Epoch 18/20 ****
+21/33-(0.181)
+3/33-(0.311)
+18/33-(0.035)
+0/33-(0.062)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7284345047923323
+
+
+**** Epoch 19/20 ****
+15/33-(0.030)
+Best accuracy on Test 0.7628205128205128
+
+Source domain: 2, Target domain: 2, Cur_fold 3
+Corpus: TOEFL
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin HTTP/1.1" 200 0
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/20 ****
+Use CrossEntropyLoss
+15/33-(1.579)
+30/33-(1.018)
+12/33-(1.051)
+
+=== Evaluating Model ===
+accuracy on Valid 0.536741214057508
+
+Best accuracy on Valid 0.536741214057508
+Total valid loss 0.8096677154302597
+accuracy on Test 0.610223642172524
+Best accuracy on Test 0.610223642172524
+
+**** Epoch 0/20 ****
+27/33-(0.848)
+9/33-(1.122)
+24/33-(0.817)
+6/33-(0.851)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6549520766773163
+
+Best accuracy on Valid 0.6549520766773163
+Total valid loss 0.8273965030908584
+accuracy on Test 0.6198083067092651
+Best accuracy on Test 0.6198083067092651
+
+**** Epoch 1/20 ****
+21/33-(1.400)
+3/33-(0.662)
+18/33-(0.479)
+0/33-(0.746)
+
+=== Evaluating Model ===
+accuracy on Valid 0.65814696485623
+
+Best accuracy on Valid 0.65814696485623
+Total valid loss 0.8366897821426391
+accuracy on Test 0.6325878594249201
+Best accuracy on Test 0.6325878594249201
+
+**** Epoch 2/20 ****
+15/33-(0.812)
+30/33-(0.428)
+12/33-(0.505)
+27/33-(0.595)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6517571884984026
+
+
+**** Epoch 3/20 ****
+9/33-(1.089)
+24/33-(0.628)
+6/33-(0.599)
+21/33-(0.493)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7028753993610224
+
+Best accuracy on Valid 0.7028753993610224
+Total valid loss 0.6064277112483978
+accuracy on Test 0.7220447284345048
+Best accuracy on Test 0.7220447284345048
+
+**** Epoch 4/20 ****
+3/33-(0.656)
+18/33-(0.454)
+0/33-(0.498)
+15/33-(0.534)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6932907348242812
+
+
+**** Epoch 5/20 ****
+30/33-(0.655)
+12/33-(0.372)
+27/33-(0.499)
+9/33-(0.515)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7092651757188498
+
+Best accuracy on Valid 0.7092651757188498
+Total valid loss 0.7284801378846169
+accuracy on Test 0.7060702875399361
+Best accuracy on Test 0.7220447284345048
+
+**** Epoch 6/20 ****
+24/33-(0.485)
+6/33-(0.888)
+21/33-(0.814)
+
+=== Evaluating Model ===
+accuracy on Valid 0.5878594249201278
+
+
+**** Epoch 7/20 ****
+3/33-(1.209)
+18/33-(0.292)
+0/33-(0.347)
+15/33-(0.700)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7028753993610224
+
+
+**** Epoch 8/20 ****
+30/33-(0.509)
+12/33-(0.589)
+27/33-(0.158)
+9/33-(0.554)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7092651757188498
+
+Best accuracy on Valid 0.7092651757188498
+Total valid loss 0.7100639343261719
+accuracy on Test 0.7028753993610224
+Best accuracy on Test 0.7220447284345048
+
+**** Epoch 9/20 ****
+24/33-(0.564)
+6/33-(0.303)
+21/33-(0.358)
+3/33-(0.239)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6773162939297125
+
+
+**** Epoch 10/20 ****
+18/33-(0.843)
+0/33-(0.488)
+15/33-(0.429)
+30/33-(0.371)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6996805111821086
+
+
+**** Epoch 11/20 ****
+12/33-(0.217)
+27/33-(0.227)
+9/33-(0.457)
+24/33-(0.330)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6613418530351438
+
+
+**** Epoch 12/20 ****
+6/33-(0.199)
+21/33-(0.398)
+3/33-(0.184)
+18/33-(0.636)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6900958466453674
+
+
+**** Epoch 13/20 ****
+0/33-(0.942)
+15/33-(1.563)
+30/33-(0.364)
+12/33-(0.185)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6964856230031949
+
+
+**** Epoch 14/20 ****
+27/33-(0.068)
+9/33-(0.035)
+24/33-(0.066)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6837060702875399
+
+
+**** Epoch 15/20 ****
+6/33-(0.172)
+21/33-(0.193)
+3/33-(0.652)
+18/33-(0.261)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6389776357827476
+
+
+**** Epoch 16/20 ****
+0/33-(0.240)
+15/33-(0.366)
+30/33-(0.207)
+12/33-(0.359)
+
+=== Evaluating Model ===
+accuracy on Valid 0.65814696485623
+
+
+**** Epoch 17/20 ****
+27/33-(0.509)
+9/33-(0.052)
+24/33-(0.141)
+6/33-(0.295)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6741214057507987
+
+
+**** Epoch 18/20 ****
+21/33-(0.122)
+3/33-(0.115)
+18/33-(0.369)
+0/33-(0.067)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6677316293929713
+
+
+**** Epoch 19/20 ****
+15/33-(0.140)
+Best accuracy on Test 0.7220447284345048
+
+Source domain: 2, Target domain: 2, Cur_fold 4
+Corpus: TOEFL
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin HTTP/1.1" 200 0
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/20 ****
+Use CrossEntropyLoss
+15/33-(1.941)
+30/33-(1.562)
+12/33-(1.137)
+
+=== Evaluating Model ===
+accuracy on Valid 0.5865384615384616
+
+Best accuracy on Valid 0.5865384615384616
+Total valid loss 0.7926486194133758
+accuracy on Test 0.5623003194888179
+Best accuracy on Test 0.5623003194888179
+
+**** Epoch 0/20 ****
+27/33-(1.077)
+9/33-(0.980)
+24/33-(0.877)
+6/33-(0.906)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6955128205128205
+
+Best accuracy on Valid 0.6955128205128205
+Total valid loss 0.8353927880525589
+accuracy on Test 0.6421725239616614
+Best accuracy on Test 0.6421725239616614
+
+**** Epoch 1/20 ****
+21/33-(0.742)
+3/33-(0.873)
+18/33-(0.985)
+0/33-(1.011)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7243589743589743
+
+Best accuracy on Valid 0.7243589743589743
+Total valid loss 0.6947223857045174
+accuracy on Test 0.6677316293929713
+Best accuracy on Test 0.6677316293929713
+
+**** Epoch 2/20 ****
+15/33-(0.606)
+30/33-(0.785)
+12/33-(0.492)
+27/33-(0.746)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7692307692307693
+
+Best accuracy on Valid 0.7692307692307693
+Total valid loss 0.5680400311946869
+accuracy on Test 0.7476038338658147
+Best accuracy on Test 0.7476038338658147
+
+**** Epoch 3/20 ****
+9/33-(0.534)
+24/33-(0.726)
+6/33-(0.868)
+21/33-(1.384)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7243589743589743
+
+
+**** Epoch 4/20 ****
+3/33-(0.523)
+18/33-(0.708)
+0/33-(0.587)
+15/33-(0.826)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7211538461538461
+
+
+**** Epoch 5/20 ****
+30/33-(0.567)
+12/33-(0.418)
+27/33-(0.640)
+9/33-(1.218)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7532051282051282
+
+
+**** Epoch 6/20 ****
+24/33-(0.426)
+6/33-(0.542)
+21/33-(0.420)
+
+=== Evaluating Model ===
+accuracy on Valid 0.75
+
+
+**** Epoch 7/20 ****
+3/33-(0.398)
+18/33-(1.285)
+0/33-(0.703)
+15/33-(0.542)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6762820512820513
+
+
+**** Epoch 8/20 ****
+30/33-(0.260)
+12/33-(0.273)
+27/33-(0.484)
+9/33-(0.340)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7724358974358975
+
+Best accuracy on Valid 0.7724358974358975
+Total valid loss 0.7713938176631927
+accuracy on Test 0.7380191693290735
+Best accuracy on Test 0.7476038338658147
+
+**** Epoch 9/20 ****
+24/33-(0.303)
+6/33-(0.238)
+21/33-(0.331)
+3/33-(0.250)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6923076923076923
+
+
+**** Epoch 10/20 ****
+18/33-(0.528)
+0/33-(0.478)
+15/33-(0.499)
+30/33-(0.496)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6634615384615384
+
+
+**** Epoch 11/20 ****
+12/33-(0.648)
+27/33-(0.261)
+9/33-(0.740)
+24/33-(0.702)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7788461538461539
+
+Best accuracy on Valid 0.7788461538461539
+Total valid loss 0.8111879646778106
+accuracy on Test 0.7284345047923323
+Best accuracy on Test 0.7476038338658147
+
+**** Epoch 12/20 ****
+6/33-(0.427)
+21/33-(0.094)
+3/33-(0.316)
+18/33-(0.951)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7628205128205128
+
+
+**** Epoch 13/20 ****
+0/33-(0.665)
+15/33-(0.272)
+30/33-(0.665)
+12/33-(0.283)
+
+=== Evaluating Model ===
+accuracy on Valid 0.75
+
+
+**** Epoch 14/20 ****
+27/33-(0.229)
+9/33-(0.300)
+24/33-(0.096)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7339743589743589
+
+
+**** Epoch 15/20 ****
+6/33-(0.057)
+21/33-(0.554)
+3/33-(0.499)
+18/33-(0.073)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7115384615384616
+
+
+**** Epoch 16/20 ****
+0/33-(0.372)
+15/33-(0.186)
+30/33-(0.116)
+12/33-(0.414)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6955128205128205
+
+
+**** Epoch 17/20 ****
+27/33-(0.091)
+9/33-(0.208)
+24/33-(0.177)
+6/33-(0.128)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6698717948717948
+
+
+**** Epoch 18/20 ****
+21/33-(0.850)
+3/33-(0.314)
+18/33-(0.145)
+0/33-(0.606)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6282051282051282
+
+
+**** Epoch 19/20 ****
+15/33-(0.144)
+Best accuracy on Test 0.7476038338658147
+
+Final k-fold valid 0.7304968460719259
+[0.7211538461538461, 0.7371794871794872, 0.7220447284345048, 0.7028753993610224, 0.7692307692307693]
+Final k-fold eval 0.7458527893831408
+[0.7788461538461539, 0.717948717948718, 0.7628205128205128, 0.7220447284345048, 0.7476038338658147]
