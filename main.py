@@ -135,6 +135,8 @@ def get_model_target(config, corpus_target, embReader):
     elif config.target_model.lower() == "cent_hds_order":
         logger.info("Model: DIS_Simple Avg Plus Sentence Ordering")
         model = Coh_Model_Cent_Hds_Order(config=config, corpus_target=corpus_target, embReader=embReader)
+        # for name, value in model.named_parameters():
+        #     print(name, value.requires_grad)
 
 
     elif config.target_model.lower() == "cent_hds":

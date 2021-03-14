@@ -66,6 +66,8 @@ def process_config():
         train_arg.add_argument('--max_epoch', type=int, default=20)
         train_arg.add_argument('--loss_type', type=str, default="CrossEntropyLoss")  # CrossEntropyLoss, MSELoss, nLLloss ...
         train_arg.add_argument('--eval_type', type=str, default="accuracy")  # accuracy, qwk
+        ### Loss = coherence_loss + Lambda*sent_ordering_loss
+        # train_arg.add_argument('--order_lambda', type=int, default=1)
 
         train_arg.add_argument('--fp16_mode', type=str2bool, default=False)
 

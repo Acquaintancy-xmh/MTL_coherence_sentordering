@@ -202,6 +202,11 @@ def train(model, optimizer, scheduler, dataset_train, dataset_valid, dataset_tes
     if config.corpus_target.lower() == "yelp13" or config.corpus_target.lower() == "nyt":
         is_valid_sens = False
 
+    ### 增加optimizer 不同任务不同学习率
+    # optimizer = torch.optim.Adam(filter(lambda p: p.requires_grad,
+    #                                        self.parameters()), lr=config.init_lr, eps=config.eps, weight_decay=config.lr_decay)
+
+
     # epoch loop
     model.train()
     for cur_epoch in range(config.max_epoch):
