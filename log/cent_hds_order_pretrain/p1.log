@@ -1,5 +1,5 @@
 Whole k-fold eval mode
-Source domain: 2, Target domain: 2, Cur_fold 0
+Source domain: 1, Target domain: 1, Cur_fold 0
 Corpus: TOEFL
 Starting new HTTPS connection (1): s3.amazonaws.com:443
 https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
@@ -248,126 +248,10 @@ Model config XLNetConfig {
 }
 
 Optimizer: adam
+Optimizer: adam
 **** Training Begins ****
 **** Epoch 0/20 ****
 Use CrossEntropyLoss
-15/33-(1.776)
-30/33-(1.239)
-12/33-(1.462)
-
-=== Evaluating Model ===
-accuracy on Valid 0.5128205128205128
-
-Best accuracy on Valid 0.5128205128205128
-Total valid loss 0.816910246014595
-accuracy on Test 0.5448717948717948
-Best accuracy on Test 0.5448717948717948
-
-**** Epoch 0/20 ****
-27/33-(1.020)
-9/33-(0.986)
-24/33-(0.756)
-6/33-(1.287)
-
-=== Evaluating Model ===
-accuracy on Valid 0.5512820512820513
-
-Best accuracy on Valid 0.5512820512820513
-Total valid loss 0.7815181404352188
-accuracy on Test 0.5897435897435898
-Best accuracy on Test 0.5897435897435898
-
-**** Epoch 1/20 ****
-21/33-(1.067)
-3/33-(0.902)
-18/33-(1.084)
-0/33-(0.653)
-
-=== Evaluating Model ===
-accuracy on Valid 0.6666666666666666
-
-Best accuracy on Valid 0.6666666666666666
-Total valid loss 0.6050033003091813
-accuracy on Test 0.7467948717948718
-Best accuracy on Test 0.7467948717948718
-
-**** Epoch 2/20 ****
-15/33-(1.244)
-30/33-(0.663)
-12/33-(0.897)
-27/33-(0.526)
-
-=== Evaluating Model ===
-accuracy on Valid 0.6602564102564102
-
-
-**** Epoch 3/20 ****
-9/33-(0.481)
-24/33-(0.550)
-6/33-(0.766)
-21/33-(0.443)
-
-=== Evaluating Model ===
-accuracy on Valid 0.5544871794871795
-
-
-**** Epoch 4/20 ****
-3/33-(0.672)
-18/33-(0.496)
-0/33-(0.497)
-15/33-(1.079)
-
-=== Evaluating Model ===
-accuracy on Valid 0.6923076923076923
-
-Best accuracy on Valid 0.6923076923076923
-Total valid loss 0.5192443490028381
-accuracy on Test 0.7756410256410257
-Best accuracy on Test 0.7756410256410257
-
-**** Epoch 5/20 ****
-30/33-(0.572)
-12/33-(1.407)
-27/33-(0.727)
-9/33-(0.665)
-
-=== Evaluating Model ===
-accuracy on Valid 0.717948717948718
-
-Best accuracy on Valid 0.717948717948718
-Total valid loss 0.5007223576307297
-accuracy on Test 0.8141025641025641
-Best accuracy on Test 0.8141025641025641
-
-**** Epoch 6/20 ****
-24/33-(0.768)
-6/33-(0.580)
-21/33-(0.542)
-
-=== Evaluating Model ===
-accuracy on Valid 0.7115384615384616
-
-
-**** Epoch 7/20 ****
-3/33-(0.532)
-18/33-(0.564)
-0/33-(0.325)
-15/33-(0.577)
-
-=== Evaluating Model ===
-accuracy on Valid 0.6955128205128205
-
-
-**** Epoch 8/20 ****
-30/33-(0.663)
-12/33-(0.267)
-27/33-(0.657)
-9/33-(0.420)
-
-=== Evaluating Model ===
-accuracy on Valid 0.5993589743589743
-
-
-**** Epoch 9/20 ****
-24/33-(0.513)
-6/33-(0.510)
+15/33-(0.531)
+30/33-(0.214)
+12/33-(0.260)

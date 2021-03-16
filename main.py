@@ -30,6 +30,7 @@ from torch.optim.lr_scheduler import StepLR
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 
 import training
+import training_pretrain
 
 from evaluators import eval_acc, eval_qwk, eval_fscore
 
@@ -191,6 +192,7 @@ def exp_model(config):
     else: config.use_gpu = False
     model = get_model_target(config, corpus_target, embReader)  # get model class
     optimizer, scheduler = get_optimizer(config, model, len(dataset_train))
+    pretrain_optimizer, pretrain_scheduler = get_optimizer(config, model, len(dataset_train))
 
 
     # distributed
@@ -230,14 +232,25 @@ def exp_model(config):
 
     ##
     # training and evaluating
-    final_eval_best, final_valid = training.train(model,
-                        optimizer,
-                        scheduler,
-                        dataset_train=dataset_train,
-                        dataset_valid=dataset_valid,
-                        dataset_test=dataset_test,
-                        config=config,
-                        evaluator=evaluator)
+    if config.pretrain :
+        final_eval_best, final_valid = training_pretrain.train(model,
+                            pretrain_optimizer,
+                            optimizer,
+                            scheduler,
+                            dataset_train=dataset_train,
+                            dataset_valid=dataset_valid,
+                            dataset_test=dataset_test,
+                            config=config,
+                            evaluator=evaluator)
+    else:
+        final_eval_best, final_valid = training.train(model,
+                            optimizer,
+                            scheduler,
+                            dataset_train=dataset_train,
+                            dataset_valid=dataset_valid,
+                            dataset_test=dataset_test,
+                            config=config,
+                            evaluator=evaluator)
 
 
     return final_eval_best, final_valid
