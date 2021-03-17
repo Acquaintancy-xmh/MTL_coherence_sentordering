@@ -45,12 +45,9 @@ def get_loss_func(config, pad_id=None):
 # end get_loss_func
 
 #
-def validate(model, evaluator, dataset_test, config, loss_func, is_test=False):
+def validate(model, evaluator, dataloader_test, config, loss_func, is_test=False):
     model.eval()
     losses = []
-
-    sampler_test = SequentialSampler(dataset_test) if config.local_rank == -1 else DistributedSampler(dataset_test)
-    dataloader_test = DataLoader(dataset_test, sampler=sampler_test, batch_size=config.batch_size)
 
     adj_list = []
     root_ds_list = []
@@ -182,6 +179,12 @@ def train(model, optimizer, scheduler, dataset_train, dataset_valid, dataset_tes
     # sampler_train = SequentialSampler(dataset_train) if config.local_rank == -1 else DistributedSampler(dataset_train)  # for debugging
     dataloader_train = DataLoader(dataset_train, sampler=sampler_train, batch_size=config.batch_size)
 
+    sampler_valid = SequentialSampler(dataset_valid) if config.local_rank == -1 else DistributedSampler(dataset_valid)
+    dataloader_valid = DataLoader(dataset_valid, sampler=sampler_valid, batch_size=config.batch_size)
+
+    sampler_test = SequentialSampler(dataset_test) if config.local_rank == -1 else DistributedSampler(dataset_test)
+    dataloader_test = DataLoader(dataset_test, sampler=sampler_test, batch_size=config.batch_size)
+
     batch_cnt = 0
     ckpt_step = len(dataloader_train.dataset) // dataloader_train.batch_size
     logger.info("**** Training Begins ****")
@@ -199,7 +202,7 @@ def train(model, optimizer, scheduler, dataset_train, dataset_valid, dataset_tes
         loss_func.cuda()
 
     is_valid_sens = True
-    if config.corpus_target.lower() == "yelp13" or config.corpus_target.lower() == "nyt":
+    if config.corpus_target.lower() == "yelp13" or config.corpus_target.lower() == "nyt" or config.corpus_target.lower() == "gcdc":
         is_valid_sens = False
 
     ### 增加optimizer 不同任务不同学习率
@@ -339,14 +342,15 @@ def train(model, optimizer, scheduler, dataset_train, dataset_valid, dataset_tes
                 # validation
                 eval_cur_valid = -1
                 if dataset_valid is not None and is_valid_sens:
-                    loss_valid, eval_cur_valid, _, valid_itpt = validate(model, evaluator, dataset_valid, config, loss_func, is_test=False)
+                    loss_valid, eval_cur_valid, _, valid_itpt = validate(model, evaluator, dataloader_valid, config, loss_func, is_test=False)
                     logger.info("")
 
-                if eval_cur_valid >= best_eval_valid or dataset_valid is None:
-                    logger.info("Best {} on Valid {}".format(evaluator.eval_type, eval_cur_valid))
-                    best_eval_valid = eval_cur_valid
+                if eval_cur_valid >= best_eval_valid or dataset_valid is None or True:
+                    if eval_cur_valid >= best_eval_valid: 
+                        best_eval_valid = eval_cur_valid
+                        logger.info("Best {} on Valid {}".format(evaluator.eval_type, eval_cur_valid))
 
-                    valid_loss, eval_last, eval_best, valid_itpt = validate(model, evaluator, dataset_test, config, loss_func, is_test=True)
+                    valid_loss, eval_last, eval_best, valid_itpt = validate(model, evaluator, dataloader_test, config, loss_func, is_test=True)
 
                     if config.target_model.lower() == "cent_attn":
                         tid_list = tid_list + valid_itpt[0]

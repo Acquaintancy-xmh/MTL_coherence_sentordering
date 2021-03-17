@@ -52,7 +52,7 @@ def process_config():
 
         train_arg = add_argument_group('Training')
         train_arg.add_argument('--pretrain', type=str2bool, default=False)
-        train_arg.add_argument('--pretrain_epoch', type=int, default=10)
+        train_arg.add_argument('--pretrain_epoch', type=int, default=5)
 
         train_arg.add_argument('--op', type=str, default='adam')  # adam, sgd, asgd, rmsprop
         train_arg.add_argument('--eps', type=float, default=1e-4)

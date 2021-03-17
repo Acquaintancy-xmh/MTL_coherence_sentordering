@@ -17,6 +17,7 @@ import utils
 
 import corpus.corpus_toefl
 import corpus.corpus_nyt
+import corpus.corpus_gcdc
 
 import w2vEmbReader
 
@@ -53,6 +54,7 @@ from torch.utils.data.distributed import DistributedSampler
 
 from corpus.dataset_toefl import Dataset_TOEFL
 from corpus.dataset_nyt import Dataset_NYT
+from corpus.dataset_gcdc import Dataset_GCDC
 
 ########################################################
 
@@ -80,6 +82,9 @@ def get_corpus_target(config):
     elif config.corpus_target.lower() == "nyt":
         logger.info("Corpus: NYT")
         corpus_target = corpus.corpus_nyt.CorpusNYT(config)
+    elif config.corpus_target.lower() == "gcdc":
+        logger.info("Corpus: GCDC")
+        corpus_target = corpus.corpus_gcdc.CorpusGCDC(config)
 
     return corpus_target
 # end get_corpus_target
@@ -98,6 +103,10 @@ def get_dataset(config, id_corpus, pad_id):
         dataset_train = Dataset_NYT(id_corpus["train"], config, pad_id)
         dataset_valid = Dataset_NYT(id_corpus["valid"], config, pad_id)
         dataset_test = Dataset_NYT(id_corpus["test"], config, pad_id)
+    elif config.corpus_target.lower() == "gcdc":
+        dataset_train = Dataset_GCDC(id_corpus["train"], config, pad_id)
+        dataset_valid = None
+        dataset_test = Dataset_GCDC(id_corpus["test"], config, pad_id)
 
 
     return dataset_train, dataset_valid, dataset_test
@@ -278,6 +287,9 @@ if __name__=='__main__':
     if config.corpus_target.lower() == "toefl":
         cur_domain_train = config.essay_prompt_id_train
         cur_domain_test = config.essay_prompt_id_test
+    elif config.corpus_target.lower() == "gcdc":
+        cur_domain_train = config.gcdc_domain
+        cur_domain_test = config.gcdc_domain
 
     ## Run model
     list_cv_valid=[]

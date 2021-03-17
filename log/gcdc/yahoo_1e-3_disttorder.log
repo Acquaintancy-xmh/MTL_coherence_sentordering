@@ -1,0 +1,3412 @@
+Whole k-fold eval mode
+Source domain: Yahoo, Target domain: Yahoo, Cur_fold 0
+Corpus: GCDC
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+172.5
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin HTTP/1.1" 200 0
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+context_weight True
+base_encoder.encoder.model.mask_emb True
+base_encoder.encoder.model.word_embedding.weight True
+base_encoder.encoder.model.layer.0.rel_attn.q True
+base_encoder.encoder.model.layer.0.rel_attn.k True
+base_encoder.encoder.model.layer.0.rel_attn.v True
+base_encoder.encoder.model.layer.0.rel_attn.o True
+base_encoder.encoder.model.layer.0.rel_attn.r True
+base_encoder.encoder.model.layer.0.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.0.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.0.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.0.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.0.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.0.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.0.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.0.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.0.ff.layer_1.weight True
+base_encoder.encoder.model.layer.0.ff.layer_1.bias True
+base_encoder.encoder.model.layer.0.ff.layer_2.weight True
+base_encoder.encoder.model.layer.0.ff.layer_2.bias True
+base_encoder.encoder.model.layer.1.rel_attn.q True
+base_encoder.encoder.model.layer.1.rel_attn.k True
+base_encoder.encoder.model.layer.1.rel_attn.v True
+base_encoder.encoder.model.layer.1.rel_attn.o True
+base_encoder.encoder.model.layer.1.rel_attn.r True
+base_encoder.encoder.model.layer.1.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.1.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.1.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.1.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.1.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.1.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.1.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.1.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.1.ff.layer_1.weight True
+base_encoder.encoder.model.layer.1.ff.layer_1.bias True
+base_encoder.encoder.model.layer.1.ff.layer_2.weight True
+base_encoder.encoder.model.layer.1.ff.layer_2.bias True
+base_encoder.encoder.model.layer.2.rel_attn.q True
+base_encoder.encoder.model.layer.2.rel_attn.k True
+base_encoder.encoder.model.layer.2.rel_attn.v True
+base_encoder.encoder.model.layer.2.rel_attn.o True
+base_encoder.encoder.model.layer.2.rel_attn.r True
+base_encoder.encoder.model.layer.2.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.2.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.2.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.2.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.2.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.2.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.2.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.2.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.2.ff.layer_1.weight True
+base_encoder.encoder.model.layer.2.ff.layer_1.bias True
+base_encoder.encoder.model.layer.2.ff.layer_2.weight True
+base_encoder.encoder.model.layer.2.ff.layer_2.bias True
+base_encoder.encoder.model.layer.3.rel_attn.q True
+base_encoder.encoder.model.layer.3.rel_attn.k True
+base_encoder.encoder.model.layer.3.rel_attn.v True
+base_encoder.encoder.model.layer.3.rel_attn.o True
+base_encoder.encoder.model.layer.3.rel_attn.r True
+base_encoder.encoder.model.layer.3.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.3.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.3.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.3.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.3.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.3.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.3.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.3.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.3.ff.layer_1.weight True
+base_encoder.encoder.model.layer.3.ff.layer_1.bias True
+base_encoder.encoder.model.layer.3.ff.layer_2.weight True
+base_encoder.encoder.model.layer.3.ff.layer_2.bias True
+base_encoder.encoder.model.layer.4.rel_attn.q True
+base_encoder.encoder.model.layer.4.rel_attn.k True
+base_encoder.encoder.model.layer.4.rel_attn.v True
+base_encoder.encoder.model.layer.4.rel_attn.o True
+base_encoder.encoder.model.layer.4.rel_attn.r True
+base_encoder.encoder.model.layer.4.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.4.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.4.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.4.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.4.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.4.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.4.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.4.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.4.ff.layer_1.weight True
+base_encoder.encoder.model.layer.4.ff.layer_1.bias True
+base_encoder.encoder.model.layer.4.ff.layer_2.weight True
+base_encoder.encoder.model.layer.4.ff.layer_2.bias True
+base_encoder.encoder.model.layer.5.rel_attn.q True
+base_encoder.encoder.model.layer.5.rel_attn.k True
+base_encoder.encoder.model.layer.5.rel_attn.v True
+base_encoder.encoder.model.layer.5.rel_attn.o True
+base_encoder.encoder.model.layer.5.rel_attn.r True
+base_encoder.encoder.model.layer.5.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.5.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.5.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.5.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.5.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.5.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.5.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.5.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.5.ff.layer_1.weight True
+base_encoder.encoder.model.layer.5.ff.layer_1.bias True
+base_encoder.encoder.model.layer.5.ff.layer_2.weight True
+base_encoder.encoder.model.layer.5.ff.layer_2.bias True
+base_encoder.encoder.model.layer.6.rel_attn.q True
+base_encoder.encoder.model.layer.6.rel_attn.k True
+base_encoder.encoder.model.layer.6.rel_attn.v True
+base_encoder.encoder.model.layer.6.rel_attn.o True
+base_encoder.encoder.model.layer.6.rel_attn.r True
+base_encoder.encoder.model.layer.6.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.6.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.6.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.6.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.6.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.6.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.6.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.6.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.6.ff.layer_1.weight True
+base_encoder.encoder.model.layer.6.ff.layer_1.bias True
+base_encoder.encoder.model.layer.6.ff.layer_2.weight True
+base_encoder.encoder.model.layer.6.ff.layer_2.bias True
+base_encoder.encoder.model.layer.7.rel_attn.q True
+base_encoder.encoder.model.layer.7.rel_attn.k True
+base_encoder.encoder.model.layer.7.rel_attn.v True
+base_encoder.encoder.model.layer.7.rel_attn.o True
+base_encoder.encoder.model.layer.7.rel_attn.r True
+base_encoder.encoder.model.layer.7.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.7.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.7.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.7.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.7.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.7.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.7.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.7.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.7.ff.layer_1.weight True
+base_encoder.encoder.model.layer.7.ff.layer_1.bias True
+base_encoder.encoder.model.layer.7.ff.layer_2.weight True
+base_encoder.encoder.model.layer.7.ff.layer_2.bias True
+base_encoder.encoder.model.layer.8.rel_attn.q True
+base_encoder.encoder.model.layer.8.rel_attn.k True
+base_encoder.encoder.model.layer.8.rel_attn.v True
+base_encoder.encoder.model.layer.8.rel_attn.o True
+base_encoder.encoder.model.layer.8.rel_attn.r True
+base_encoder.encoder.model.layer.8.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.8.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.8.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.8.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.8.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.8.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.8.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.8.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.8.ff.layer_1.weight True
+base_encoder.encoder.model.layer.8.ff.layer_1.bias True
+base_encoder.encoder.model.layer.8.ff.layer_2.weight True
+base_encoder.encoder.model.layer.8.ff.layer_2.bias True
+base_encoder.encoder.model.layer.9.rel_attn.q True
+base_encoder.encoder.model.layer.9.rel_attn.k True
+base_encoder.encoder.model.layer.9.rel_attn.v True
+base_encoder.encoder.model.layer.9.rel_attn.o True
+base_encoder.encoder.model.layer.9.rel_attn.r True
+base_encoder.encoder.model.layer.9.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.9.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.9.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.9.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.9.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.9.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.9.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.9.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.9.ff.layer_1.weight True
+base_encoder.encoder.model.layer.9.ff.layer_1.bias True
+base_encoder.encoder.model.layer.9.ff.layer_2.weight True
+base_encoder.encoder.model.layer.9.ff.layer_2.bias True
+base_encoder.encoder.model.layer.10.rel_attn.q True
+base_encoder.encoder.model.layer.10.rel_attn.k True
+base_encoder.encoder.model.layer.10.rel_attn.v True
+base_encoder.encoder.model.layer.10.rel_attn.o True
+base_encoder.encoder.model.layer.10.rel_attn.r True
+base_encoder.encoder.model.layer.10.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.10.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.10.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.10.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.10.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.10.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.10.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.10.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.10.ff.layer_1.weight True
+base_encoder.encoder.model.layer.10.ff.layer_1.bias True
+base_encoder.encoder.model.layer.10.ff.layer_2.weight True
+base_encoder.encoder.model.layer.10.ff.layer_2.bias True
+base_encoder.encoder.model.layer.11.rel_attn.q True
+base_encoder.encoder.model.layer.11.rel_attn.k True
+base_encoder.encoder.model.layer.11.rel_attn.v True
+base_encoder.encoder.model.layer.11.rel_attn.o True
+base_encoder.encoder.model.layer.11.rel_attn.r True
+base_encoder.encoder.model.layer.11.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.11.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.11.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.11.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.11.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.11.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.11.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.11.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.11.ff.layer_1.weight True
+base_encoder.encoder.model.layer.11.ff.layer_1.bias True
+base_encoder.encoder.model.layer.11.ff.layer_2.weight True
+base_encoder.encoder.model.layer.11.ff.layer_2.bias True
+tt_encoder.layers.0.self_attn.linears.0.weight True
+tt_encoder.layers.0.self_attn.linears.0.bias True
+tt_encoder.layers.0.self_attn.linears.1.weight True
+tt_encoder.layers.0.self_attn.linears.1.bias True
+tt_encoder.layers.0.self_attn.linears.2.weight True
+tt_encoder.layers.0.self_attn.linears.2.bias True
+tt_encoder.layers.0.self_attn.linears.3.weight True
+tt_encoder.layers.0.self_attn.linears.3.bias True
+tt_encoder.layers.0.feed_forward.w_1.weight True
+tt_encoder.layers.0.feed_forward.w_1.bias True
+tt_encoder.layers.0.feed_forward.w_2.weight True
+tt_encoder.layers.0.feed_forward.w_2.bias True
+tt_encoder.layers.0.group_attn.linear_key.weight True
+tt_encoder.layers.0.group_attn.linear_key.bias True
+tt_encoder.layers.0.group_attn.linear_query.weight True
+tt_encoder.layers.0.group_attn.linear_query.bias True
+tt_encoder.layers.0.group_attn.norm.a_2 True
+tt_encoder.layers.0.group_attn.norm.b_2 True
+tt_encoder.layers.0.sublayer.0.norm.a_2 True
+tt_encoder.layers.0.sublayer.0.norm.b_2 True
+tt_encoder.layers.0.sublayer.1.norm.a_2 True
+tt_encoder.layers.0.sublayer.1.norm.b_2 True
+tt_encoder.layers.1.self_attn.linears.0.weight True
+tt_encoder.layers.1.self_attn.linears.0.bias True
+tt_encoder.layers.1.self_attn.linears.1.weight True
+tt_encoder.layers.1.self_attn.linears.1.bias True
+tt_encoder.layers.1.self_attn.linears.2.weight True
+tt_encoder.layers.1.self_attn.linears.2.bias True
+tt_encoder.layers.1.self_attn.linears.3.weight True
+tt_encoder.layers.1.self_attn.linears.3.bias True
+tt_encoder.layers.1.feed_forward.w_1.weight True
+tt_encoder.layers.1.feed_forward.w_1.bias True
+tt_encoder.layers.1.feed_forward.w_2.weight True
+tt_encoder.layers.1.feed_forward.w_2.bias True
+tt_encoder.layers.1.group_attn.linear_key.weight True
+tt_encoder.layers.1.group_attn.linear_key.bias True
+tt_encoder.layers.1.group_attn.linear_query.weight True
+tt_encoder.layers.1.group_attn.linear_query.bias True
+tt_encoder.layers.1.group_attn.norm.a_2 True
+tt_encoder.layers.1.group_attn.norm.b_2 True
+tt_encoder.layers.1.sublayer.0.norm.a_2 True
+tt_encoder.layers.1.sublayer.0.norm.b_2 True
+tt_encoder.layers.1.sublayer.1.norm.a_2 True
+tt_encoder.layers.1.sublayer.1.norm.b_2 True
+tt_encoder.layers.2.self_attn.linears.0.weight True
+tt_encoder.layers.2.self_attn.linears.0.bias True
+tt_encoder.layers.2.self_attn.linears.1.weight True
+tt_encoder.layers.2.self_attn.linears.1.bias True
+tt_encoder.layers.2.self_attn.linears.2.weight True
+tt_encoder.layers.2.self_attn.linears.2.bias True
+tt_encoder.layers.2.self_attn.linears.3.weight True
+tt_encoder.layers.2.self_attn.linears.3.bias True
+tt_encoder.layers.2.feed_forward.w_1.weight True
+tt_encoder.layers.2.feed_forward.w_1.bias True
+tt_encoder.layers.2.feed_forward.w_2.weight True
+tt_encoder.layers.2.feed_forward.w_2.bias True
+tt_encoder.layers.2.group_attn.linear_key.weight True
+tt_encoder.layers.2.group_attn.linear_key.bias True
+tt_encoder.layers.2.group_attn.linear_query.weight True
+tt_encoder.layers.2.group_attn.linear_query.bias True
+tt_encoder.layers.2.group_attn.norm.a_2 True
+tt_encoder.layers.2.group_attn.norm.b_2 True
+tt_encoder.layers.2.sublayer.0.norm.a_2 True
+tt_encoder.layers.2.sublayer.0.norm.b_2 True
+tt_encoder.layers.2.sublayer.1.norm.a_2 True
+tt_encoder.layers.2.sublayer.1.norm.b_2 True
+tt_encoder.layers.3.self_attn.linears.0.weight True
+tt_encoder.layers.3.self_attn.linears.0.bias True
+tt_encoder.layers.3.self_attn.linears.1.weight True
+tt_encoder.layers.3.self_attn.linears.1.bias True
+tt_encoder.layers.3.self_attn.linears.2.weight True
+tt_encoder.layers.3.self_attn.linears.2.bias True
+tt_encoder.layers.3.self_attn.linears.3.weight True
+tt_encoder.layers.3.self_attn.linears.3.bias True
+tt_encoder.layers.3.feed_forward.w_1.weight True
+tt_encoder.layers.3.feed_forward.w_1.bias True
+tt_encoder.layers.3.feed_forward.w_2.weight True
+tt_encoder.layers.3.feed_forward.w_2.bias True
+tt_encoder.layers.3.group_attn.linear_key.weight True
+tt_encoder.layers.3.group_attn.linear_key.bias True
+tt_encoder.layers.3.group_attn.linear_query.weight True
+tt_encoder.layers.3.group_attn.linear_query.bias True
+tt_encoder.layers.3.group_attn.norm.a_2 True
+tt_encoder.layers.3.group_attn.norm.b_2 True
+tt_encoder.layers.3.sublayer.0.norm.a_2 True
+tt_encoder.layers.3.sublayer.0.norm.b_2 True
+tt_encoder.layers.3.sublayer.1.norm.a_2 True
+tt_encoder.layers.3.sublayer.1.norm.b_2 True
+tt_encoder.norm.a_2 True
+tt_encoder.norm.b_2 True
+linear_1.weight True
+linear_1.bias True
+linear_2.weight True
+linear_2.bias True
+linear_out.weight True
+linear_out.bias True
+so_linear_1.weight True
+so_linear_1.bias True
+so_linear_2.weight True
+so_linear_2.bias True
+so_linear_out.weight True
+so_linear_out.bias True
+layer_norm1.weight True
+layer_norm1.bias True
+layer_norm2.weight True
+layer_norm2.bias True
+Optimizer: adam
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/30 ****
+Use CrossEntropyLoss
+15/33-(1.880)
+30/33-(1.692)
+12/33-(1.379)
+
+=== Evaluating Model ===
+Total valid loss 1.0379420866568883
+accuracy on Test 0.4166666666666667
+Best accuracy on Test 0.4166666666666667
+
+**** Epoch 0/30 ****
+27/33-(1.255)
+9/33-(0.915)
+24/33-(1.292)
+6/33-(0.962)
+
+=== Evaluating Model ===
+Total valid loss 1.2340994328260422
+accuracy on Test 0.43333333333333335
+Best accuracy on Test 0.43333333333333335
+
+**** Epoch 1/30 ****
+21/33-(1.244)
+3/33-(1.140)
+18/33-(1.067)
+0/33-(1.182)
+
+=== Evaluating Model ===
+Total valid loss 1.1006704221169155
+accuracy on Test 0.40555555555555556
+Best accuracy on Test 0.43333333333333335
+
+**** Epoch 2/30 ****
+15/33-(1.112)
+30/33-(0.883)
+12/33-(0.970)
+
+=== Evaluating Model ===
+Total valid loss 1.0040765926241875
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.49444444444444446
+
+**** Epoch 3/30 ****
+27/33-(0.979)
+9/33-(0.886)
+24/33-(1.973)
+6/33-(0.930)
+
+=== Evaluating Model ===
+Total valid loss 1.054629623889923
+accuracy on Test 0.40555555555555556
+Best accuracy on Test 0.49444444444444446
+
+**** Epoch 4/30 ****
+21/33-(0.989)
+3/33-(1.050)
+18/33-(0.898)
+0/33-(0.911)
+
+=== Evaluating Model ===
+Total valid loss 0.9310819481809934
+accuracy on Test 0.5666666666666667
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 5/30 ****
+15/33-(0.812)
+30/33-(0.711)
+12/33-(0.823)
+27/33-(1.122)
+
+=== Evaluating Model ===
+Total valid loss 0.9623436331748962
+accuracy on Test 0.5388888888888889
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 6/30 ****
+9/33-(0.537)
+24/33-(0.515)
+6/33-(0.919)
+
+=== Evaluating Model ===
+Total valid loss 1.0472056617339451
+accuracy on Test 0.5388888888888889
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 7/30 ****
+21/33-(0.749)
+3/33-(0.363)
+18/33-(0.577)
+0/33-(0.765)
+
+=== Evaluating Model ===
+Total valid loss 0.9707384631037712
+accuracy on Test 0.5388888888888889
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 8/30 ****
+15/33-(0.658)
+30/33-(0.533)
+12/33-(0.813)
+27/33-(0.677)
+
+=== Evaluating Model ===
+Total valid loss 1.1655302147070568
+accuracy on Test 0.5333333333333333
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 9/30 ****
+9/33-(0.356)
+24/33-(0.747)
+6/33-(0.543)
+21/33-(0.810)
+
+=== Evaluating Model ===
+Total valid loss 1.3636353015899658
+accuracy on Test 0.5333333333333333
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 10/30 ****
+3/33-(0.419)
+18/33-(0.670)
+0/33-(0.954)
+
+=== Evaluating Model ===
+Total valid loss 1.2340923162798088
+accuracy on Test 0.5666666666666667
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 11/30 ****
+15/33-(0.846)
+30/33-(0.589)
+12/33-(0.582)
+27/33-(0.753)
+
+=== Evaluating Model ===
+Total valid loss 1.737049733599027
+accuracy on Test 0.55
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 12/30 ****
+9/33-(0.233)
+24/33-(1.139)
+6/33-(0.325)
+21/33-(0.627)
+
+=== Evaluating Model ===
+Total valid loss 1.4813375721375148
+accuracy on Test 0.45555555555555555
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 13/30 ****
+3/33-(0.350)
+18/33-(0.847)
+0/33-(0.089)
+15/33-(1.247)
+
+=== Evaluating Model ===
+Total valid loss 2.454944094022115
+accuracy on Test 0.4444444444444444
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 14/30 ****
+30/33-(0.320)
+12/33-(0.555)
+27/33-(0.311)
+
+=== Evaluating Model ===
+Total valid loss 2.084806869427363
+accuracy on Test 0.4444444444444444
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 15/30 ****
+9/33-(0.708)
+24/33-(0.347)
+6/33-(0.783)
+21/33-(0.237)
+
+=== Evaluating Model ===
+Total valid loss 2.5225633482138314
+accuracy on Test 0.45
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 16/30 ****
+3/33-(0.254)
+18/33-(0.163)
+0/33-(0.241)
+15/33-(0.282)
+
+=== Evaluating Model ===
+Total valid loss 2.1943040738503137
+accuracy on Test 0.4166666666666667
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 17/30 ****
+30/33-(0.360)
+12/33-(0.441)
+27/33-(0.274)
+
+=== Evaluating Model ===
+Total valid loss 3.173967550198237
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 18/30 ****
+9/33-(0.398)
+24/33-(0.792)
+6/33-(0.191)
+21/33-(1.010)
+
+=== Evaluating Model ===
+Total valid loss 1.9325554172197978
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 19/30 ****
+3/33-(0.264)
+18/33-(1.024)
+0/33-(0.689)
+15/33-(0.278)
+
+=== Evaluating Model ===
+Total valid loss 2.636215661962827
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 20/30 ****
+30/33-(0.479)
+12/33-(0.835)
+27/33-(0.355)
+9/33-(0.137)
+
+=== Evaluating Model ===
+Total valid loss 2.28874804576238
+accuracy on Test 0.5055555555555555
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 21/30 ****
+24/33-(0.066)
+6/33-(0.039)
+21/33-(0.064)
+
+=== Evaluating Model ===
+Total valid loss 3.2843655546506247
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 22/30 ****
+3/33-(0.020)
+18/33-(0.384)
+0/33-(0.960)
+15/33-(0.472)
+
+=== Evaluating Model ===
+Total valid loss 3.027410817643007
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 23/30 ****
+30/33-(0.169)
+12/33-(0.363)
+27/33-(0.151)
+9/33-(0.043)
+
+=== Evaluating Model ===
+Total valid loss 2.8381059914827347
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 24/30 ****
+24/33-(0.058)
+6/33-(0.043)
+21/33-(0.077)
+3/33-(0.151)
+
+=== Evaluating Model ===
+Total valid loss 3.1702831784884133
+accuracy on Test 0.4666666666666667
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 25/30 ****
+18/33-(0.207)
+0/33-(0.237)
+15/33-(0.416)
+
+=== Evaluating Model ===
+Total valid loss 3.50010292728742
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 26/30 ****
+30/33-(0.052)
+12/33-(0.243)
+27/33-(0.157)
+9/33-(0.121)
+
+=== Evaluating Model ===
+Total valid loss 2.8877442479133606
+accuracy on Test 0.55
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 27/30 ****
+24/33-(0.029)
+6/33-(0.053)
+21/33-(0.289)
+3/33-(0.116)
+
+=== Evaluating Model ===
+Total valid loss 3.462275892496109
+accuracy on Test 0.4666666666666667
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 28/30 ****
+18/33-(0.266)
+0/33-(0.089)
+15/33-(0.618)
+30/33-(0.061)
+
+=== Evaluating Model ===
+Total valid loss 3.488779584566752
+accuracy on Test 0.4111111111111111
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 29/30 ****
+12/33-(0.145)
+27/33-(0.017)
+Best accuracy on Test 0.5666666666666667
+
+Source domain: Yahoo, Target domain: Yahoo, Cur_fold 1
+Corpus: GCDC
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+172.5
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin HTTP/1.1" 200 0
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+context_weight True
+base_encoder.encoder.model.mask_emb True
+base_encoder.encoder.model.word_embedding.weight True
+base_encoder.encoder.model.layer.0.rel_attn.q True
+base_encoder.encoder.model.layer.0.rel_attn.k True
+base_encoder.encoder.model.layer.0.rel_attn.v True
+base_encoder.encoder.model.layer.0.rel_attn.o True
+base_encoder.encoder.model.layer.0.rel_attn.r True
+base_encoder.encoder.model.layer.0.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.0.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.0.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.0.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.0.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.0.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.0.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.0.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.0.ff.layer_1.weight True
+base_encoder.encoder.model.layer.0.ff.layer_1.bias True
+base_encoder.encoder.model.layer.0.ff.layer_2.weight True
+base_encoder.encoder.model.layer.0.ff.layer_2.bias True
+base_encoder.encoder.model.layer.1.rel_attn.q True
+base_encoder.encoder.model.layer.1.rel_attn.k True
+base_encoder.encoder.model.layer.1.rel_attn.v True
+base_encoder.encoder.model.layer.1.rel_attn.o True
+base_encoder.encoder.model.layer.1.rel_attn.r True
+base_encoder.encoder.model.layer.1.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.1.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.1.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.1.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.1.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.1.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.1.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.1.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.1.ff.layer_1.weight True
+base_encoder.encoder.model.layer.1.ff.layer_1.bias True
+base_encoder.encoder.model.layer.1.ff.layer_2.weight True
+base_encoder.encoder.model.layer.1.ff.layer_2.bias True
+base_encoder.encoder.model.layer.2.rel_attn.q True
+base_encoder.encoder.model.layer.2.rel_attn.k True
+base_encoder.encoder.model.layer.2.rel_attn.v True
+base_encoder.encoder.model.layer.2.rel_attn.o True
+base_encoder.encoder.model.layer.2.rel_attn.r True
+base_encoder.encoder.model.layer.2.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.2.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.2.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.2.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.2.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.2.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.2.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.2.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.2.ff.layer_1.weight True
+base_encoder.encoder.model.layer.2.ff.layer_1.bias True
+base_encoder.encoder.model.layer.2.ff.layer_2.weight True
+base_encoder.encoder.model.layer.2.ff.layer_2.bias True
+base_encoder.encoder.model.layer.3.rel_attn.q True
+base_encoder.encoder.model.layer.3.rel_attn.k True
+base_encoder.encoder.model.layer.3.rel_attn.v True
+base_encoder.encoder.model.layer.3.rel_attn.o True
+base_encoder.encoder.model.layer.3.rel_attn.r True
+base_encoder.encoder.model.layer.3.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.3.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.3.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.3.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.3.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.3.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.3.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.3.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.3.ff.layer_1.weight True
+base_encoder.encoder.model.layer.3.ff.layer_1.bias True
+base_encoder.encoder.model.layer.3.ff.layer_2.weight True
+base_encoder.encoder.model.layer.3.ff.layer_2.bias True
+base_encoder.encoder.model.layer.4.rel_attn.q True
+base_encoder.encoder.model.layer.4.rel_attn.k True
+base_encoder.encoder.model.layer.4.rel_attn.v True
+base_encoder.encoder.model.layer.4.rel_attn.o True
+base_encoder.encoder.model.layer.4.rel_attn.r True
+base_encoder.encoder.model.layer.4.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.4.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.4.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.4.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.4.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.4.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.4.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.4.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.4.ff.layer_1.weight True
+base_encoder.encoder.model.layer.4.ff.layer_1.bias True
+base_encoder.encoder.model.layer.4.ff.layer_2.weight True
+base_encoder.encoder.model.layer.4.ff.layer_2.bias True
+base_encoder.encoder.model.layer.5.rel_attn.q True
+base_encoder.encoder.model.layer.5.rel_attn.k True
+base_encoder.encoder.model.layer.5.rel_attn.v True
+base_encoder.encoder.model.layer.5.rel_attn.o True
+base_encoder.encoder.model.layer.5.rel_attn.r True
+base_encoder.encoder.model.layer.5.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.5.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.5.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.5.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.5.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.5.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.5.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.5.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.5.ff.layer_1.weight True
+base_encoder.encoder.model.layer.5.ff.layer_1.bias True
+base_encoder.encoder.model.layer.5.ff.layer_2.weight True
+base_encoder.encoder.model.layer.5.ff.layer_2.bias True
+base_encoder.encoder.model.layer.6.rel_attn.q True
+base_encoder.encoder.model.layer.6.rel_attn.k True
+base_encoder.encoder.model.layer.6.rel_attn.v True
+base_encoder.encoder.model.layer.6.rel_attn.o True
+base_encoder.encoder.model.layer.6.rel_attn.r True
+base_encoder.encoder.model.layer.6.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.6.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.6.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.6.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.6.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.6.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.6.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.6.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.6.ff.layer_1.weight True
+base_encoder.encoder.model.layer.6.ff.layer_1.bias True
+base_encoder.encoder.model.layer.6.ff.layer_2.weight True
+base_encoder.encoder.model.layer.6.ff.layer_2.bias True
+base_encoder.encoder.model.layer.7.rel_attn.q True
+base_encoder.encoder.model.layer.7.rel_attn.k True
+base_encoder.encoder.model.layer.7.rel_attn.v True
+base_encoder.encoder.model.layer.7.rel_attn.o True
+base_encoder.encoder.model.layer.7.rel_attn.r True
+base_encoder.encoder.model.layer.7.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.7.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.7.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.7.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.7.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.7.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.7.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.7.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.7.ff.layer_1.weight True
+base_encoder.encoder.model.layer.7.ff.layer_1.bias True
+base_encoder.encoder.model.layer.7.ff.layer_2.weight True
+base_encoder.encoder.model.layer.7.ff.layer_2.bias True
+base_encoder.encoder.model.layer.8.rel_attn.q True
+base_encoder.encoder.model.layer.8.rel_attn.k True
+base_encoder.encoder.model.layer.8.rel_attn.v True
+base_encoder.encoder.model.layer.8.rel_attn.o True
+base_encoder.encoder.model.layer.8.rel_attn.r True
+base_encoder.encoder.model.layer.8.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.8.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.8.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.8.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.8.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.8.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.8.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.8.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.8.ff.layer_1.weight True
+base_encoder.encoder.model.layer.8.ff.layer_1.bias True
+base_encoder.encoder.model.layer.8.ff.layer_2.weight True
+base_encoder.encoder.model.layer.8.ff.layer_2.bias True
+base_encoder.encoder.model.layer.9.rel_attn.q True
+base_encoder.encoder.model.layer.9.rel_attn.k True
+base_encoder.encoder.model.layer.9.rel_attn.v True
+base_encoder.encoder.model.layer.9.rel_attn.o True
+base_encoder.encoder.model.layer.9.rel_attn.r True
+base_encoder.encoder.model.layer.9.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.9.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.9.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.9.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.9.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.9.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.9.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.9.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.9.ff.layer_1.weight True
+base_encoder.encoder.model.layer.9.ff.layer_1.bias True
+base_encoder.encoder.model.layer.9.ff.layer_2.weight True
+base_encoder.encoder.model.layer.9.ff.layer_2.bias True
+base_encoder.encoder.model.layer.10.rel_attn.q True
+base_encoder.encoder.model.layer.10.rel_attn.k True
+base_encoder.encoder.model.layer.10.rel_attn.v True
+base_encoder.encoder.model.layer.10.rel_attn.o True
+base_encoder.encoder.model.layer.10.rel_attn.r True
+base_encoder.encoder.model.layer.10.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.10.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.10.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.10.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.10.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.10.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.10.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.10.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.10.ff.layer_1.weight True
+base_encoder.encoder.model.layer.10.ff.layer_1.bias True
+base_encoder.encoder.model.layer.10.ff.layer_2.weight True
+base_encoder.encoder.model.layer.10.ff.layer_2.bias True
+base_encoder.encoder.model.layer.11.rel_attn.q True
+base_encoder.encoder.model.layer.11.rel_attn.k True
+base_encoder.encoder.model.layer.11.rel_attn.v True
+base_encoder.encoder.model.layer.11.rel_attn.o True
+base_encoder.encoder.model.layer.11.rel_attn.r True
+base_encoder.encoder.model.layer.11.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.11.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.11.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.11.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.11.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.11.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.11.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.11.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.11.ff.layer_1.weight True
+base_encoder.encoder.model.layer.11.ff.layer_1.bias True
+base_encoder.encoder.model.layer.11.ff.layer_2.weight True
+base_encoder.encoder.model.layer.11.ff.layer_2.bias True
+tt_encoder.layers.0.self_attn.linears.0.weight True
+tt_encoder.layers.0.self_attn.linears.0.bias True
+tt_encoder.layers.0.self_attn.linears.1.weight True
+tt_encoder.layers.0.self_attn.linears.1.bias True
+tt_encoder.layers.0.self_attn.linears.2.weight True
+tt_encoder.layers.0.self_attn.linears.2.bias True
+tt_encoder.layers.0.self_attn.linears.3.weight True
+tt_encoder.layers.0.self_attn.linears.3.bias True
+tt_encoder.layers.0.feed_forward.w_1.weight True
+tt_encoder.layers.0.feed_forward.w_1.bias True
+tt_encoder.layers.0.feed_forward.w_2.weight True
+tt_encoder.layers.0.feed_forward.w_2.bias True
+tt_encoder.layers.0.group_attn.linear_key.weight True
+tt_encoder.layers.0.group_attn.linear_key.bias True
+tt_encoder.layers.0.group_attn.linear_query.weight True
+tt_encoder.layers.0.group_attn.linear_query.bias True
+tt_encoder.layers.0.group_attn.norm.a_2 True
+tt_encoder.layers.0.group_attn.norm.b_2 True
+tt_encoder.layers.0.sublayer.0.norm.a_2 True
+tt_encoder.layers.0.sublayer.0.norm.b_2 True
+tt_encoder.layers.0.sublayer.1.norm.a_2 True
+tt_encoder.layers.0.sublayer.1.norm.b_2 True
+tt_encoder.layers.1.self_attn.linears.0.weight True
+tt_encoder.layers.1.self_attn.linears.0.bias True
+tt_encoder.layers.1.self_attn.linears.1.weight True
+tt_encoder.layers.1.self_attn.linears.1.bias True
+tt_encoder.layers.1.self_attn.linears.2.weight True
+tt_encoder.layers.1.self_attn.linears.2.bias True
+tt_encoder.layers.1.self_attn.linears.3.weight True
+tt_encoder.layers.1.self_attn.linears.3.bias True
+tt_encoder.layers.1.feed_forward.w_1.weight True
+tt_encoder.layers.1.feed_forward.w_1.bias True
+tt_encoder.layers.1.feed_forward.w_2.weight True
+tt_encoder.layers.1.feed_forward.w_2.bias True
+tt_encoder.layers.1.group_attn.linear_key.weight True
+tt_encoder.layers.1.group_attn.linear_key.bias True
+tt_encoder.layers.1.group_attn.linear_query.weight True
+tt_encoder.layers.1.group_attn.linear_query.bias True
+tt_encoder.layers.1.group_attn.norm.a_2 True
+tt_encoder.layers.1.group_attn.norm.b_2 True
+tt_encoder.layers.1.sublayer.0.norm.a_2 True
+tt_encoder.layers.1.sublayer.0.norm.b_2 True
+tt_encoder.layers.1.sublayer.1.norm.a_2 True
+tt_encoder.layers.1.sublayer.1.norm.b_2 True
+tt_encoder.layers.2.self_attn.linears.0.weight True
+tt_encoder.layers.2.self_attn.linears.0.bias True
+tt_encoder.layers.2.self_attn.linears.1.weight True
+tt_encoder.layers.2.self_attn.linears.1.bias True
+tt_encoder.layers.2.self_attn.linears.2.weight True
+tt_encoder.layers.2.self_attn.linears.2.bias True
+tt_encoder.layers.2.self_attn.linears.3.weight True
+tt_encoder.layers.2.self_attn.linears.3.bias True
+tt_encoder.layers.2.feed_forward.w_1.weight True
+tt_encoder.layers.2.feed_forward.w_1.bias True
+tt_encoder.layers.2.feed_forward.w_2.weight True
+tt_encoder.layers.2.feed_forward.w_2.bias True
+tt_encoder.layers.2.group_attn.linear_key.weight True
+tt_encoder.layers.2.group_attn.linear_key.bias True
+tt_encoder.layers.2.group_attn.linear_query.weight True
+tt_encoder.layers.2.group_attn.linear_query.bias True
+tt_encoder.layers.2.group_attn.norm.a_2 True
+tt_encoder.layers.2.group_attn.norm.b_2 True
+tt_encoder.layers.2.sublayer.0.norm.a_2 True
+tt_encoder.layers.2.sublayer.0.norm.b_2 True
+tt_encoder.layers.2.sublayer.1.norm.a_2 True
+tt_encoder.layers.2.sublayer.1.norm.b_2 True
+tt_encoder.layers.3.self_attn.linears.0.weight True
+tt_encoder.layers.3.self_attn.linears.0.bias True
+tt_encoder.layers.3.self_attn.linears.1.weight True
+tt_encoder.layers.3.self_attn.linears.1.bias True
+tt_encoder.layers.3.self_attn.linears.2.weight True
+tt_encoder.layers.3.self_attn.linears.2.bias True
+tt_encoder.layers.3.self_attn.linears.3.weight True
+tt_encoder.layers.3.self_attn.linears.3.bias True
+tt_encoder.layers.3.feed_forward.w_1.weight True
+tt_encoder.layers.3.feed_forward.w_1.bias True
+tt_encoder.layers.3.feed_forward.w_2.weight True
+tt_encoder.layers.3.feed_forward.w_2.bias True
+tt_encoder.layers.3.group_attn.linear_key.weight True
+tt_encoder.layers.3.group_attn.linear_key.bias True
+tt_encoder.layers.3.group_attn.linear_query.weight True
+tt_encoder.layers.3.group_attn.linear_query.bias True
+tt_encoder.layers.3.group_attn.norm.a_2 True
+tt_encoder.layers.3.group_attn.norm.b_2 True
+tt_encoder.layers.3.sublayer.0.norm.a_2 True
+tt_encoder.layers.3.sublayer.0.norm.b_2 True
+tt_encoder.layers.3.sublayer.1.norm.a_2 True
+tt_encoder.layers.3.sublayer.1.norm.b_2 True
+tt_encoder.norm.a_2 True
+tt_encoder.norm.b_2 True
+linear_1.weight True
+linear_1.bias True
+linear_2.weight True
+linear_2.bias True
+linear_out.weight True
+linear_out.bias True
+so_linear_1.weight True
+so_linear_1.bias True
+so_linear_2.weight True
+so_linear_2.bias True
+so_linear_out.weight True
+so_linear_out.bias True
+layer_norm1.weight True
+layer_norm1.bias True
+layer_norm2.weight True
+layer_norm2.bias True
+Optimizer: adam
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/30 ****
+Use CrossEntropyLoss
+15/33-(2.528)
+30/33-(1.757)
+12/33-(1.575)
+
+=== Evaluating Model ===
+Total valid loss 1.1233828316132228
+accuracy on Test 0.39444444444444443
+Best accuracy on Test 0.39444444444444443
+
+**** Epoch 0/30 ****
+27/33-(1.493)
+9/33-(1.228)
+24/33-(1.365)
+6/33-(1.255)
+
+=== Evaluating Model ===
+Total valid loss 1.0530669738849003
+accuracy on Test 0.4444444444444444
+Best accuracy on Test 0.4444444444444444
+
+**** Epoch 1/30 ****
+21/33-(0.764)
+3/33-(1.148)
+18/33-(1.302)
+0/33-(1.150)
+
+=== Evaluating Model ===
+Total valid loss 1.0391096870104473
+accuracy on Test 0.4388888888888889
+Best accuracy on Test 0.4444444444444444
+
+**** Epoch 2/30 ****
+15/33-(1.070)
+30/33-(1.194)
+12/33-(1.008)
+
+=== Evaluating Model ===
+Total valid loss 1.3893227775891621
+accuracy on Test 0.39444444444444443
+Best accuracy on Test 0.4444444444444444
+
+**** Epoch 3/30 ****
+27/33-(0.933)
+9/33-(1.126)
+24/33-(1.123)
+6/33-(0.944)
+
+=== Evaluating Model ===
+Total valid loss 1.1570833524068196
+accuracy on Test 0.4666666666666667
+Best accuracy on Test 0.4666666666666667
+
+**** Epoch 4/30 ****
+21/33-(0.827)
+3/33-(0.811)
+18/33-(0.798)
+0/33-(0.904)
+
+=== Evaluating Model ===
+Total valid loss 1.0850668648878734
+accuracy on Test 0.5055555555555555
+Best accuracy on Test 0.5055555555555555
+
+**** Epoch 5/30 ****
+15/33-(0.870)
+30/33-(0.884)
+12/33-(0.759)
+27/33-(1.058)
+
+=== Evaluating Model ===
+Total valid loss 1.0577595680952072
+accuracy on Test 0.5166666666666667
+Best accuracy on Test 0.5166666666666667
+
+**** Epoch 6/30 ****
+9/33-(0.941)
+24/33-(0.778)
+6/33-(0.668)
+
+=== Evaluating Model ===
+Total valid loss 1.049490397175153
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.5166666666666667
+
+**** Epoch 7/30 ****
+21/33-(1.002)
+3/33-(0.751)
+18/33-(0.589)
+0/33-(1.399)
+
+=== Evaluating Model ===
+Total valid loss 1.0496984869241714
+accuracy on Test 0.5388888888888889
+Best accuracy on Test 0.5388888888888889
+
+**** Epoch 8/30 ****
+15/33-(0.723)
+30/33-(0.529)
+12/33-(0.595)
+27/33-(0.963)
+
+=== Evaluating Model ===
+Total valid loss 1.694381207227707
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.5388888888888889
+
+**** Epoch 9/30 ****
+9/33-(1.079)
+24/33-(0.671)
+6/33-(0.755)
+21/33-(0.456)
+
+=== Evaluating Model ===
+Total valid loss 1.8065483768781025
+accuracy on Test 0.5055555555555555
+Best accuracy on Test 0.5388888888888889
+
+**** Epoch 10/30 ****
+3/33-(0.592)
+18/33-(0.983)
+0/33-(0.494)
+
+=== Evaluating Model ===
+Total valid loss 1.578106294075648
+accuracy on Test 0.5722222222222222
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 11/30 ****
+15/33-(0.398)
+30/33-(0.429)
+12/33-(0.320)
+27/33-(1.058)
+
+=== Evaluating Model ===
+Total valid loss 1.861575315395991
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 12/30 ****
+9/33-(1.301)
+24/33-(0.371)
+6/33-(0.316)
+21/33-(0.410)
+
+=== Evaluating Model ===
+Total valid loss 2.044184406598409
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 13/30 ****
+3/33-(0.789)
+18/33-(0.462)
+0/33-(0.461)
+15/33-(0.374)
+
+=== Evaluating Model ===
+Total valid loss 2.1945961316426597
+accuracy on Test 0.5388888888888889
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 14/30 ****
+30/33-(0.193)
+12/33-(0.119)
+27/33-(1.077)
+
+=== Evaluating Model ===
+Total valid loss 2.396916617949804
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 15/30 ****
+9/33-(0.396)
+24/33-(0.441)
+6/33-(0.672)
+21/33-(0.590)
+
+=== Evaluating Model ===
+Total valid loss 1.7502145916223526
+accuracy on Test 0.5
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 16/30 ****
+3/33-(0.438)
+18/33-(0.771)
+0/33-(0.055)
+15/33-(0.116)
+
+=== Evaluating Model ===
+Total valid loss 2.907993733882904
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 17/30 ****
+30/33-(0.289)
+12/33-(0.858)
+27/33-(0.515)
+
+=== Evaluating Model ===
+Total valid loss 2.7624128460884094
+accuracy on Test 0.4666666666666667
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 18/30 ****
+9/33-(0.270)
+24/33-(0.368)
+6/33-(0.131)
+21/33-(0.278)
+
+=== Evaluating Model ===
+Total valid loss 3.859923084576925
+accuracy on Test 0.5166666666666667
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 19/30 ****
+3/33-(0.272)
+18/33-(0.132)
+0/33-(0.311)
+15/33-(0.283)
+
+=== Evaluating Model ===
+Total valid loss 3.4299099842707315
+accuracy on Test 0.4444444444444444
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 20/30 ****
+30/33-(0.305)
+12/33-(0.313)
+27/33-(0.581)
+9/33-(0.617)
+
+=== Evaluating Model ===
+Total valid loss 3.3013524214426675
+accuracy on Test 0.5055555555555555
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 21/30 ****
+24/33-(0.231)
+6/33-(0.148)
+21/33-(0.141)
+
+=== Evaluating Model ===
+Total valid loss 4.8715799649556475
+accuracy on Test 0.5
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 22/30 ****
+3/33-(0.710)
+18/33-(0.680)
+0/33-(0.618)
+15/33-(0.317)
+
+=== Evaluating Model ===
+Total valid loss 3.35563733180364
+accuracy on Test 0.43333333333333335
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 23/30 ****
+30/33-(0.024)
+12/33-(0.342)
+27/33-(0.295)
+9/33-(0.119)
+
+=== Evaluating Model ===
+Total valid loss 2.935550441344579
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 24/30 ****
+24/33-(0.071)
+6/33-(0.050)
+21/33-(0.062)
+3/33-(0.134)
+
+=== Evaluating Model ===
+Total valid loss 3.5760217905044556
+accuracy on Test 0.5
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 25/30 ****
+18/33-(0.023)
+0/33-(0.101)
+15/33-(0.122)
+
+=== Evaluating Model ===
+Total valid loss 3.6865088740984597
+accuracy on Test 0.45555555555555555
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 26/30 ****
+30/33-(0.102)
+12/33-(0.095)
+27/33-(0.602)
+9/33-(0.021)
+
+=== Evaluating Model ===
+Total valid loss 3.45870574315389
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 27/30 ****
+24/33-(0.036)
+6/33-(0.362)
+21/33-(0.015)
+3/33-(0.048)
+
+=== Evaluating Model ===
+Total valid loss 3.9292811354001365
+accuracy on Test 0.5111111111111111
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 28/30 ****
+18/33-(0.041)
+0/33-(0.043)
+15/33-(0.042)
+30/33-(0.164)
+
+=== Evaluating Model ===
+Total valid loss 3.487901488939921
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 29/30 ****
+12/33-(0.090)
+27/33-(0.005)
+Best accuracy on Test 0.5722222222222222
+
+Source domain: Yahoo, Target domain: Yahoo, Cur_fold 2
+Corpus: GCDC
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+172.5
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin HTTP/1.1" 200 0
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+context_weight True
+base_encoder.encoder.model.mask_emb True
+base_encoder.encoder.model.word_embedding.weight True
+base_encoder.encoder.model.layer.0.rel_attn.q True
+base_encoder.encoder.model.layer.0.rel_attn.k True
+base_encoder.encoder.model.layer.0.rel_attn.v True
+base_encoder.encoder.model.layer.0.rel_attn.o True
+base_encoder.encoder.model.layer.0.rel_attn.r True
+base_encoder.encoder.model.layer.0.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.0.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.0.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.0.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.0.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.0.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.0.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.0.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.0.ff.layer_1.weight True
+base_encoder.encoder.model.layer.0.ff.layer_1.bias True
+base_encoder.encoder.model.layer.0.ff.layer_2.weight True
+base_encoder.encoder.model.layer.0.ff.layer_2.bias True
+base_encoder.encoder.model.layer.1.rel_attn.q True
+base_encoder.encoder.model.layer.1.rel_attn.k True
+base_encoder.encoder.model.layer.1.rel_attn.v True
+base_encoder.encoder.model.layer.1.rel_attn.o True
+base_encoder.encoder.model.layer.1.rel_attn.r True
+base_encoder.encoder.model.layer.1.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.1.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.1.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.1.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.1.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.1.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.1.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.1.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.1.ff.layer_1.weight True
+base_encoder.encoder.model.layer.1.ff.layer_1.bias True
+base_encoder.encoder.model.layer.1.ff.layer_2.weight True
+base_encoder.encoder.model.layer.1.ff.layer_2.bias True
+base_encoder.encoder.model.layer.2.rel_attn.q True
+base_encoder.encoder.model.layer.2.rel_attn.k True
+base_encoder.encoder.model.layer.2.rel_attn.v True
+base_encoder.encoder.model.layer.2.rel_attn.o True
+base_encoder.encoder.model.layer.2.rel_attn.r True
+base_encoder.encoder.model.layer.2.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.2.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.2.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.2.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.2.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.2.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.2.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.2.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.2.ff.layer_1.weight True
+base_encoder.encoder.model.layer.2.ff.layer_1.bias True
+base_encoder.encoder.model.layer.2.ff.layer_2.weight True
+base_encoder.encoder.model.layer.2.ff.layer_2.bias True
+base_encoder.encoder.model.layer.3.rel_attn.q True
+base_encoder.encoder.model.layer.3.rel_attn.k True
+base_encoder.encoder.model.layer.3.rel_attn.v True
+base_encoder.encoder.model.layer.3.rel_attn.o True
+base_encoder.encoder.model.layer.3.rel_attn.r True
+base_encoder.encoder.model.layer.3.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.3.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.3.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.3.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.3.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.3.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.3.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.3.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.3.ff.layer_1.weight True
+base_encoder.encoder.model.layer.3.ff.layer_1.bias True
+base_encoder.encoder.model.layer.3.ff.layer_2.weight True
+base_encoder.encoder.model.layer.3.ff.layer_2.bias True
+base_encoder.encoder.model.layer.4.rel_attn.q True
+base_encoder.encoder.model.layer.4.rel_attn.k True
+base_encoder.encoder.model.layer.4.rel_attn.v True
+base_encoder.encoder.model.layer.4.rel_attn.o True
+base_encoder.encoder.model.layer.4.rel_attn.r True
+base_encoder.encoder.model.layer.4.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.4.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.4.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.4.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.4.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.4.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.4.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.4.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.4.ff.layer_1.weight True
+base_encoder.encoder.model.layer.4.ff.layer_1.bias True
+base_encoder.encoder.model.layer.4.ff.layer_2.weight True
+base_encoder.encoder.model.layer.4.ff.layer_2.bias True
+base_encoder.encoder.model.layer.5.rel_attn.q True
+base_encoder.encoder.model.layer.5.rel_attn.k True
+base_encoder.encoder.model.layer.5.rel_attn.v True
+base_encoder.encoder.model.layer.5.rel_attn.o True
+base_encoder.encoder.model.layer.5.rel_attn.r True
+base_encoder.encoder.model.layer.5.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.5.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.5.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.5.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.5.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.5.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.5.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.5.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.5.ff.layer_1.weight True
+base_encoder.encoder.model.layer.5.ff.layer_1.bias True
+base_encoder.encoder.model.layer.5.ff.layer_2.weight True
+base_encoder.encoder.model.layer.5.ff.layer_2.bias True
+base_encoder.encoder.model.layer.6.rel_attn.q True
+base_encoder.encoder.model.layer.6.rel_attn.k True
+base_encoder.encoder.model.layer.6.rel_attn.v True
+base_encoder.encoder.model.layer.6.rel_attn.o True
+base_encoder.encoder.model.layer.6.rel_attn.r True
+base_encoder.encoder.model.layer.6.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.6.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.6.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.6.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.6.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.6.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.6.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.6.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.6.ff.layer_1.weight True
+base_encoder.encoder.model.layer.6.ff.layer_1.bias True
+base_encoder.encoder.model.layer.6.ff.layer_2.weight True
+base_encoder.encoder.model.layer.6.ff.layer_2.bias True
+base_encoder.encoder.model.layer.7.rel_attn.q True
+base_encoder.encoder.model.layer.7.rel_attn.k True
+base_encoder.encoder.model.layer.7.rel_attn.v True
+base_encoder.encoder.model.layer.7.rel_attn.o True
+base_encoder.encoder.model.layer.7.rel_attn.r True
+base_encoder.encoder.model.layer.7.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.7.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.7.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.7.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.7.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.7.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.7.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.7.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.7.ff.layer_1.weight True
+base_encoder.encoder.model.layer.7.ff.layer_1.bias True
+base_encoder.encoder.model.layer.7.ff.layer_2.weight True
+base_encoder.encoder.model.layer.7.ff.layer_2.bias True
+base_encoder.encoder.model.layer.8.rel_attn.q True
+base_encoder.encoder.model.layer.8.rel_attn.k True
+base_encoder.encoder.model.layer.8.rel_attn.v True
+base_encoder.encoder.model.layer.8.rel_attn.o True
+base_encoder.encoder.model.layer.8.rel_attn.r True
+base_encoder.encoder.model.layer.8.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.8.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.8.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.8.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.8.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.8.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.8.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.8.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.8.ff.layer_1.weight True
+base_encoder.encoder.model.layer.8.ff.layer_1.bias True
+base_encoder.encoder.model.layer.8.ff.layer_2.weight True
+base_encoder.encoder.model.layer.8.ff.layer_2.bias True
+base_encoder.encoder.model.layer.9.rel_attn.q True
+base_encoder.encoder.model.layer.9.rel_attn.k True
+base_encoder.encoder.model.layer.9.rel_attn.v True
+base_encoder.encoder.model.layer.9.rel_attn.o True
+base_encoder.encoder.model.layer.9.rel_attn.r True
+base_encoder.encoder.model.layer.9.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.9.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.9.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.9.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.9.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.9.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.9.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.9.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.9.ff.layer_1.weight True
+base_encoder.encoder.model.layer.9.ff.layer_1.bias True
+base_encoder.encoder.model.layer.9.ff.layer_2.weight True
+base_encoder.encoder.model.layer.9.ff.layer_2.bias True
+base_encoder.encoder.model.layer.10.rel_attn.q True
+base_encoder.encoder.model.layer.10.rel_attn.k True
+base_encoder.encoder.model.layer.10.rel_attn.v True
+base_encoder.encoder.model.layer.10.rel_attn.o True
+base_encoder.encoder.model.layer.10.rel_attn.r True
+base_encoder.encoder.model.layer.10.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.10.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.10.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.10.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.10.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.10.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.10.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.10.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.10.ff.layer_1.weight True
+base_encoder.encoder.model.layer.10.ff.layer_1.bias True
+base_encoder.encoder.model.layer.10.ff.layer_2.weight True
+base_encoder.encoder.model.layer.10.ff.layer_2.bias True
+base_encoder.encoder.model.layer.11.rel_attn.q True
+base_encoder.encoder.model.layer.11.rel_attn.k True
+base_encoder.encoder.model.layer.11.rel_attn.v True
+base_encoder.encoder.model.layer.11.rel_attn.o True
+base_encoder.encoder.model.layer.11.rel_attn.r True
+base_encoder.encoder.model.layer.11.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.11.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.11.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.11.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.11.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.11.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.11.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.11.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.11.ff.layer_1.weight True
+base_encoder.encoder.model.layer.11.ff.layer_1.bias True
+base_encoder.encoder.model.layer.11.ff.layer_2.weight True
+base_encoder.encoder.model.layer.11.ff.layer_2.bias True
+tt_encoder.layers.0.self_attn.linears.0.weight True
+tt_encoder.layers.0.self_attn.linears.0.bias True
+tt_encoder.layers.0.self_attn.linears.1.weight True
+tt_encoder.layers.0.self_attn.linears.1.bias True
+tt_encoder.layers.0.self_attn.linears.2.weight True
+tt_encoder.layers.0.self_attn.linears.2.bias True
+tt_encoder.layers.0.self_attn.linears.3.weight True
+tt_encoder.layers.0.self_attn.linears.3.bias True
+tt_encoder.layers.0.feed_forward.w_1.weight True
+tt_encoder.layers.0.feed_forward.w_1.bias True
+tt_encoder.layers.0.feed_forward.w_2.weight True
+tt_encoder.layers.0.feed_forward.w_2.bias True
+tt_encoder.layers.0.group_attn.linear_key.weight True
+tt_encoder.layers.0.group_attn.linear_key.bias True
+tt_encoder.layers.0.group_attn.linear_query.weight True
+tt_encoder.layers.0.group_attn.linear_query.bias True
+tt_encoder.layers.0.group_attn.norm.a_2 True
+tt_encoder.layers.0.group_attn.norm.b_2 True
+tt_encoder.layers.0.sublayer.0.norm.a_2 True
+tt_encoder.layers.0.sublayer.0.norm.b_2 True
+tt_encoder.layers.0.sublayer.1.norm.a_2 True
+tt_encoder.layers.0.sublayer.1.norm.b_2 True
+tt_encoder.layers.1.self_attn.linears.0.weight True
+tt_encoder.layers.1.self_attn.linears.0.bias True
+tt_encoder.layers.1.self_attn.linears.1.weight True
+tt_encoder.layers.1.self_attn.linears.1.bias True
+tt_encoder.layers.1.self_attn.linears.2.weight True
+tt_encoder.layers.1.self_attn.linears.2.bias True
+tt_encoder.layers.1.self_attn.linears.3.weight True
+tt_encoder.layers.1.self_attn.linears.3.bias True
+tt_encoder.layers.1.feed_forward.w_1.weight True
+tt_encoder.layers.1.feed_forward.w_1.bias True
+tt_encoder.layers.1.feed_forward.w_2.weight True
+tt_encoder.layers.1.feed_forward.w_2.bias True
+tt_encoder.layers.1.group_attn.linear_key.weight True
+tt_encoder.layers.1.group_attn.linear_key.bias True
+tt_encoder.layers.1.group_attn.linear_query.weight True
+tt_encoder.layers.1.group_attn.linear_query.bias True
+tt_encoder.layers.1.group_attn.norm.a_2 True
+tt_encoder.layers.1.group_attn.norm.b_2 True
+tt_encoder.layers.1.sublayer.0.norm.a_2 True
+tt_encoder.layers.1.sublayer.0.norm.b_2 True
+tt_encoder.layers.1.sublayer.1.norm.a_2 True
+tt_encoder.layers.1.sublayer.1.norm.b_2 True
+tt_encoder.layers.2.self_attn.linears.0.weight True
+tt_encoder.layers.2.self_attn.linears.0.bias True
+tt_encoder.layers.2.self_attn.linears.1.weight True
+tt_encoder.layers.2.self_attn.linears.1.bias True
+tt_encoder.layers.2.self_attn.linears.2.weight True
+tt_encoder.layers.2.self_attn.linears.2.bias True
+tt_encoder.layers.2.self_attn.linears.3.weight True
+tt_encoder.layers.2.self_attn.linears.3.bias True
+tt_encoder.layers.2.feed_forward.w_1.weight True
+tt_encoder.layers.2.feed_forward.w_1.bias True
+tt_encoder.layers.2.feed_forward.w_2.weight True
+tt_encoder.layers.2.feed_forward.w_2.bias True
+tt_encoder.layers.2.group_attn.linear_key.weight True
+tt_encoder.layers.2.group_attn.linear_key.bias True
+tt_encoder.layers.2.group_attn.linear_query.weight True
+tt_encoder.layers.2.group_attn.linear_query.bias True
+tt_encoder.layers.2.group_attn.norm.a_2 True
+tt_encoder.layers.2.group_attn.norm.b_2 True
+tt_encoder.layers.2.sublayer.0.norm.a_2 True
+tt_encoder.layers.2.sublayer.0.norm.b_2 True
+tt_encoder.layers.2.sublayer.1.norm.a_2 True
+tt_encoder.layers.2.sublayer.1.norm.b_2 True
+tt_encoder.layers.3.self_attn.linears.0.weight True
+tt_encoder.layers.3.self_attn.linears.0.bias True
+tt_encoder.layers.3.self_attn.linears.1.weight True
+tt_encoder.layers.3.self_attn.linears.1.bias True
+tt_encoder.layers.3.self_attn.linears.2.weight True
+tt_encoder.layers.3.self_attn.linears.2.bias True
+tt_encoder.layers.3.self_attn.linears.3.weight True
+tt_encoder.layers.3.self_attn.linears.3.bias True
+tt_encoder.layers.3.feed_forward.w_1.weight True
+tt_encoder.layers.3.feed_forward.w_1.bias True
+tt_encoder.layers.3.feed_forward.w_2.weight True
+tt_encoder.layers.3.feed_forward.w_2.bias True
+tt_encoder.layers.3.group_attn.linear_key.weight True
+tt_encoder.layers.3.group_attn.linear_key.bias True
+tt_encoder.layers.3.group_attn.linear_query.weight True
+tt_encoder.layers.3.group_attn.linear_query.bias True
+tt_encoder.layers.3.group_attn.norm.a_2 True
+tt_encoder.layers.3.group_attn.norm.b_2 True
+tt_encoder.layers.3.sublayer.0.norm.a_2 True
+tt_encoder.layers.3.sublayer.0.norm.b_2 True
+tt_encoder.layers.3.sublayer.1.norm.a_2 True
+tt_encoder.layers.3.sublayer.1.norm.b_2 True
+tt_encoder.norm.a_2 True
+tt_encoder.norm.b_2 True
+linear_1.weight True
+linear_1.bias True
+linear_2.weight True
+linear_2.bias True
+linear_out.weight True
+linear_out.bias True
+so_linear_1.weight True
+so_linear_1.bias True
+so_linear_2.weight True
+so_linear_2.bias True
+so_linear_out.weight True
+so_linear_out.bias True
+layer_norm1.weight True
+layer_norm1.bias True
+layer_norm2.weight True
+layer_norm2.bias True
+Optimizer: adam
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/30 ****
+Use CrossEntropyLoss
+15/33-(1.659)
+30/33-(1.844)
+12/33-(1.709)
+
+=== Evaluating Model ===
+Total valid loss 1.107247789700826
+accuracy on Test 0.4111111111111111
+Best accuracy on Test 0.4111111111111111
+
+**** Epoch 0/30 ****
+27/33-(1.361)
+9/33-(1.104)
+24/33-(1.065)
+6/33-(1.579)
+
+=== Evaluating Model ===
+Total valid loss 1.159131293495496
+accuracy on Test 0.4111111111111111
+Best accuracy on Test 0.4111111111111111
+
+**** Epoch 1/30 ****
+21/33-(0.919)
+3/33-(1.141)
+18/33-(1.158)
+0/33-(1.146)
+
+=== Evaluating Model ===
+Total valid loss 1.3680216372013092
+accuracy on Test 0.3888888888888889
+Best accuracy on Test 0.4111111111111111
+
+**** Epoch 2/30 ****
+15/33-(1.208)
+30/33-(1.026)
+12/33-(1.020)
+
+=== Evaluating Model ===
+Total valid loss 1.0149245113134384
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.49444444444444446
+
+**** Epoch 3/30 ****
+27/33-(1.022)
+9/33-(1.132)
+24/33-(1.065)
+6/33-(0.763)
+
+=== Evaluating Model ===
+Total valid loss 1.0033907145261765
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.5222222222222223
+
+**** Epoch 4/30 ****
+21/33-(0.700)
+3/33-(1.091)
+18/33-(1.306)
+0/33-(0.750)
+
+=== Evaluating Model ===
+Total valid loss 1.1286728133757908
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.5277777777777778
+
+**** Epoch 5/30 ****
+15/33-(0.721)
+30/33-(0.844)
+12/33-(1.165)
+27/33-(0.502)
+
+=== Evaluating Model ===
+Total valid loss 1.0696600278218586
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.5277777777777778
+
+**** Epoch 6/30 ****
+9/33-(0.509)
+24/33-(0.628)
+6/33-(0.708)
+
+=== Evaluating Model ===
+Total valid loss 1.028200626373291
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5277777777777778
+
+**** Epoch 7/30 ****
+21/33-(0.891)
+3/33-(0.784)
+18/33-(0.487)
+0/33-(0.756)
+
+=== Evaluating Model ===
+Total valid loss 1.1891734053691227
+accuracy on Test 0.5666666666666667
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 8/30 ****
+15/33-(0.325)
+30/33-(0.970)
+12/33-(0.964)
+27/33-(0.596)
+
+=== Evaluating Model ===
+Total valid loss 1.1350919256607692
+accuracy on Test 0.5722222222222222
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 9/30 ****
+9/33-(0.373)
+24/33-(0.499)
+6/33-(0.586)
+21/33-(0.323)
+
+=== Evaluating Model ===
+Total valid loss 2.020386189222336
+accuracy on Test 0.5444444444444444
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 10/30 ****
+3/33-(0.540)
+18/33-(0.686)
+0/33-(0.223)
+
+=== Evaluating Model ===
+Total valid loss 1.2927408516407013
+accuracy on Test 0.5111111111111111
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 11/30 ****
+15/33-(0.463)
+30/33-(0.270)
+12/33-(0.179)
+27/33-(0.336)
+
+=== Evaluating Model ===
+Total valid loss 2.203046197692553
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 12/30 ****
+9/33-(0.612)
+24/33-(0.501)
+6/33-(0.755)
+21/33-(0.280)
+
+=== Evaluating Model ===
+Total valid loss 2.0738841394583383
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 13/30 ****
+3/33-(0.357)
+18/33-(0.351)
+0/33-(0.415)
+15/33-(0.919)
+
+=== Evaluating Model ===
+Total valid loss 2.6885245045026145
+accuracy on Test 0.5
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 14/30 ****
+30/33-(0.436)
+12/33-(0.120)
+27/33-(0.819)
+
+=== Evaluating Model ===
+Total valid loss 2.071307743589083
+accuracy on Test 0.5166666666666667
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 15/30 ****
+9/33-(0.135)
+24/33-(0.264)
+6/33-(0.434)
+21/33-(0.237)
+
+=== Evaluating Model ===
+Total valid loss 2.3940266172091165
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 16/30 ****
+3/33-(0.601)
+18/33-(0.217)
+0/33-(0.136)
+15/33-(0.826)
+
+=== Evaluating Model ===
+Total valid loss 2.6087967654069266
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 17/30 ****
+30/33-(0.364)
+12/33-(0.362)
+27/33-(0.348)
+
+=== Evaluating Model ===
+Total valid loss 3.0892050663630166
+accuracy on Test 0.43333333333333335
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 18/30 ****
+9/33-(0.569)
+24/33-(0.129)
+6/33-(0.111)
+21/33-(0.593)
+
+=== Evaluating Model ===
+Total valid loss 1.873646726210912
+accuracy on Test 0.5111111111111111
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 19/30 ****
+3/33-(0.182)
+18/33-(0.089)
+0/33-(0.374)
+15/33-(0.287)
+
+=== Evaluating Model ===
+Total valid loss 3.474139670530955
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 20/30 ****
+30/33-(0.299)
+12/33-(0.168)
+27/33-(0.170)
+9/33-(0.054)
+
+=== Evaluating Model ===
+Total valid loss 3.043449491262436
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 21/30 ****
+24/33-(0.033)
+6/33-(0.128)
+21/33-(0.266)
+
+=== Evaluating Model ===
+Total valid loss 3.8744342724482217
+accuracy on Test 0.5388888888888889
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 22/30 ****
+3/33-(0.205)
+18/33-(0.385)
+0/33-(0.447)
+15/33-(0.029)
+
+=== Evaluating Model ===
+Total valid loss 3.457762827475866
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 23/30 ****
+30/33-(0.009)
+12/33-(0.454)
+27/33-(0.123)
+9/33-(0.315)
+
+=== Evaluating Model ===
+Total valid loss 3.135759323835373
+accuracy on Test 0.5
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 24/30 ****
+24/33-(0.089)
+6/33-(0.023)
+21/33-(0.066)
+3/33-(0.372)
+
+=== Evaluating Model ===
+Total valid loss 2.3335366249084473
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 25/30 ****
+18/33-(0.207)
+0/33-(0.015)
+15/33-(0.094)
+
+=== Evaluating Model ===
+Total valid loss 3.4106831749280295
+accuracy on Test 0.4722222222222222
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 26/30 ****
+30/33-(0.423)
+12/33-(0.356)
+27/33-(0.128)
+9/33-(0.040)
+
+=== Evaluating Model ===
+Total valid loss 3.5286967158317566
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 27/30 ****
+24/33-(0.057)
+6/33-(0.265)
+21/33-(0.066)
+3/33-(0.032)
+
+=== Evaluating Model ===
+Total valid loss 4.16085159778595
+accuracy on Test 0.4666666666666667
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 28/30 ****
+18/33-(0.124)
+0/33-(0.477)
+15/33-(0.042)
+30/33-(0.093)
+
+=== Evaluating Model ===
+Total valid loss 3.894583304723104
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.5722222222222222
+
+**** Epoch 29/30 ****
+12/33-(0.174)
+27/33-(0.002)
+Best accuracy on Test 0.5722222222222222
+
+Source domain: Yahoo, Target domain: Yahoo, Cur_fold 3
+Corpus: GCDC
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+172.5
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin HTTP/1.1" 200 0
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+context_weight True
+base_encoder.encoder.model.mask_emb True
+base_encoder.encoder.model.word_embedding.weight True
+base_encoder.encoder.model.layer.0.rel_attn.q True
+base_encoder.encoder.model.layer.0.rel_attn.k True
+base_encoder.encoder.model.layer.0.rel_attn.v True
+base_encoder.encoder.model.layer.0.rel_attn.o True
+base_encoder.encoder.model.layer.0.rel_attn.r True
+base_encoder.encoder.model.layer.0.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.0.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.0.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.0.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.0.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.0.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.0.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.0.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.0.ff.layer_1.weight True
+base_encoder.encoder.model.layer.0.ff.layer_1.bias True
+base_encoder.encoder.model.layer.0.ff.layer_2.weight True
+base_encoder.encoder.model.layer.0.ff.layer_2.bias True
+base_encoder.encoder.model.layer.1.rel_attn.q True
+base_encoder.encoder.model.layer.1.rel_attn.k True
+base_encoder.encoder.model.layer.1.rel_attn.v True
+base_encoder.encoder.model.layer.1.rel_attn.o True
+base_encoder.encoder.model.layer.1.rel_attn.r True
+base_encoder.encoder.model.layer.1.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.1.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.1.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.1.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.1.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.1.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.1.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.1.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.1.ff.layer_1.weight True
+base_encoder.encoder.model.layer.1.ff.layer_1.bias True
+base_encoder.encoder.model.layer.1.ff.layer_2.weight True
+base_encoder.encoder.model.layer.1.ff.layer_2.bias True
+base_encoder.encoder.model.layer.2.rel_attn.q True
+base_encoder.encoder.model.layer.2.rel_attn.k True
+base_encoder.encoder.model.layer.2.rel_attn.v True
+base_encoder.encoder.model.layer.2.rel_attn.o True
+base_encoder.encoder.model.layer.2.rel_attn.r True
+base_encoder.encoder.model.layer.2.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.2.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.2.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.2.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.2.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.2.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.2.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.2.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.2.ff.layer_1.weight True
+base_encoder.encoder.model.layer.2.ff.layer_1.bias True
+base_encoder.encoder.model.layer.2.ff.layer_2.weight True
+base_encoder.encoder.model.layer.2.ff.layer_2.bias True
+base_encoder.encoder.model.layer.3.rel_attn.q True
+base_encoder.encoder.model.layer.3.rel_attn.k True
+base_encoder.encoder.model.layer.3.rel_attn.v True
+base_encoder.encoder.model.layer.3.rel_attn.o True
+base_encoder.encoder.model.layer.3.rel_attn.r True
+base_encoder.encoder.model.layer.3.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.3.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.3.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.3.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.3.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.3.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.3.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.3.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.3.ff.layer_1.weight True
+base_encoder.encoder.model.layer.3.ff.layer_1.bias True
+base_encoder.encoder.model.layer.3.ff.layer_2.weight True
+base_encoder.encoder.model.layer.3.ff.layer_2.bias True
+base_encoder.encoder.model.layer.4.rel_attn.q True
+base_encoder.encoder.model.layer.4.rel_attn.k True
+base_encoder.encoder.model.layer.4.rel_attn.v True
+base_encoder.encoder.model.layer.4.rel_attn.o True
+base_encoder.encoder.model.layer.4.rel_attn.r True
+base_encoder.encoder.model.layer.4.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.4.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.4.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.4.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.4.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.4.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.4.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.4.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.4.ff.layer_1.weight True
+base_encoder.encoder.model.layer.4.ff.layer_1.bias True
+base_encoder.encoder.model.layer.4.ff.layer_2.weight True
+base_encoder.encoder.model.layer.4.ff.layer_2.bias True
+base_encoder.encoder.model.layer.5.rel_attn.q True
+base_encoder.encoder.model.layer.5.rel_attn.k True
+base_encoder.encoder.model.layer.5.rel_attn.v True
+base_encoder.encoder.model.layer.5.rel_attn.o True
+base_encoder.encoder.model.layer.5.rel_attn.r True
+base_encoder.encoder.model.layer.5.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.5.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.5.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.5.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.5.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.5.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.5.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.5.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.5.ff.layer_1.weight True
+base_encoder.encoder.model.layer.5.ff.layer_1.bias True
+base_encoder.encoder.model.layer.5.ff.layer_2.weight True
+base_encoder.encoder.model.layer.5.ff.layer_2.bias True
+base_encoder.encoder.model.layer.6.rel_attn.q True
+base_encoder.encoder.model.layer.6.rel_attn.k True
+base_encoder.encoder.model.layer.6.rel_attn.v True
+base_encoder.encoder.model.layer.6.rel_attn.o True
+base_encoder.encoder.model.layer.6.rel_attn.r True
+base_encoder.encoder.model.layer.6.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.6.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.6.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.6.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.6.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.6.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.6.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.6.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.6.ff.layer_1.weight True
+base_encoder.encoder.model.layer.6.ff.layer_1.bias True
+base_encoder.encoder.model.layer.6.ff.layer_2.weight True
+base_encoder.encoder.model.layer.6.ff.layer_2.bias True
+base_encoder.encoder.model.layer.7.rel_attn.q True
+base_encoder.encoder.model.layer.7.rel_attn.k True
+base_encoder.encoder.model.layer.7.rel_attn.v True
+base_encoder.encoder.model.layer.7.rel_attn.o True
+base_encoder.encoder.model.layer.7.rel_attn.r True
+base_encoder.encoder.model.layer.7.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.7.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.7.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.7.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.7.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.7.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.7.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.7.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.7.ff.layer_1.weight True
+base_encoder.encoder.model.layer.7.ff.layer_1.bias True
+base_encoder.encoder.model.layer.7.ff.layer_2.weight True
+base_encoder.encoder.model.layer.7.ff.layer_2.bias True
+base_encoder.encoder.model.layer.8.rel_attn.q True
+base_encoder.encoder.model.layer.8.rel_attn.k True
+base_encoder.encoder.model.layer.8.rel_attn.v True
+base_encoder.encoder.model.layer.8.rel_attn.o True
+base_encoder.encoder.model.layer.8.rel_attn.r True
+base_encoder.encoder.model.layer.8.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.8.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.8.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.8.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.8.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.8.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.8.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.8.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.8.ff.layer_1.weight True
+base_encoder.encoder.model.layer.8.ff.layer_1.bias True
+base_encoder.encoder.model.layer.8.ff.layer_2.weight True
+base_encoder.encoder.model.layer.8.ff.layer_2.bias True
+base_encoder.encoder.model.layer.9.rel_attn.q True
+base_encoder.encoder.model.layer.9.rel_attn.k True
+base_encoder.encoder.model.layer.9.rel_attn.v True
+base_encoder.encoder.model.layer.9.rel_attn.o True
+base_encoder.encoder.model.layer.9.rel_attn.r True
+base_encoder.encoder.model.layer.9.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.9.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.9.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.9.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.9.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.9.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.9.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.9.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.9.ff.layer_1.weight True
+base_encoder.encoder.model.layer.9.ff.layer_1.bias True
+base_encoder.encoder.model.layer.9.ff.layer_2.weight True
+base_encoder.encoder.model.layer.9.ff.layer_2.bias True
+base_encoder.encoder.model.layer.10.rel_attn.q True
+base_encoder.encoder.model.layer.10.rel_attn.k True
+base_encoder.encoder.model.layer.10.rel_attn.v True
+base_encoder.encoder.model.layer.10.rel_attn.o True
+base_encoder.encoder.model.layer.10.rel_attn.r True
+base_encoder.encoder.model.layer.10.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.10.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.10.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.10.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.10.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.10.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.10.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.10.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.10.ff.layer_1.weight True
+base_encoder.encoder.model.layer.10.ff.layer_1.bias True
+base_encoder.encoder.model.layer.10.ff.layer_2.weight True
+base_encoder.encoder.model.layer.10.ff.layer_2.bias True
+base_encoder.encoder.model.layer.11.rel_attn.q True
+base_encoder.encoder.model.layer.11.rel_attn.k True
+base_encoder.encoder.model.layer.11.rel_attn.v True
+base_encoder.encoder.model.layer.11.rel_attn.o True
+base_encoder.encoder.model.layer.11.rel_attn.r True
+base_encoder.encoder.model.layer.11.rel_attn.r_r_bias True
+base_encoder.encoder.model.layer.11.rel_attn.r_s_bias True
+base_encoder.encoder.model.layer.11.rel_attn.r_w_bias True
+base_encoder.encoder.model.layer.11.rel_attn.seg_embed True
+base_encoder.encoder.model.layer.11.rel_attn.layer_norm.weight True
+base_encoder.encoder.model.layer.11.rel_attn.layer_norm.bias True
+base_encoder.encoder.model.layer.11.ff.layer_norm.weight True
+base_encoder.encoder.model.layer.11.ff.layer_norm.bias True
+base_encoder.encoder.model.layer.11.ff.layer_1.weight True
+base_encoder.encoder.model.layer.11.ff.layer_1.bias True
+base_encoder.encoder.model.layer.11.ff.layer_2.weight True
+base_encoder.encoder.model.layer.11.ff.layer_2.bias True
+tt_encoder.layers.0.self_attn.linears.0.weight True
+tt_encoder.layers.0.self_attn.linears.0.bias True
+tt_encoder.layers.0.self_attn.linears.1.weight True
+tt_encoder.layers.0.self_attn.linears.1.bias True
+tt_encoder.layers.0.self_attn.linears.2.weight True
+tt_encoder.layers.0.self_attn.linears.2.bias True
+tt_encoder.layers.0.self_attn.linears.3.weight True
+tt_encoder.layers.0.self_attn.linears.3.bias True
+tt_encoder.layers.0.feed_forward.w_1.weight True
+tt_encoder.layers.0.feed_forward.w_1.bias True
+tt_encoder.layers.0.feed_forward.w_2.weight True
+tt_encoder.layers.0.feed_forward.w_2.bias True
+tt_encoder.layers.0.group_attn.linear_key.weight True
+tt_encoder.layers.0.group_attn.linear_key.bias True
+tt_encoder.layers.0.group_attn.linear_query.weight True
+tt_encoder.layers.0.group_attn.linear_query.bias True
+tt_encoder.layers.0.group_attn.norm.a_2 True
+tt_encoder.layers.0.group_attn.norm.b_2 True
+tt_encoder.layers.0.sublayer.0.norm.a_2 True
+tt_encoder.layers.0.sublayer.0.norm.b_2 True
+tt_encoder.layers.0.sublayer.1.norm.a_2 True
+tt_encoder.layers.0.sublayer.1.norm.b_2 True
+tt_encoder.layers.1.self_attn.linears.0.weight True
+tt_encoder.layers.1.self_attn.linears.0.bias True
+tt_encoder.layers.1.self_attn.linears.1.weight True
+tt_encoder.layers.1.self_attn.linears.1.bias True
+tt_encoder.layers.1.self_attn.linears.2.weight True
+tt_encoder.layers.1.self_attn.linears.2.bias True
+tt_encoder.layers.1.self_attn.linears.3.weight True
+tt_encoder.layers.1.self_attn.linears.3.bias True
+tt_encoder.layers.1.feed_forward.w_1.weight True
+tt_encoder.layers.1.feed_forward.w_1.bias True
+tt_encoder.layers.1.feed_forward.w_2.weight True
+tt_encoder.layers.1.feed_forward.w_2.bias True
+tt_encoder.layers.1.group_attn.linear_key.weight True
+tt_encoder.layers.1.group_attn.linear_key.bias True
+tt_encoder.layers.1.group_attn.linear_query.weight True
+tt_encoder.layers.1.group_attn.linear_query.bias True
+tt_encoder.layers.1.group_attn.norm.a_2 True
+tt_encoder.layers.1.group_attn.norm.b_2 True
+tt_encoder.layers.1.sublayer.0.norm.a_2 True
+tt_encoder.layers.1.sublayer.0.norm.b_2 True
+tt_encoder.layers.1.sublayer.1.norm.a_2 True
+tt_encoder.layers.1.sublayer.1.norm.b_2 True
+tt_encoder.layers.2.self_attn.linears.0.weight True
+tt_encoder.layers.2.self_attn.linears.0.bias True
+tt_encoder.layers.2.self_attn.linears.1.weight True
+tt_encoder.layers.2.self_attn.linears.1.bias True
+tt_encoder.layers.2.self_attn.linears.2.weight True
+tt_encoder.layers.2.self_attn.linears.2.bias True
+tt_encoder.layers.2.self_attn.linears.3.weight True
+tt_encoder.layers.2.self_attn.linears.3.bias True
+tt_encoder.layers.2.feed_forward.w_1.weight True
+tt_encoder.layers.2.feed_forward.w_1.bias True
+tt_encoder.layers.2.feed_forward.w_2.weight True
+tt_encoder.layers.2.feed_forward.w_2.bias True
+tt_encoder.layers.2.group_attn.linear_key.weight True
+tt_encoder.layers.2.group_attn.linear_key.bias True
+tt_encoder.layers.2.group_attn.linear_query.weight True
+tt_encoder.layers.2.group_attn.linear_query.bias True
+tt_encoder.layers.2.group_attn.norm.a_2 True
+tt_encoder.layers.2.group_attn.norm.b_2 True
+tt_encoder.layers.2.sublayer.0.norm.a_2 True
+tt_encoder.layers.2.sublayer.0.norm.b_2 True
+tt_encoder.layers.2.sublayer.1.norm.a_2 True
+tt_encoder.layers.2.sublayer.1.norm.b_2 True
+tt_encoder.layers.3.self_attn.linears.0.weight True
+tt_encoder.layers.3.self_attn.linears.0.bias True
+tt_encoder.layers.3.self_attn.linears.1.weight True
+tt_encoder.layers.3.self_attn.linears.1.bias True
+tt_encoder.layers.3.self_attn.linears.2.weight True
+tt_encoder.layers.3.self_attn.linears.2.bias True
+tt_encoder.layers.3.self_attn.linears.3.weight True
+tt_encoder.layers.3.self_attn.linears.3.bias True
+tt_encoder.layers.3.feed_forward.w_1.weight True
+tt_encoder.layers.3.feed_forward.w_1.bias True
+tt_encoder.layers.3.feed_forward.w_2.weight True
+tt_encoder.layers.3.feed_forward.w_2.bias True
+tt_encoder.layers.3.group_attn.linear_key.weight True
+tt_encoder.layers.3.group_attn.linear_key.bias True
+tt_encoder.layers.3.group_attn.linear_query.weight True
+tt_encoder.layers.3.group_attn.linear_query.bias True
+tt_encoder.layers.3.group_attn.norm.a_2 True
+tt_encoder.layers.3.group_attn.norm.b_2 True
+tt_encoder.layers.3.sublayer.0.norm.a_2 True
+tt_encoder.layers.3.sublayer.0.norm.b_2 True
+tt_encoder.layers.3.sublayer.1.norm.a_2 True
+tt_encoder.layers.3.sublayer.1.norm.b_2 True
+tt_encoder.norm.a_2 True
+tt_encoder.norm.b_2 True
+linear_1.weight True
+linear_1.bias True
+linear_2.weight True
+linear_2.bias True
+linear_out.weight True
+linear_out.bias True
+so_linear_1.weight True
+so_linear_1.bias True
+so_linear_2.weight True
+so_linear_2.bias True
+so_linear_out.weight True
+so_linear_out.bias True
+layer_norm1.weight True
+layer_norm1.bias True
+layer_norm2.weight True
+layer_norm2.bias True
+Optimizer: adam
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/30 ****
+Use CrossEntropyLoss
+15/33-(1.875)
+30/33-(1.408)
+12/33-(1.785)
+
+=== Evaluating Model ===
+Total valid loss 1.0404340575138729
+accuracy on Test 0.4444444444444444
+Best accuracy on Test 0.4444444444444444
+
+**** Epoch 0/30 ****
+27/33-(1.161)
+9/33-(1.469)
+24/33-(1.225)
+6/33-(1.282)
+
+=== Evaluating Model ===
+Total valid loss 1.075463891029358
+accuracy on Test 0.4111111111111111
+Best accuracy on Test 0.4444444444444444
+
+**** Epoch 1/30 ****
+21/33-(0.995)
+3/33-(1.006)
+18/33-(1.001)
+0/33-(1.158)
+
+=== Evaluating Model ===
+Total valid loss 1.1474961439768474
+accuracy on Test 0.43333333333333335
+Best accuracy on Test 0.4444444444444444
+
+**** Epoch 2/30 ****
+15/33-(1.069)
+30/33-(1.025)
+12/33-(1.082)
+
+=== Evaluating Model ===
+Total valid loss 1.2009257078170776
+accuracy on Test 0.5055555555555555
+Best accuracy on Test 0.5055555555555555
+
+**** Epoch 3/30 ****
+27/33-(1.115)
+9/33-(1.027)
+24/33-(0.634)
+6/33-(1.308)
+
+=== Evaluating Model ===
+Total valid loss 1.0499767412741978
+accuracy on Test 0.5166666666666667
+Best accuracy on Test 0.5166666666666667
+
+**** Epoch 4/30 ****
+21/33-(0.490)
+3/33-(1.814)
+18/33-(0.659)
+0/33-(0.970)
+
+=== Evaluating Model ===
+Total valid loss 1.083159734805425
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.5277777777777778
+
+**** Epoch 5/30 ****
+15/33-(0.932)
+30/33-(0.870)
+12/33-(0.702)
+27/33-(0.750)
+
+=== Evaluating Model ===
+Total valid loss 1.0988569259643555
+accuracy on Test 0.5111111111111111
+Best accuracy on Test 0.5277777777777778
+
+**** Epoch 6/30 ****
+9/33-(0.742)
+24/33-(1.463)
+6/33-(1.079)
+
+=== Evaluating Model ===
+Total valid loss 1.2172067761421204
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.5277777777777778
+
+**** Epoch 7/30 ****
+21/33-(0.922)
+3/33-(0.692)
+18/33-(0.996)
+0/33-(0.390)
+
+=== Evaluating Model ===
+Total valid loss 1.9145089983940125
+accuracy on Test 0.5611111111111111
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 8/30 ****
+15/33-(1.261)
+30/33-(0.798)
+12/33-(0.433)
+27/33-(0.827)
+
+=== Evaluating Model ===
+Total valid loss 1.534748911857605
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 9/30 ****
+9/33-(0.197)
+24/33-(0.329)
+6/33-(0.495)
+21/33-(0.493)
+
+=== Evaluating Model ===
+Total valid loss 1.7065261602401733
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 10/30 ****
+3/33-(0.803)
+18/33-(0.661)
+0/33-(0.405)
+
+=== Evaluating Model ===
+Total valid loss 2.1653362115224204
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 11/30 ****
+15/33-(0.639)
+30/33-(0.386)
+12/33-(0.169)
+27/33-(0.483)
+
+=== Evaluating Model ===
+Total valid loss 1.7861111561457317
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 12/30 ****
+9/33-(0.369)
+24/33-(0.185)
+6/33-(0.257)
+21/33-(0.426)
+
+=== Evaluating Model ===
+Total valid loss 2.1437109410762787
+accuracy on Test 0.4222222222222222
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 13/30 ****
+3/33-(0.391)
+18/33-(0.523)
+0/33-(0.220)
+15/33-(0.252)
+
+=== Evaluating Model ===
+Total valid loss 2.1389909982681274
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 14/30 ****
+30/33-(0.167)
+12/33-(0.121)
+27/33-(0.262)
+
+=== Evaluating Model ===
+Total valid loss 2.168592174847921
+accuracy on Test 0.40555555555555556
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 15/30 ****
+9/33-(0.258)
+24/33-(0.235)
+6/33-(0.255)
+21/33-(0.229)
+
+=== Evaluating Model ===
+Total valid loss 2.9777993857860565
+accuracy on Test 0.4666666666666667
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 16/30 ****
+3/33-(0.098)
+18/33-(0.213)
+0/33-(0.373)
+15/33-(0.333)
+
+=== Evaluating Model ===
+Total valid loss 2.5776274104913077
+accuracy on Test 0.45555555555555555
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 17/30 ****
+30/33-(0.053)
+12/33-(0.414)
+27/33-(0.292)
+
+=== Evaluating Model ===
+Total valid loss 2.8286063373088837
+accuracy on Test 0.42777777777777776
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 18/30 ****
+9/33-(0.205)
+24/33-(0.292)
