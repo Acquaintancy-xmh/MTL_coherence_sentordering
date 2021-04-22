@@ -20,6 +20,30 @@ logger = logging.getLogger()
 # from apex import amp
 #from parallel import DataParallelModel, DataParallelCriterion  # parallel huggingface
 
+
+class AutomaticWeightedLoss(nn.Module):
+    """automatically weighted multi-task loss
+    Params：
+        num: int，the number of loss
+        x: multi-task loss
+    Examples：
+        loss1=1
+        loss2=2
+        awl = AutomaticWeightedLoss(2)
+        loss_sum = awl(loss1, loss2)
+    """
+    def __init__(self, num=2):
+        super(AutomaticWeightedLoss, self).__init__()
+        params = torch.ones(num, requires_grad=True)
+        self.params = torch.nn.Parameter(params)
+
+    def forward(self, *x):
+        loss_sum = 0
+        for i, loss in enumerate(x):
+            loss_sum += 0.5 / (self.params[i] ** 2) * loss + torch.log(1 + self.params[i] ** 2)
+        return loss_sum
+
+
 #
 def get_loss_func(config, pad_id=None):
     loss_func = None
@@ -45,7 +69,7 @@ def get_loss_func(config, pad_id=None):
 # end get_loss_func
 
 #
-def validate(model, evaluator, dataloader_test, config, loss_func, is_test=False):
+def validate(model, evaluator, dataloader_test, config, loss_func, mode, is_test=False):
     model.eval()
     losses = []
 
@@ -58,6 +82,8 @@ def validate(model, evaluator, dataloader_test, config, loss_func, is_test=False
 
     tid_list = []
     label_list = []
+    correct_sum = 0.0
+    total_sum = 0.0
     for text_inputs, label_y, *remains in dataloader_test:
         mask_input = remains[0]
         len_seq = remains[1]
@@ -68,10 +94,14 @@ def validate(model, evaluator, dataloader_test, config, loss_func, is_test=False
         text_inputs = utils.cast_type(text_inputs, LONG, config.use_gpu)
         mask_input = utils.cast_type(mask_input, FLOAT, config.use_gpu)
         len_seq = utils.cast_type(len_seq, FLOAT, config.use_gpu)
+        # print(label_y)
 
         with torch.no_grad():
-            model_outputs = model(text_inputs=text_inputs, mask_input=mask_input, len_seq=len_seq, len_sents=len_sents, tid=tid, mode="") 
+            model_outputs = model(text_inputs=text_inputs, mask_input=mask_input, len_seq=len_seq, len_sents=len_sents, tid=tid, mode=mode) 
             coh_score = model_outputs[0]
+            # print("order_label_list: ", model_outputs[1])
+            # print("order_score_list: ", model_outputs[2])
+
 
             if config.output_size == 1:
                 coh_score = coh_score.view(text_inputs.shape[0])
@@ -90,6 +120,24 @@ def validate(model, evaluator, dataloader_test, config, loss_func, is_test=False
                 losses.append(loss.item())
 
             evaluator.eval_update(coh_score, label_y, tid, cur_origin_score)
+
+            order_label_list = model_outputs[1]
+            order_score_list = model_outputs[2]
+            accuracy_list = []
+            for sent_i in range(len(order_label_list)):
+                label_list = order_label_list[sent_i]
+                score_list = order_score_list[sent_i]
+                correct = 0.0
+                total = len(label_list)
+                if total == 0 : continue
+                for i in range(len(label_list)):
+                    if score_list[i].item() <= 0.5 and label_list[i] == 0.0: correct += 1
+                    if score_list[i].item() > 0.5 and label_list[i] == 1.0: correct += 1
+                correct_sum += correct
+                total_sum += total
+                accuracy_list.append(correct / total)
+            # logger.info("Order Accuracy list : {}".format(accuracy_list))
+            # logger.info("Order Accuracy : {}".format(np.mean(accuracy_list)))
 
             # for the project of centering transformer
             if config.gen_logs and config.target_model.lower() == "cent_attn":
@@ -112,6 +160,8 @@ def validate(model, evaluator, dataloader_test, config, loss_func, is_test=False
 
         # end with torch.no_grad()
     # end for batch_num
+
+    logger.info("Order Accuracy Total : {}".format(correct_sum / total_sum))
 
     eval_measure = evaluator.eval_measure(is_test)
     eval_best_val = None
@@ -212,6 +262,7 @@ def train(model, optimizer, scheduler, dataset_train, dataset_valid, dataset_tes
 
     # epoch loop
     model.train()
+    awl = AutomaticWeightedLoss(2)
     for cur_epoch in range(config.max_epoch):
 
         # loop until traverse all batches
@@ -256,22 +307,8 @@ def train(model, optimizer, scheduler, dataset_train, dataset_valid, dataset_tes
 
             loss = loss_func(coh_score, label_y)
 
-            ### Sentence Ordering Loss : sum_loss (MSELoss)
-            # order_label_list = model_outputs[1]
-            # order_score = model_outputs[2]
-            # mse_loss_func = nn.MSELoss()
-
-            # order_loss = mse_loss_func(order_score.float(), torch.Tensor(order_label_list).cuda())
-
-            # # print("loss:" , loss.item())
-            # # print("order_loss:" , order_loss.item())
-
-            # loss += order_loss
-
-            ### Sentence Ordering Loss END
-
-            ### Sentence Ordering Loss : list_loss (BCELoss)
-            if "order" in config.target_model.lower():
+            ## Sentence Ordering Loss : list_loss (BCELoss)
+            if config.target_model.lower() == "cent_hds_order":
                 # print(config.target_model)
                 order_label_list = model_outputs[1]
                 order_score_list = model_outputs[2]
@@ -282,16 +319,75 @@ def train(model, optimizer, scheduler, dataset_train, dataset_valid, dataset_tes
                     if i >= len(order_label_list): break
                     if len(order_score_list[i]) == 0: continue
                     order_loss = bce_loss_func(torch.cat(order_score_list[i], dim=0), torch.Tensor(order_label_list[i]).cuda()).cuda()
-                    order_loss_list.append(order_loss)
+                    if config.score:
+                        score = label_y[i].item() * 0.5 + 1.0
+                        order_loss_list.append(order_loss * score)
+                    else:
+                        order_loss_list.append(order_loss)
                 order_loss = torch.mean(torch.stack((order_loss_list), dim=0)).requires_grad_()
 
                 # print("loss:" , loss.item())
                 # print("order_loss:" , order_loss.item())
 
+                # loss = awl(loss, order_loss)
                 loss += order_loss
                 # loss = order_loss
-            ### Sentence Ordering Loss END
+            ## Sentence Ordering Loss END
 
+            ### Sentence Max_Min Loss : (BCELoss)
+            if "MaxMin" in config.target_model:
+                order_score_list = model_outputs[1]
+                bce_loss_func = nn.BCELoss()
+
+                order_loss_list = []
+                for i in range(config.batch_size):
+                    if i >= len(order_score_list): break
+                    if len(order_score_list[i]) == 0: continue
+                    order_loss = None
+                    if label_y[i].item() == 2: 
+                        # print("max: ", order_score_l ist[i][0])
+                        order_loss = bce_loss_func(order_score_list[i][1], torch.Tensor([1.]).cuda()).cuda()
+                    elif label_y[i].item() == 0: 
+                        # print("min: ", order_score_list[i][1])
+                        order_loss = bce_loss_func(order_score_list[i][0], torch.Tensor([0.]).cuda()).cuda()
+                    if order_loss : order_loss_list.append(order_loss)
+                if len(order_loss_list) != 0:
+                    order_loss = torch.mean(torch.stack((order_loss_list), dim=0)).requires_grad_()
+                    # print("order_loss:" , order_loss.item())
+                    loss += order_loss
+
+            if config.target_model.lower() == "cent_hds_order_mm":
+                order_label_list = model_outputs[1]
+                order_score_list = model_outputs[2]
+                order_score_MaxMin_list = model_outputs[3]
+                bce_loss_func = nn.BCELoss()
+
+                order_loss_list = []
+                for i in range(config.batch_size):
+                    if i >= len(order_label_list): break
+                    if len(order_score_list[i]) == 0: continue
+                    order_loss = bce_loss_func(torch.cat(order_score_list[i], dim=0), torch.Tensor(order_label_list[i]).cuda()).cuda()
+                    score = label_y[i].item()
+                    order_loss_list.append(order_loss * score)
+                order_loss = torch.mean(torch.stack((order_loss_list), dim=0)).requires_grad_()
+                # print("order_loss:" , order_loss.item())
+                loss += order_loss
+
+                mm_loss_list = []
+                for i in range(config.batch_size):
+                    if i >= len(order_score_MaxMin_list): break
+                    if len(order_score_MaxMin_list[i]) == 0: continue
+                    mm_loss = None
+                    if label_y[i].item() == 0: 
+                        mm_loss = bce_loss_func(order_score_MaxMin_list[i][0], torch.Tensor([0.]).cuda()).cuda()
+                    if mm_loss : mm_loss_list.append(mm_loss)
+                if len(mm_loss_list) != 0:
+                    mm_loss = torch.mean(torch.stack((mm_loss_list), dim=0)).requires_grad_()
+                    # print("mm_loss:" , mm_loss.item())
+                    loss += mm_loss
+
+                # print("loss:" , loss.item())
+                # print("order_loss:" , order_loss.item())
 
             
             if config.n_gpu > 1:
@@ -342,7 +438,8 @@ def train(model, optimizer, scheduler, dataset_train, dataset_valid, dataset_tes
                 # validation
                 eval_cur_valid = -1
                 if dataset_valid is not None and is_valid_sens:
-                    loss_valid, eval_cur_valid, _, valid_itpt = validate(model, evaluator, dataloader_valid, config, loss_func, is_test=False)
+                    loss_valid, eval_cur_valid, _, valid_itpt = validate(model, evaluator, dataloader_valid, config, loss_func, mode="predict",is_test=False)
+                    # validate(model, evaluator, dataloader_valid, config, loss_func, mode="predict",is_test=False)
                     logger.info("")
 
                 if eval_cur_valid >= best_eval_valid or dataset_valid is None or True:
@@ -350,7 +447,8 @@ def train(model, optimizer, scheduler, dataset_train, dataset_valid, dataset_tes
                         best_eval_valid = eval_cur_valid
                         logger.info("Best {} on Valid {}".format(evaluator.eval_type, eval_cur_valid))
 
-                    valid_loss, eval_last, eval_best, valid_itpt = validate(model, evaluator, dataloader_test, config, loss_func, is_test=True)
+                    valid_loss, eval_last, eval_best, valid_itpt = validate(model, evaluator, dataloader_test, config, loss_func, mode="predict", is_test=True)
+                    # validate(model, evaluator, dataloader_test, config, loss_func, mode="predict", is_test=True)
 
                     if config.target_model.lower() == "cent_attn":
                         tid_list = tid_list + valid_itpt[0]

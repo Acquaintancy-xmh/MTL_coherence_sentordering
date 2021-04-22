@@ -53,6 +53,7 @@ def process_config():
         train_arg = add_argument_group('Training')
         train_arg.add_argument('--pretrain', type=str2bool, default=False)
         train_arg.add_argument('--pretrain_epoch', type=int, default=5)
+        train_arg.add_argument('--pretrain_init_lr', type=float, default=0.001)
 
         train_arg.add_argument('--op', type=str, default='adam')  # adam, sgd, asgd, rmsprop
         train_arg.add_argument('--eps', type=float, default=1e-4)
@@ -70,7 +71,7 @@ def process_config():
         train_arg.add_argument('--loss_type', type=str, default="CrossEntropyLoss")  # CrossEntropyLoss, MSELoss, nLLloss ...
         train_arg.add_argument('--eval_type', type=str, default="accuracy")  # accuracy, qwk
         ### Loss = coherence_loss + Lambda*sent_ordering_loss
-        # train_arg.add_argument('--order_lambda', type=int, default=1)
+        train_arg.add_argument('--score', type=str2bool, default=False)
 
         train_arg.add_argument('--fp16_mode', type=str2bool, default=False)
 

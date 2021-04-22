@@ -1,0 +1,1802 @@
+Whole k-fold eval mode
+Source domain: 8, Target domain: 8, Cur_fold 0
+Corpus: TOEFL
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Max_Min
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Optimizer: adam
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/20 ****
+Use CrossEntropyLoss
+order_loss: 0.7291673421859741
+order_loss: 0.720623254776001
+order_loss: 0.7071694135665894
+order_loss: 1.060479760169983
+order_loss: 0.6718446016311646
+order_loss: 0.7283926010131836
+order_loss: 0.7365304827690125
+order_loss: 0.7073320746421814
+order_loss: 0.7271685600280762
+order_loss: 0.6701417565345764
+order_loss: 0.5992587208747864
+order_loss: 0.5661577582359314
+order_loss: 0.2828046381473541
+order_loss: 0.8318237066268921
+order_loss: 0.4184158742427826
+15/33-(1.253)
+order_loss: 0.4749527871608734
+order_loss: 1.5372346639633179
+order_loss: 0.9329644441604614
+order_loss: 0.24380216002464294
+order_loss: 0.26933351159095764
+order_loss: 0.5166435241699219
+order_loss: 0.2726258933544159
+order_loss: 0.6161537170410156
+order_loss: 0.6190897226333618
+order_loss: 0.7055381536483765
+order_loss: 0.48686254024505615
+order_loss: 0.23780322074890137
+order_loss: 0.3716730773448944
+order_loss: 0.17688974738121033
+order_loss: 0.7840820550918579
+30/33-(1.801)
+order_loss: 0.513210117816925
+order_loss: 0.7287930250167847
+order_loss: 0.4656212329864502
+order_loss: 0.8393862247467041
+order_loss: 0.7252753376960754
+order_loss: 0.5164245963096619
+order_loss: 0.8579196929931641
+order_loss: 0.43965181708335876
+order_loss: 0.5898431539535522
+order_loss: 0.5239055156707764
+order_loss: 0.49742403626441956
+order_loss: 0.7921380400657654
+order_loss: 0.4265597462654114
+order_loss: 0.5457342267036438
+order_loss: 0.5211774110794067
+12/33-(1.386)
+order_loss: 0.5036916732788086
+order_loss: 1.0192890167236328
+order_loss: 0.38382381200790405
+order_loss: 0.8604125380516052
+order_loss: 0.7878721952438354
+order_loss: 0.5465070009231567
+order_loss: 0.5533373951911926
+order_loss: 0.5874916911125183
+order_loss: 0.49437642097473145
+order_loss: 0.6322572231292725
+order_loss: 0.6511909365653992
+order_loss: 0.5313107967376709
+order_loss: 0.392566442489624
+order_loss: 0.4529063403606415
+order_loss: 0.8603465557098389
+27/33-(1.815)
+order_loss: 0.6559299230575562
+order_loss: 0.9383882880210876
+order_loss: 0.29363298416137695
+
+=== Evaluating Model ===
+accuracy on Valid 0.6101190476190477
+
+Best accuracy on Valid 0.6101190476190477
+Total valid loss 0.8233148256937662
+accuracy on Test 0.6369047619047619
+Best accuracy on Test 0.6369047619047619
+
+**** Epoch 0/20 ****
+order_loss: 0.9479573965072632
+order_loss: 0.5139070749282837
+order_loss: 0.273225337266922
+order_loss: 0.2391863316297531
+order_loss: 0.741395115852356
+order_loss: 0.8158339858055115
+order_loss: 0.7107878923416138
+order_loss: 0.4251377582550049
+order_loss: 0.5097052454948425
+order_loss: 0.3832958936691284
+order_loss: 1.2914174795150757
+order_loss: 0.4545230269432068
+9/33-(1.267)
+order_loss: 0.7627816796302795
+order_loss: 0.3012753427028656
+order_loss: 0.5037426948547363
+order_loss: 0.2698981463909149
+order_loss: 0.38076362013816833
+order_loss: 0.7700221538543701
+order_loss: 0.5334289073944092
+order_loss: 0.614862859249115
+order_loss: 0.6761964559555054
+order_loss: 0.9378418922424316
+order_loss: 0.5888087153434753
+order_loss: 0.8708948493003845
+order_loss: 0.41689273715019226
+order_loss: 0.5924276113510132
+order_loss: 0.7943496704101562
+24/33-(1.570)
+order_loss: 0.705208957195282
+order_loss: 0.5922017097473145
+order_loss: 0.5601601600646973
+order_loss: 0.5507256388664246
+order_loss: 0.4702083468437195
+order_loss: 0.4181939661502838
+order_loss: 0.706451952457428
+order_loss: 0.6360647678375244
+order_loss: 0.3053620457649231
+order_loss: 0.617251992225647
+order_loss: 0.8827440142631531
+order_loss: 0.5340682864189148
+order_loss: 0.9374967217445374
+order_loss: 0.7289246320724487
+order_loss: 0.501600444316864
+6/33-(1.407)
+order_loss: 0.27959930896759033
+order_loss: 0.5274675488471985
+order_loss: 0.5119256973266602
+order_loss: 0.614203929901123
+order_loss: 0.41405433416366577
+order_loss: 0.5769386291503906
+order_loss: 0.44873955845832825
+order_loss: 0.49746307730674744
+order_loss: 0.302359402179718
+order_loss: 0.5517668724060059
+order_loss: 0.35572513937950134
+order_loss: 0.35048922896385193
+order_loss: 1.075934648513794
+order_loss: 1.8570438623428345
+order_loss: 0.16425363719463348
+21/33-(0.725)
+order_loss: 1.2364840507507324
+order_loss: 0.39260753989219666
+order_loss: 0.49315762519836426
+order_loss: 0.2888683080673218
+order_loss: 0.6314462423324585
+order_loss: 0.4046919047832489
+
+=== Evaluating Model ===
+accuracy on Valid 0.625
+
+Best accuracy on Valid 0.625
+Total valid loss 0.723861201888039
+accuracy on Test 0.6577380952380952
+Best accuracy on Test 0.6577380952380952
+
+**** Epoch 1/20 ****
+order_loss: 0.4349222183227539
+order_loss: 0.46101629734039307
+order_loss: 0.4710512161254883
+order_loss: 0.4446101784706116
+order_loss: 0.46677395701408386
+order_loss: 0.8069303631782532
+order_loss: 0.3770849108695984
+order_loss: 0.4841652512550354
+3/33-(1.149)
+order_loss: 0.5715000629425049
+order_loss: 1.1530842781066895
+order_loss: 0.46179214119911194
+order_loss: 0.3880714476108551
+order_loss: 0.7339221835136414
+order_loss: 0.7140240669250488
+order_loss: 0.44501662254333496
+order_loss: 0.6321021914482117
+order_loss: 0.4588622450828552
+order_loss: 0.6449527144432068
+order_loss: 0.5797163248062134
+order_loss: 0.8543168902397156
+order_loss: 0.5674540400505066
+order_loss: 0.7420467138290405
+order_loss: 0.5261322259902954
+18/33-(1.509)
+order_loss: 0.6690274477005005
+order_loss: 0.5156692862510681
+order_loss: 0.49146726727485657
+order_loss: 0.5294236540794373
+order_loss: 0.5388932228088379
+order_loss: 0.4703735113143921
+order_loss: 0.5091578364372253
+order_loss: 0.6011574864387512
+order_loss: 0.4991876780986786
+order_loss: 0.4572763442993164
+order_loss: 0.3380350172519684
+order_loss: 0.20798327028751373
+order_loss: 1.0630433559417725
+order_loss: 0.5482674837112427
+order_loss: 0.5286949276924133
+0/33-(1.278)
+order_loss: 0.3912445902824402
+order_loss: 0.25228700041770935
+order_loss: 0.3205413222312927
+order_loss: 0.09268391132354736
+order_loss: 0.3579220473766327
+order_loss: 0.7801360487937927
+order_loss: 0.9827389121055603
+order_loss: 1.1885267496109009
+order_loss: 0.3874494731426239
+order_loss: 0.7563812136650085
+order_loss: 0.47716498374938965
+order_loss: 0.5123565793037415
+order_loss: 0.45775413513183594
+order_loss: 0.893957793712616
+order_loss: 0.7098500728607178
+15/33-(1.778)
+order_loss: 0.41747134923934937
+order_loss: 0.4646807610988617
+order_loss: 0.7066009044647217
+order_loss: 0.40017205476760864
+order_loss: 0.4837953746318817
+order_loss: 0.7381165623664856
+order_loss: 0.39960071444511414
+order_loss: 0.5324980020523071
+order_loss: 0.7939573526382446
+
+=== Evaluating Model ===
+accuracy on Valid 0.5863095238095238
+
+Total valid loss 0.7345246729396638
+accuracy on Test 0.6428571428571429
+Best accuracy on Test 0.6577380952380952
+
+**** Epoch 2/20 ****
+order_loss: 0.5578278303146362
+order_loss: 0.9221420288085938
+order_loss: 0.789247989654541
+order_loss: 0.33755382895469666
+order_loss: 0.5058472752571106
+order_loss: 0.47016972303390503
+30/33-(0.875)
+order_loss: 0.6657447218894958
+order_loss: 0.3492891788482666
+order_loss: 0.4271630644798279
+order_loss: 0.5014775991439819
+order_loss: 0.6027945876121521
+order_loss: 0.6752505302429199
+order_loss: 0.4145859479904175
+order_loss: 0.5254957675933838
+order_loss: 0.6255910992622375
+order_loss: 0.5831270217895508
+order_loss: 0.6233696937561035
+order_loss: 0.5598646998405457
+order_loss: 0.4447833299636841
+order_loss: 0.5712494850158691
+order_loss: 0.5370129942893982
+12/33-(1.212)
+order_loss: 0.4353557825088501
+order_loss: 0.23778918385505676
+order_loss: 0.3148186206817627
+order_loss: 0.7314102649688721
+order_loss: 0.32566964626312256
+order_loss: 0.3522194027900696
+order_loss: 0.767541766166687
+order_loss: 1.480872631072998
+order_loss: 1.966673731803894
+order_loss: 0.3641444444656372
+order_loss: 0.5280663967132568
+order_loss: 0.43255820870399475
+order_loss: 0.2785339057445526
+order_loss: 0.4263445734977722
+order_loss: 0.7535247206687927
+27/33-(1.226)
+order_loss: 0.1408897340297699
+order_loss: 0.16429480910301208
+order_loss: 0.558888852596283
+order_loss: 0.4606245160102844
+order_loss: 0.1052035242319107
+order_loss: 0.6011326909065247
+order_loss: 0.9153097867965698
+order_loss: 0.7950888872146606
+order_loss: 1.113178014755249
+order_loss: 0.33944401144981384
+order_loss: 0.6844857931137085
+order_loss: 0.5365160703659058
+order_loss: 0.6781808137893677
+order_loss: 0.6716768145561218
+order_loss: 0.4363303482532501
+9/33-(1.051)
+order_loss: 0.8411763906478882
+order_loss: 0.4503777325153351
+order_loss: 0.7116210460662842
+order_loss: 0.48374781012535095
+order_loss: 0.39001575112342834
+order_loss: 0.42647144198417664
+order_loss: 0.3991374969482422
+order_loss: 0.6279205679893494
+order_loss: 0.7601048350334167
+order_loss: 0.28867480158805847
+order_loss: 0.5182031989097595
+order_loss: 0.5570235252380371
+
+=== Evaluating Model ===
+accuracy on Valid 0.6934523809523809
+
+Best accuracy on Valid 0.6934523809523809
+Total valid loss 0.6483925027506692
+accuracy on Test 0.7380952380952381
+Best accuracy on Test 0.7380952380952381
+
+**** Epoch 3/20 ****
+order_loss: 0.7741599678993225
+order_loss: 0.7514662742614746
+order_loss: 0.8528059720993042
+24/33-(1.299)
+order_loss: 0.29813870787620544
+order_loss: 0.2864702343940735
+order_loss: 0.3909779191017151
+order_loss: 0.43520277738571167
+order_loss: 0.5477253794670105
+order_loss: 0.6597824096679688
+order_loss: 0.18997430801391602
+order_loss: 0.7936849594116211
+order_loss: 0.13241605460643768
+order_loss: 0.1479545533657074
+order_loss: 0.32512614130973816
+order_loss: 0.1677578091621399
+order_loss: 0.19118539988994598
+order_loss: 0.12243343889713287
+6/33-(0.456)
+order_loss: 0.46741724014282227
+order_loss: 0.27060574293136597
+order_loss: 0.3781835436820984
+order_loss: 0.9854304790496826
+order_loss: 0.9934027194976807
+order_loss: 0.35644251108169556
+order_loss: 1.6086064577102661
+order_loss: 0.10729941725730896
+order_loss: 0.5628795623779297
+order_loss: 0.5017687082290649
+order_loss: 0.7427420020103455
+order_loss: 0.23245441913604736
+order_loss: 0.2262379676103592
+order_loss: 1.2926862239837646
+order_loss: 0.3882416784763336
+21/33-(0.997)
+order_loss: 0.20056326687335968
+order_loss: 0.6971185207366943
+order_loss: 0.7446578145027161
+order_loss: 0.5548588037490845
+order_loss: 0.4974636435508728
+order_loss: 0.6109975576400757
+order_loss: 0.6538959741592407
+order_loss: 0.4528375267982483
+order_loss: 0.3728407919406891
+order_loss: 0.6051017642021179
+order_loss: 0.6744436621665955
+order_loss: 0.6197408437728882
+order_loss: 0.72197026014328
+order_loss: 0.433652400970459
+order_loss: 0.5717194080352783
+3/33-(1.187)
+order_loss: 0.6348589658737183
+order_loss: 0.7573570013046265
+order_loss: 0.4486459195613861
+order_loss: 0.4081554412841797
+order_loss: 0.792320966720581
+order_loss: 0.3440561890602112
+order_loss: 0.46676012873649597
+order_loss: 0.45935893058776855
+order_loss: 0.4347524344921112
+order_loss: 0.42870864272117615
+order_loss: 0.3692808747291565
+order_loss: 0.5121763944625854
+order_loss: 0.14578744769096375
+order_loss: 0.4395684599876404
+order_loss: 0.3608783781528473
+18/33-(0.876)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7023809523809523
+
+Best accuracy on Valid 0.7023809523809523
+Total valid loss 0.6002486461684817
+accuracy on Test 0.7589285714285714
+Best accuracy on Test 0.7589285714285714
+
+**** Epoch 4/20 ****
+order_loss: 0.5983896255493164
+order_loss: 0.8017447590827942
+order_loss: 0.47422945499420166
+order_loss: 0.3400856554508209
+order_loss: 1.520961046218872
+order_loss: 0.9958879947662354
+order_loss: 0.5482480525970459
+order_loss: 0.7934102416038513
+order_loss: 0.5326410531997681
+order_loss: 0.7842546701431274
+order_loss: 0.37224385142326355
+order_loss: 0.2764982283115387
+order_loss: 0.6917450428009033
+order_loss: 0.6674432158470154
+order_loss: 0.1627136766910553
+0/33-(0.720)
+order_loss: 0.13566160202026367
+order_loss: 0.28370556235313416
+order_loss: 0.16450105607509613
+order_loss: 0.6762251853942871
+order_loss: 0.1080726906657219
+order_loss: 1.0217902660369873
+order_loss: 0.4766601026058197
+order_loss: 0.29157841205596924
+order_loss: 0.5438043475151062
+order_loss: 0.7814358472824097
+order_loss: 0.6861345171928406
+order_loss: 0.1190355122089386
+order_loss: 0.4879867136478424
+order_loss: 0.1320197433233261
+order_loss: 0.2961764931678772
+15/33-(0.781)
+order_loss: 0.6518890857696533
+order_loss: 0.21301953494548798
+order_loss: 0.35344284772872925
+order_loss: 0.13915398716926575
+order_loss: 0.2619245946407318
+order_loss: 0.5364755988121033
+order_loss: 0.3274158239364624
+order_loss: 0.13416370749473572
+order_loss: 0.16569292545318604
+order_loss: 0.3977314829826355
+order_loss: 0.7481366395950317
+order_loss: 0.5959377288818359
+order_loss: 0.17063963413238525
+order_loss: 0.16096097230911255
+order_loss: 0.12569372355937958
+30/33-(0.806)
+order_loss: 0.44702064990997314
+order_loss: 1.2225584983825684
+order_loss: 0.054508551955223083
+order_loss: 0.3708057105541229
+order_loss: 0.49060583114624023
+order_loss: 0.05200842767953873
+order_loss: 0.3499908745288849
+order_loss: 0.09763116389513016
+order_loss: 0.9425418972969055
+order_loss: 0.7230846881866455
+order_loss: 0.4279511570930481
+order_loss: 0.47255897521972656
+order_loss: 0.08566169440746307
+order_loss: 0.11432063579559326
+order_loss: 2.0180201530456543
+12/33-(3.475)
+order_loss: 1.0195999145507812
+order_loss: 0.9085549116134644
+order_loss: 0.14667466282844543
+
+=== Evaluating Model ===
+accuracy on Valid 0.6071428571428571
+
+Total valid loss 0.8235954514571598
+accuracy on Test 0.6369047619047619
+Best accuracy on Test 0.7589285714285714
+
+**** Epoch 5/20 ****
+order_loss: 0.3439009189605713
+order_loss: 0.5182389616966248
+order_loss: 0.4107637405395508
+order_loss: 1.2124994993209839
+order_loss: 0.11511441320180893
+order_loss: 0.10644414275884628
+order_loss: 0.3261110186576843
+order_loss: 0.09466653317213058
+order_loss: 0.8281521201133728
+order_loss: 0.3984220325946808
+order_loss: 0.34477677941322327
+order_loss: 0.789071798324585
+27/33-(1.341)
+order_loss: 0.7759745717048645
+order_loss: 0.40212365984916687
+order_loss: 0.49589595198631287
+order_loss: 0.6594915986061096
+order_loss: 0.3474234342575073
+order_loss: 0.15720532834529877
+order_loss: 0.11006774008274078
+order_loss: 0.16300654411315918
+order_loss: 0.28913286328315735
+order_loss: 0.6701108813285828
+order_loss: 0.046502821147441864
+order_loss: 0.3971487879753113
+order_loss: 0.32942408323287964
+order_loss: 0.8240113258361816
+order_loss: 0.14691174030303955
+9/33-(0.792)
+order_loss: 0.37227386236190796
+order_loss: 0.5670337677001953
+order_loss: 0.45486024022102356
+order_loss: 0.095768503844738
+order_loss: 0.0728670060634613
+order_loss: 1.7886289358139038
+order_loss: 0.37521082162857056
+order_loss: 0.17129556834697723
+order_loss: 0.3461854159832001
+order_loss: 0.34778541326522827
+order_loss: 0.3870231509208679
+order_loss: 0.7073455452919006
+order_loss: 0.6342644691467285
+order_loss: 0.16366660594940186
+order_loss: 0.5693846940994263
+24/33-(1.191)
+order_loss: 0.15691420435905457
+order_loss: 0.37785619497299194
+order_loss: 0.4908381700515747
+order_loss: 0.06621484458446503
+order_loss: 0.04078284278512001
+order_loss: 0.9030391573905945
+order_loss: 0.6043710708618164
+order_loss: 1.2476856708526611
+order_loss: 0.11823876947164536
+order_loss: 0.38563165068626404
+order_loss: 0.5873971581459045
+order_loss: 0.46932440996170044
+order_loss: 0.356472909450531
+order_loss: 0.3983013331890106
+order_loss: 0.10079638659954071
+6/33-(0.456)
+order_loss: 0.10849198698997498
+order_loss: 0.32914939522743225
+order_loss: 0.6271842122077942
+order_loss: 0.3305351436138153
+order_loss: 1.2413873672485352
+order_loss: 0.15846781432628632
+
+=== Evaluating Model ===
+accuracy on Valid 0.7053571428571429
+
+Best accuracy on Valid 0.7053571428571429
+Total valid loss 0.5576379639761788
+accuracy on Test 0.7738095238095238
+Best accuracy on Test 0.7738095238095238
+
+**** Epoch 6/20 ****
+order_loss: 0.10793548822402954
+order_loss: 0.3032023310661316
+order_loss: 0.15000319480895996
+order_loss: 0.36283713579177856
+order_loss: 0.6105325818061829
+order_loss: 0.8433105945587158
+order_loss: 0.040895625948905945
+order_loss: 0.44161492586135864
+order_loss: 0.11813147366046906
+21/33-(0.627)
+order_loss: 0.28310462832450867
+order_loss: 0.20002365112304688
+order_loss: 0.1489381641149521
+order_loss: 0.399869441986084
+order_loss: 0.3041421175003052
+order_loss: 0.11636877059936523
+order_loss: 0.10241853445768356
+order_loss: 0.6233816146850586
+order_loss: 0.05742194876074791
+order_loss: 0.06137543171644211
+order_loss: 0.032382771372795105
+order_loss: 2.8059444427490234
+order_loss: 0.04938399791717529
+order_loss: 0.39858511090278625
+order_loss: 0.2812093496322632
+3/33-(0.879)
+order_loss: 0.07473564893007278
+order_loss: 0.1662968099117279
+order_loss: 0.9042394161224365
+order_loss: 0.13501432538032532
+order_loss: 0.07662183046340942
+order_loss: 0.15720458328723907
+order_loss: 0.6422194838523865
+order_loss: 0.47905007004737854
+order_loss: 0.4467218518257141
+order_loss: 0.12103856354951859
+order_loss: 0.08376764506101608
+order_loss: 0.28995218873023987
+order_loss: 0.08543132990598679
+order_loss: 0.22075672447681427
+order_loss: 0.19461433589458466
+18/33-(0.844)
+order_loss: 0.18587173521518707
+order_loss: 0.15038953721523285
+order_loss: 0.14433906972408295
+order_loss: 0.13600927591323853
+order_loss: 0.5530652403831482
+order_loss: 0.8579975366592407
+order_loss: 0.110493004322052
+order_loss: 0.01842254400253296
+order_loss: 0.6352007389068604
+order_loss: 0.02103971317410469
+order_loss: 0.783007025718689
+order_loss: 0.22170576453208923
+order_loss: 0.41456183791160583
+order_loss: 0.5368717312812805
+order_loss: 0.34626248478889465
+0/33-(1.009)
+order_loss: 0.4020127058029175
+order_loss: 0.8615165948867798
+order_loss: 0.10743724554777145
+order_loss: 0.36605826020240784
+order_loss: 0.06561952084302902
+order_loss: 0.06300128996372223
+order_loss: 0.029505958780646324
+order_loss: 0.22017458081245422
+order_loss: 1.2908804416656494
+
+=== Evaluating Model ===
+accuracy on Valid 0.6130952380952381
+
+Total valid loss 0.7409478525320689
+accuracy on Test 0.6726190476190477
+Best accuracy on Test 0.7738095238095238
+
+**** Epoch 7/20 ****
+order_loss: 0.10313454270362854
+order_loss: 0.04718870297074318
+order_loss: 0.3748174011707306
+order_loss: 0.18886108696460724
+order_loss: 1.2176204919815063
+order_loss: 0.5303953886032104
+15/33-(1.217)
+order_loss: 0.14182835817337036
+order_loss: 0.24997709691524506
+order_loss: 0.17087647318840027
+order_loss: 0.08121375739574432
+order_loss: 0.5187762379646301
+order_loss: 0.2200048714876175
+order_loss: 0.10541976243257523
+order_loss: 0.09382902830839157
+order_loss: 0.39724433422088623
+order_loss: 0.04042156785726547
+order_loss: 0.06484206765890121
+order_loss: 0.5474243760108948
+order_loss: 0.24939288198947906
+order_loss: 0.10533221065998077
+order_loss: 0.16685254871845245
+30/33-(0.747)
+order_loss: 0.7770445942878723
+order_loss: 0.05039757490158081
+order_loss: 0.036213621497154236
+order_loss: 0.021983716636896133
+order_loss: 1.1609597206115723
+order_loss: 0.21102292835712433
+order_loss: 0.9353879690170288
+order_loss: 0.030067209154367447
+order_loss: 0.08108976483345032
+order_loss: 0.6790333986282349
+order_loss: 0.036344051361083984
+order_loss: 0.644104540348053
+order_loss: 0.5470774173736572
+order_loss: 0.01936969719827175
+order_loss: 0.22036178410053253
+12/33-(0.559)
+order_loss: 0.10022499412298203
+order_loss: 0.09047430753707886
+order_loss: 0.16451741755008698
+order_loss: 0.04863407090306282
+order_loss: 0.1575501412153244
+order_loss: 0.29569342732429504
+order_loss: 1.1599148511886597
+order_loss: 0.023504935204982758
+order_loss: 0.46633273363113403
+order_loss: 0.03268010914325714
+order_loss: 0.02862483449280262
+order_loss: 0.02404613420367241
+order_loss: 0.016329417005181313
+order_loss: 0.09486013650894165
+order_loss: 0.07836541533470154
+27/33-(0.539)
+order_loss: 0.9450798034667969
+order_loss: 0.0325145497918129
+order_loss: 0.20273664593696594
+order_loss: 0.017843440175056458
+order_loss: 0.17327557504177094
+order_loss: 0.02904103882610798
+order_loss: 0.13462091982364655
+order_loss: 0.04564583674073219
+order_loss: 0.03380948305130005
+order_loss: 0.4772387146949768
+order_loss: 0.672997236251831
+order_loss: 0.5508779883384705
+
+=== Evaluating Model ===
+accuracy on Valid 0.7083333333333334
+
+Best accuracy on Valid 0.7083333333333334
+Total valid loss 0.600492652683031
+accuracy on Test 0.7648809523809523
+Best accuracy on Test 0.7738095238095238
+
+**** Epoch 8/20 ****
+order_loss: 0.4740487337112427
+order_loss: 0.012506690807640553
+order_loss: 0.7376258373260498
+9/33-(1.251)
+order_loss: 1.0744194984436035
+order_loss: 0.3288884460926056
+order_loss: 0.009909650310873985
+order_loss: 0.3973160684108734
+order_loss: 0.004606498870998621
+order_loss: 0.018960343673825264
+order_loss: 0.014111197553575039
+order_loss: 0.9906983375549316
+order_loss: 0.015650764107704163
+order_loss: 0.009006346575915813
+order_loss: 1.7012076377868652
+order_loss: 0.40413138270378113
+order_loss: 0.020102394744753838
+order_loss: 0.05960872769355774
+order_loss: 0.06221635639667511
+24/33-(0.493)
+order_loss: 0.07002577185630798
+order_loss: 0.05140670761466026
+order_loss: 0.041858602315187454
+order_loss: 0.40420347452163696
+order_loss: 0.12756496667861938
+order_loss: 0.35663095116615295
+order_loss: 0.06213332712650299
+order_loss: 0.04128112643957138
+order_loss: 0.020626073703169823
+order_loss: 0.005615854170173407
+order_loss: 0.022664718329906464
+order_loss: 2.7846314907073975
+order_loss: 0.37678951025009155
+order_loss: 0.18411241471767426
+order_loss: 0.027124883607029915
+6/33-(0.702)
+order_loss: 0.23811593651771545
+order_loss: 1.5084255933761597
+order_loss: 0.02523783966898918
+order_loss: 0.027371417731046677
+order_loss: 0.3111170828342438
+order_loss: 0.006570521276444197
+order_loss: 0.022567592561244965
+order_loss: 0.0999041423201561
+order_loss: 0.05526116117835045
+order_loss: 0.04607662186026573
+order_loss: 0.05183570086956024
+order_loss: 0.1494438797235489
+order_loss: 0.4631631374359131
+order_loss: 0.05728277564048767
+order_loss: 1.4583290815353394
+21/33-(1.899)
+order_loss: 0.07809406518936157
+order_loss: 0.2236589789390564
+order_loss: 0.08025699108839035
+order_loss: 0.10570947080850601
+order_loss: 0.20964090526103973
+order_loss: 0.05566663295030594
+order_loss: 0.5316532850265503
+order_loss: 0.0386619046330452
+order_loss: 0.022112954407930374
+order_loss: 0.013235772959887981
+order_loss: 0.15158116817474365
+order_loss: 0.2026894986629486
+order_loss: 0.01837494969367981
+order_loss: 0.008582647889852524
+order_loss: 0.3693849444389343
+3/33-(0.909)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7053571428571429
+
+Total valid loss 0.6403757674353463
+accuracy on Test 0.7529761904761905
+Best accuracy on Test 0.7738095238095238
+
+**** Epoch 9/20 ****
+order_loss: 0.03070453181862831
+order_loss: 0.3226202428340912
+order_loss: 0.02671508863568306
+order_loss: 1.0422823429107666
+order_loss: 0.06646549701690674
+order_loss: 0.08695395290851593
+order_loss: 0.22559170424938202
+order_loss: 0.8630245327949524
+order_loss: 0.22906239330768585
+order_loss: 0.9700318574905396
+order_loss: 0.13775217533111572
+order_loss: 0.03622496873140335
+order_loss: 0.0437970906496048
+order_loss: 0.01719464547932148
+order_loss: 0.45419079065322876
+18/33-(1.068)
+order_loss: 0.06138857081532478
+order_loss: 0.015730198472738266
+order_loss: 0.04613381251692772
+order_loss: 0.21099232137203217
+order_loss: 0.013612424954771996
+order_loss: 0.5850376486778259
+order_loss: 0.5242030620574951
+order_loss: 0.03276411071419716
+order_loss: 0.3237997591495514
+order_loss: 0.019528828561306
+order_loss: 0.02166188322007656
+order_loss: 0.28137078881263733
+order_loss: 0.35496965050697327
+order_loss: 0.03100711852312088
+order_loss: 0.11028644442558289
+0/33-(0.645)
+order_loss: 0.06668828427791595
+order_loss: 0.024443481117486954
+order_loss: 0.02384432777762413
+order_loss: 0.029935356229543686
+order_loss: 0.06857147812843323
+order_loss: 0.01287762075662613
+order_loss: 11.577198028564453
+order_loss: 0.012979738414287567
+order_loss: 0.04373275116086006
+order_loss: 0.1543896198272705
+order_loss: 0.010178360156714916
+order_loss: 0.008387021720409393
+order_loss: 0.0359436571598053
+order_loss: 0.5941308736801147
+order_loss: 0.0854579359292984
+15/33-(0.565)
+order_loss: 0.005674723535776138
+order_loss: 0.04654783010482788
+order_loss: 0.03299964964389801
+order_loss: 0.1885910928249359
+order_loss: 0.24701033532619476
+order_loss: 0.1440051645040512
+order_loss: 0.4069342017173767
+order_loss: 0.45076295733451843
+order_loss: 0.018293697386980057
+order_loss: 0.7925344109535217
+order_loss: 0.01505019050091505
+order_loss: 0.0576571561396122
+order_loss: 0.11603163927793503
+order_loss: 0.018216803669929504
+order_loss: 0.11153440177440643
+30/33-(0.648)
+order_loss: 0.046632956713438034
+order_loss: 0.2572436034679413
+order_loss: 0.00987113919109106
+
+=== Evaluating Model ===
+accuracy on Valid 0.7023809523809523
+
+Total valid loss 0.6577787207705634
+accuracy on Test 0.75
+Best accuracy on Test 0.7738095238095238
+
+**** Epoch 10/20 ****
+order_loss: 0.027630135416984558
+order_loss: 0.011145005002617836
+order_loss: 0.031833797693252563
+order_loss: 0.006384644657373428
+order_loss: 1.1299868822097778
+order_loss: 1.0885944366455078
+order_loss: 0.5492334365844727
+order_loss: 0.8804914951324463
+order_loss: 0.015616725198924541
+order_loss: 0.020124007016420364
+order_loss: 0.003282504389062524
+order_loss: 0.01908707618713379
+12/33-(0.635)
+order_loss: 0.006159601733088493
+order_loss: 0.3370762765407562
+order_loss: 0.0189095176756382
+order_loss: 0.017584379762411118
+order_loss: 0.017067108303308487
+order_loss: 0.18232323229312897
+order_loss: 0.721785306930542
+order_loss: 0.02555478923022747
+order_loss: 0.5836626291275024
+order_loss: 0.2753216028213501
+order_loss: 0.33549097180366516
+order_loss: 0.14562676846981049
+order_loss: 0.0980783998966217
+order_loss: 0.5163413882255554
+order_loss: 0.11681884527206421
+27/33-(0.728)
+order_loss: 0.10518217831850052
+order_loss: 0.41679179668426514
+order_loss: 0.525835394859314
+order_loss: 0.05432550981640816
+order_loss: 0.09683752804994583
+order_loss: 0.6560468077659607
+order_loss: 0.38628703355789185
+order_loss: 0.025226188823580742
+order_loss: 0.04575205221772194
+order_loss: 0.67271888256073
+order_loss: 0.18902434408664703
+order_loss: 0.04325009882450104
+order_loss: 0.03384698927402496
+order_loss: 0.024614857509732246
+order_loss: 0.044739484786987305
+9/33-(0.152)
+order_loss: 0.02588837407529354
+order_loss: 0.06533288955688477
+order_loss: 0.06064673885703087
+order_loss: 0.04473261535167694
+order_loss: 0.09374883025884628
+order_loss: 0.12641757726669312
+order_loss: 0.054027121514081955
+order_loss: 0.037531059235334396
+order_loss: 0.018866239115595818
+order_loss: 0.4979037344455719
+order_loss: 0.296907901763916
+order_loss: 0.00858775619417429
+order_loss: 0.004432556685060263
+order_loss: 0.004108013119548559
+order_loss: 0.001080730464309454
+24/33-(0.275)
+order_loss: 0.020519256591796875
+order_loss: 0.0045745884999632835
+order_loss: 0.37456798553466797
+order_loss: 0.003847285406664014
+order_loss: 0.0043625799007713795
+order_loss: 0.003428564639762044
+
+=== Evaluating Model ===
+accuracy on Valid 0.7142857142857143
+
+Best accuracy on Valid 0.7142857142857143
+Total valid loss 0.6928723873127074
+accuracy on Test 0.7113095238095238
+Best accuracy on Test 0.7738095238095238
+
+**** Epoch 11/20 ****
+order_loss: 0.9708346128463745
+order_loss: 0.0018995179561898112
+order_loss: 0.0885775238275528
+order_loss: 0.0033809500746428967
+order_loss: 0.0077892206609249115
+order_loss: 0.7465052604675293
+order_loss: 0.019576124846935272
+order_loss: 1.1681679487228394
+order_loss: 0.004255562089383602
+6/33-(0.411)
+order_loss: 0.0625196322798729
+order_loss: 0.8238598108291626
+order_loss: 5.960464477539063e-08
+order_loss: 0.02739104814827442
+order_loss: 0.09672896564006805
+order_loss: 0.06988015025854111
+order_loss: 0.022103900089859962
+order_loss: 0.9027133584022522
+order_loss: 0.004283434245735407
+order_loss: 0.009698446840047836
+order_loss: 0.17223936319351196
+order_loss: 0.43446245789527893
+order_loss: 0.03162204846739769
+order_loss: 0.012082698754966259
+order_loss: 1.3985073566436768
+21/33-(2.038)
+order_loss: 0.023419616743922234
+order_loss: 0.3165202736854553
+order_loss: 0.015788914635777473
+order_loss: 0.01728709042072296
+order_loss: 0.0020942382980138063
+order_loss: 0.018992919474840164
+order_loss: 0.017246825620532036
+order_loss: 0.00756204966455698
+order_loss: 0.760545551776886
+order_loss: 0.00789195392280817
+order_loss: 0.014199606142938137
+order_loss: 0.01672150194644928
+order_loss: 0.007909073494374752
+order_loss: 0.006455377209931612
+order_loss: 0.013850562274456024
+3/33-(0.444)
+order_loss: 0.8026115894317627
+order_loss: 0.012651498429477215
+order_loss: 0.002735067857429385
+order_loss: 0.38405922055244446
+order_loss: 0.031212717294692993
+order_loss: 0.017661115154623985
+order_loss: 0.02065359801054001
+order_loss: 0.06467274576425552
+order_loss: 0.07845883071422577
+order_loss: 0.0017240516608580947
+order_loss: 0.7490077018737793
+order_loss: 0.05113601312041283
+order_loss: 0.6489553451538086
+order_loss: 0.2546297609806061
+order_loss: 0.11323945224285126
+18/33-(0.747)
+order_loss: 0.32507842779159546
+order_loss: 0.022308463230729103
+order_loss: 0.00782445352524519
+order_loss: 0.012602480128407478
+order_loss: 0.18330080807209015
+order_loss: 1.0792475938796997
+order_loss: 0.02175847254693508
+order_loss: 0.00944739580154419
+order_loss: 0.19463962316513062
+
+=== Evaluating Model ===
+accuracy on Valid 0.6220238095238095
+
+Total valid loss 0.892650503487814
+accuracy on Test 0.6845238095238095
+Best accuracy on Test 0.7738095238095238
+
+**** Epoch 12/20 ****
+order_loss: 0.0075401365756988525
+order_loss: 0.027030089870095253
+order_loss: 0.02893880568444729
+order_loss: 0.005979378242045641
+order_loss: 0.014120451174676418
+order_loss: 0.0413898304104805
+0/33-(0.503)
+order_loss: 1.049643635749817
+order_loss: 0.008421266451478004
+order_loss: 0.005631209351122379
+order_loss: 0.45423418283462524
+order_loss: 0.012736585922539234
+order_loss: 0.017519667744636536
+order_loss: 0.05049198120832443
+order_loss: 0.11396279186010361
+order_loss: 0.012177268974483013
+order_loss: 0.03262431547045708
+order_loss: 0.03013071045279503
+order_loss: 0.03872179239988327
+order_loss: 0.02323143370449543
+order_loss: 0.08350763469934464
+order_loss: 0.05895305052399635
+15/33-(0.221)
+order_loss: 0.014581965282559395
+order_loss: 0.2536855936050415
+order_loss: 0.004790934734046459
+order_loss: 0.009500212036073208
+order_loss: 0.2137128859758377
+order_loss: 0.06776043772697449
+order_loss: 0.21211545169353485
+order_loss: 0.008695686236023903
+order_loss: 0.0072763473726809025
+order_loss: 0.02688627876341343
+order_loss: 0.40777358412742615
+order_loss: 0.0037673183251172304
+order_loss: 0.9364544749259949
+order_loss: 0.022792646661400795
+order_loss: 0.008862294256687164
+30/33-(0.140)
+order_loss: 0.00560135068371892
+order_loss: 0.005437171086668968
+order_loss: 0.004468514118343592
+order_loss: 0.21237409114837646
+order_loss: 0.0015218692133203149
+order_loss: 0.0025797649286687374
+order_loss: 0.0016677341191098094
+order_loss: 0.0015077464049682021
+order_loss: 0.03214871510863304
+order_loss: 0.0013221597764641047
+order_loss: 0.0016776695847511292
+order_loss: 0.006156647112220526
+order_loss: 0.0015900409780442715
+order_loss: 0.002778914524242282
+order_loss: 0.03520355373620987
+12/33-(0.645)
+order_loss: 0.0014065593713894486
+order_loss: 0.8994289040565491
+order_loss: 0.001505843480117619
+order_loss: 0.01209520734846592
+order_loss: 0.6536059379577637
+order_loss: 0.0023088306188583374
+order_loss: 0.0035799983888864517
+order_loss: 0.11706623435020447
+order_loss: 0.19509808719158173
+order_loss: 0.02233768068253994
+order_loss: 0.016454892233014107
+order_loss: 0.0066680340096354485
+
+=== Evaluating Model ===
+accuracy on Valid 0.6815476190476191
+
+Total valid loss 0.7362411313113713
+accuracy on Test 0.7291666666666666
+Best accuracy on Test 0.7738095238095238
+
+**** Epoch 13/20 ****
+order_loss: 0.03393236920237541
+order_loss: 0.003988844808191061
+order_loss: 0.0024705820251256227
+27/33-(0.217)
+order_loss: 0.0018241740763187408
+order_loss: 0.6923045516014099
+order_loss: 0.7208163142204285
+order_loss: 0.006136385723948479
+order_loss: 0.6199578046798706
+order_loss: 0.8720640540122986
+order_loss: 0.0014401768567040563
+order_loss: 0.018464505672454834
+order_loss: 0.002650726353749633
+order_loss: 0.03748705983161926
+order_loss: 0.03798067942261696
+order_loss: 0.027280058711767197
+order_loss: 0.007303173188120127
+order_loss: 0.016663627699017525
+order_loss: 0.008578987792134285
+9/33-(0.481)
+order_loss: 0.009569641202688217
+order_loss: 0.09179314970970154
+order_loss: 0.0768013596534729
+order_loss: 0.06426435708999634
+order_loss: 0.036022406071424484
+order_loss: 0.013387873768806458
+order_loss: 0.010073496028780937
+order_loss: 0.02681012451648712
+order_loss: 0.6079597473144531
+order_loss: 0.010631371289491653
+order_loss: 1.2656784057617188
+order_loss: 0.005694576073437929
+order_loss: 0.009764974936842918
+order_loss: 0.00943213514983654
+order_loss: 0.01927211694419384
+24/33-(0.267)
+order_loss: 0.012432929128408432
+order_loss: 0.7216513752937317
+order_loss: 0.005545465741306543
+order_loss: 1.733206033706665
+order_loss: 0.06647202372550964
+order_loss: 0.012522036209702492
+order_loss: 0.007831101305782795
+order_loss: 0.02698742225766182
+order_loss: 0.007701074704527855
+order_loss: 0.003536937991157174
+order_loss: 0.3484036922454834
+order_loss: 0.009218121878802776
+order_loss: 0.4553694427013397
+order_loss: 0.023401852697134018
+order_loss: 0.0266732070595026
+6/33-(0.435)
+order_loss: 0.014165571890771389
+order_loss: 0.002623853040859103
+order_loss: 0.02489517070353031
+order_loss: 0.020962746813893318
+order_loss: 0.020739685744047165
+order_loss: 0.007411343045532703
+order_loss: 0.0049380152486264706
+order_loss: 0.005355045199394226
+order_loss: 0.29328277707099915
+order_loss: 0.4100654125213623
+order_loss: 0.6498726606369019
+order_loss: 0.005188469775021076
+order_loss: 0.028930403292179108
+order_loss: 0.03159366548061371
+order_loss: 0.04218412563204765
+21/33-(0.283)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6785714285714286
+
+Total valid loss 1.074685326999142
+accuracy on Test 0.7053571428571429
+Best accuracy on Test 0.7738095238095238
+
+**** Epoch 14/20 ****
+order_loss: 0.02979755587875843
+order_loss: 0.04052748531103134
+order_loss: 2.184431791305542
+order_loss: 0.08070117235183716
+order_loss: 0.01909763552248478
+order_loss: 0.00509470421820879
+order_loss: 0.008148259483277798
+order_loss: 0.3097526729106903
+order_loss: 0.016201818361878395
+order_loss: 0.03366920351982117
+order_loss: 0.0553010068833828
+order_loss: 0.004531238228082657
+order_loss: 0.013408135622739792
+order_loss: 0.0061821648851037025
+3/33-(0.023)
+order_loss: 0.007627940736711025
+order_loss: 0.2908095419406891
+order_loss: 0.001976798754185438
+order_loss: 0.006779616232961416
+order_loss: 0.0012025568867102265
+order_loss: 0.0012902615126222372
+order_loss: 0.002403778489679098
+order_loss: 0.0034344238229095936
+order_loss: 0.5713231563568115
+order_loss: 0.11130538582801819
+order_loss: 0.004505647346377373
+order_loss: 0.0049597653560340405
+order_loss: 0.005757118109613657
+order_loss: 0.0044672223739326
+order_loss: 1.1553947925567627
+18/33-(1.244)
+order_loss: 0.04939576983451843
+order_loss: 0.17550984025001526
+order_loss: 0.010917218402028084
+order_loss: 0.025127075612545013
+order_loss: 0.16821607947349548
+order_loss: 0.0359947569668293
+order_loss: 0.1004183292388916
+order_loss: 0.0031016746070235968
+order_loss: 0.051320940256118774
+order_loss: 0.3598766028881073
+order_loss: 0.010559617541730404
+order_loss: 0.002870327327400446
+order_loss: 0.005469399970024824
+order_loss: 0.0014147036708891392
+order_loss: 0.3351055681705475
+0/33-(1.510)
+order_loss: 0.0274431724101305
+order_loss: 0.000726906000636518
+order_loss: 0.005611336790025234
+order_loss: 0.0031461254693567753
+order_loss: 0.036864761263132095
+order_loss: 0.027200952172279358
+order_loss: 0.4508020281791687
+order_loss: 0.30272507667541504
+order_loss: 0.002795432461425662
+order_loss: 0.006822880357503891
+order_loss: 0.7396575808525085
+order_loss: 0.010763391852378845
+order_loss: 0.020594201982021332
+order_loss: 0.0005128716584295034
+order_loss: 0.00278921308927238
+15/33-(0.430)
+order_loss: 0.0012712767347693443
+order_loss: 0.0014494939241558313
+order_loss: 0.4047006070613861
+
+=== Evaluating Model ===
+accuracy on Valid 0.6934523809523809
+
+Total valid loss 1.0061394558066414
+accuracy on Test 0.6815476190476191
+Best accuracy on Test 0.7738095238095238
+
+**** Epoch 15/20 ****
+order_loss: 0.005889043211936951
+order_loss: 0.0026858896017074585
+order_loss: 0.005248565226793289
+order_loss: 0.006661675870418549
+order_loss: 0.039126891642808914
+order_loss: 0.013458039611577988
+order_loss: 0.009999869391322136
+order_loss: 0.00012803275603801012
+order_loss: 0.1060265377163887
+order_loss: 0.447517454624176
+order_loss: 0.05995979532599449
+order_loss: 1.177838683128357
+30/33-(1.844)
+order_loss: 0.298356831073761
+order_loss: 0.019779620692133904
+order_loss: 0.567968487739563
+order_loss: 0.024074474349617958
+order_loss: 1.4867218732833862
+order_loss: 0.002041193190962076
+order_loss: 0.01498330570757389
+order_loss: 0.01550047006458044
+order_loss: 0.1502106934785843
+order_loss: 0.0019187706056982279
+order_loss: 0.35598668456077576
+order_loss: 0.09189160913228989
+order_loss: 0.026882868260145187
+order_loss: 0.024797389283776283
+12/33-(0.231)
+order_loss: 0.04859628528356552
+order_loss: 0.026028329506516457
+order_loss: 0.2829812169075012
+order_loss: 0.029592694714665413
+order_loss: 0.027024177834391594
+order_loss: 0.02054169587790966
+order_loss: 0.031992070376873016
+order_loss: 0.03942999243736267
+order_loss: 0.013732917606830597
+order_loss: 0.0092134615406394
+order_loss: 0.005685342475771904
+order_loss: 0.012328836135566235
+order_loss: 0.019812937825918198
+order_loss: 0.05097617581486702
+order_loss: 0.00213833199813962
+27/33-(0.131)
+order_loss: 0.040681786835193634
+order_loss: 0.0024343281984329224
+order_loss: 0.0044094412587583065
+order_loss: 0.0012555421562865376
+order_loss: 0.0006472566165030003
+order_loss: 0.0005888094892725348
+order_loss: 1.3958073854446411
+order_loss: 0.001234650146216154
+order_loss: 0.01619013026356697
+order_loss: 0.19469250738620758
+order_loss: 0.0010964617831632495
+order_loss: 0.0029012083541601896
+order_loss: 0.020110538229346275
+order_loss: 0.0025288425385951996
+order_loss: 0.01835053600370884
+9/33-(0.517)
+order_loss: 0.48594948649406433
+order_loss: 0.008637167513370514
+order_loss: 0.0006323539419099689
+order_loss: 0.0809389054775238
+order_loss: 0.053654223680496216
+order_loss: 0.0019050867995247245
+
+=== Evaluating Model ===
+accuracy on Valid 0.6934523809523809
+
+Total valid loss 0.8845636674336025
+accuracy on Test 0.7291666666666666
+Best accuracy on Test 0.7738095238095238
+
+**** Epoch 16/20 ****
+order_loss: 0.0029386316891759634
+order_loss: 0.0010169660672545433
+order_loss: 0.0009157421882264316
+order_loss: 0.003268349915742874
+order_loss: 0.18111413717269897
+order_loss: 4.1277020500274375e-05
+order_loss: 0.0005760700441896915
+order_loss: 0.0005596568807959557
+order_loss: 4.4974258344154805e-05
+24/33-(1.018)
+order_loss: 0.432380348443985
+order_loss: 1.7467670440673828
+order_loss: 0.00039004220161587
+order_loss: 0.5508348941802979
+order_loss: 0.0010623533744364977
+order_loss: 0.0006910971133038402
+order_loss: 0.8488063812255859
+order_loss: 0.5865253806114197
+order_loss: 0.4723972976207733
+order_loss: 0.0016174117336049676
+order_loss: 0.011300072073936462
+order_loss: 0.0391356460750103
+order_loss: 0.36182090640068054
+order_loss: 0.007426244672387838
+6/33-(0.742)
+order_loss: 0.003222325351089239
+order_loss: 0.007750251796096563
+order_loss: 0.007872741669416428
+order_loss: 0.03955903649330139
+order_loss: 0.08889194577932358
+order_loss: 0.05181732773780823
+order_loss: 0.13200567662715912
+order_loss: 0.01111339870840311
+order_loss: 0.01907704770565033
+order_loss: 0.05290374159812927
+order_loss: 0.021939024329185486
+order_loss: 0.36452800035476685
+order_loss: 0.007847987115383148
+order_loss: 0.0020098534878343344
+order_loss: 0.0048995534889400005
+21/33-(0.233)
+order_loss: 0.004431347828358412
+order_loss: 0.005063294433057308
+order_loss: 0.004210101440548897
+order_loss: 0.000969469896517694
+order_loss: 0.0022109034471213818
+order_loss: 0.002885189838707447
+order_loss: 0.0017496112268418074
+order_loss: 0.3455272316932678
+order_loss: 0.008253760635852814
+order_loss: 0.6663244962692261
+order_loss: 0.6166186928749084
+order_loss: 0.0018337173387408257
+order_loss: 0.003296057227998972
+order_loss: 0.001642814022488892
+order_loss: 0.002629309194162488
+3/33-(0.272)
+order_loss: 0.004784199874848127
+order_loss: 0.1934940069913864
+order_loss: 0.0010793862165883183
+order_loss: 0.9809185862541199
+order_loss: 0.09928374737501144
+order_loss: 0.0007810376700945199
+order_loss: 0.0022660556714981794
+order_loss: 0.0007251647184602916
+order_loss: 0.0007646954036317766
+
+=== Evaluating Model ===
+accuracy on Valid 0.6190476190476191
+
+Total valid loss 1.1719059404872714
+accuracy on Test 0.6845238095238095
+Best accuracy on Test 0.7738095238095238
+
+**** Epoch 17/20 ****
+order_loss: 0.2811427712440491
+order_loss: 0.006681164726614952
+order_loss: 0.001454798155464232
+order_loss: 0.0006570250843651593
+order_loss: 0.010701358318328857
+order_loss: 0.09769757091999054
+18/33-(1.157)
+order_loss: 0.08036597073078156
+order_loss: 0.023137642070651054
+order_loss: 0.0059371343813836575
+order_loss: 0.011859048157930374
+order_loss: 0.06778650730848312
+order_loss: 0.012424511834979057
+order_loss: 0.007798921316862106
+order_loss: 0.8309707641601562
+order_loss: 0.0008463384583592415
+order_loss: 1.648784875869751
+order_loss: 1.2919169664382935
+order_loss: 0.01642378605902195
+order_loss: 0.0011253486154600978
+order_loss: 0.001270537031814456
+order_loss: 0.0019010731484740973
+0/33-(0.461)
+order_loss: 0.0028714784421026707
+order_loss: 0.0009077323484234512
+order_loss: 0.0030868116300553083
+order_loss: 0.001891712425276637
+order_loss: 1.3550299627240747e-05
+order_loss: 0.06293101608753204
+order_loss: 1.0789871215820312
+order_loss: 0.002280703280121088
+order_loss: 0.0009531585383228958
+order_loss: 0.010645166039466858
+order_loss: 0.004120856523513794
+order_loss: 0.012214099057018757
+order_loss: 0.003770590526983142
+order_loss: 0.006600302644073963
+order_loss: 0.0550445094704628
+15/33-(0.370)
+order_loss: 0.008462552912533283
+order_loss: 0.19996421039104462
+order_loss: 0.021906819194555283
+order_loss: 0.006078922655433416
+order_loss: 0.02176935411989689
+order_loss: 0.04081319272518158
+order_loss: 0.0034408532083034515
+order_loss: 0.0016947577241808176
+order_loss: 0.4555172920227051
+order_loss: 0.003494009142741561
+order_loss: 0.006200285628437996
+order_loss: 0.0015309625305235386
+order_loss: 0.0008482072735205293
+order_loss: 0.005641748197376728
+order_loss: 0.008517906069755554
+30/33-(0.215)
+order_loss: 0.0037526371888816357
+order_loss: 0.001633437816053629
+order_loss: 0.1403401792049408
+order_loss: 0.0354023203253746
+order_loss: 0.0021919691935181618
+order_loss: 0.0037549175322055817
+order_loss: 0.03840288519859314
+order_loss: 0.008128752000629902
+order_loss: 0.0017439107177779078
+order_loss: 0.000887524161953479
+order_loss: 0.0023168418556451797
+order_loss: 0.004784502554684877
+
+=== Evaluating Model ===
+accuracy on Valid 0.6517857142857143
+
+Total valid loss 1.1946919375941867
+accuracy on Test 0.7083333333333334
+Best accuracy on Test 0.7738095238095238
+
+**** Epoch 18/20 ****
+order_loss: 0.0019876754377037287
+order_loss: 0.003178614191710949
+order_loss: 0.0024419797118753195
+12/33-(0.039)
+order_loss: 0.16492076218128204
+order_loss: 0.0080126216635108
+order_loss: 0.24201151728630066
+order_loss: 0.003812139155343175
+order_loss: 0.00025431602261960506
+order_loss: 0.0015043404418975115
+order_loss: 0.0003646706754807383
+order_loss: 9.89798572845757e-05
+order_loss: 0.0038486607372760773
+order_loss: 0.00044751257519237697
+order_loss: 0.4324122369289398
+order_loss: 0.005241114180535078
+order_loss: 5.733350553782657e-05
+order_loss: 0.0009940206073224545
+order_loss: 0.0003793922660406679
+27/33-(0.016)
+order_loss: 0.0010090566938742995
+order_loss: 0.0015626066597178578
+order_loss: 0.0006083961925469339
+order_loss: 0.00017932751507032663
+order_loss: 0.0019932365976274014
+order_loss: 0.00010509268759051338
+order_loss: 0.017586834728717804
+order_loss: 0.0011110277846455574
+order_loss: 0.029344467446208
+order_loss: 0.0019701230339705944
+order_loss: 0.008170459419488907
+order_loss: 0.0010176447685807943
+order_loss: 0.010873574763536453
+order_loss: 0.000843805551994592
+order_loss: 0.0002147453196812421
+9/33-(0.613)
+order_loss: 0.00014568993356078863
+order_loss: 0.017557956278324127
+order_loss: 0.0020185941830277443
+order_loss: 0.0004256873799022287
+order_loss: 0.05475100502371788
+order_loss: 0.0008345731184817851
+order_loss: 0.0013890143018215895
+order_loss: 0.0009388408507220447
+order_loss: 1.544687271118164
+order_loss: 0.0017371709691360593
+order_loss: 0.0032469916623085737
+order_loss: 0.0004174050991423428
+order_loss: 0.00021499906142707914
+order_loss: 0.0018687685951590538
+order_loss: 0.0003343846765346825
+24/33-(0.491)
+order_loss: 0.0007728745113126934
+order_loss: 0.015504224225878716
+order_loss: 0.024156354367733
+order_loss: 0.029959825798869133
+order_loss: 0.030195055529475212
+order_loss: 5.026091821491718e-05
+order_loss: 5.3282605222193524e-05
+order_loss: 8.394906762987375e-05
+order_loss: 0.0001017970935208723
+order_loss: 0.47871339321136475
+order_loss: 0.0003758380189538002
+order_loss: 0.0006790682091377676
+order_loss: 0.000884530134499073
+order_loss: 0.14052501320838928
+order_loss: 0.016346508637070656
+6/33-(0.251)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7261904761904762
+
+Best accuracy on Valid 0.7261904761904762
+Total valid loss 0.864719481695266
+accuracy on Test 0.7380952380952381
+Best accuracy on Test 0.7738095238095238
+
+**** Epoch 19/20 ****
+order_loss: 0.0010351791279390454
+order_loss: 0.01245652325451374
+order_loss: 0.36407873034477234
+order_loss: 0.3201272487640381
+order_loss: 0.002310509793460369
+order_loss: 0.0029256599955260754
+order_loss: 0.012968539260327816
+order_loss: 5.8078134316019714e-05
+order_loss: 0.0005299487966112792
+order_loss: 5.346176840248518e-05
+order_loss: 1.1682668628054671e-05
+order_loss: 1.2131885290145874
+order_loss: 1.876889705657959
+order_loss: 0.8795900344848633
+order_loss: 0.00024270762514788657
+21/33-(1.118)
+order_loss: 7.360570452874526e-05
+order_loss: 6.865082104923204e-05
+order_loss: 0.00016692356439307332
+order_loss: 0.0002026617876254022
+order_loss: 9.064058303833008
+Best accuracy on Test 0.7738095238095238
+
+Source domain: 8, Target domai

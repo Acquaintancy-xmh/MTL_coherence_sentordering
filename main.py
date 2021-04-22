@@ -48,6 +48,8 @@ from models.model_Cent_Hds import Coh_Model_Cent_Hds
 from models.model_DIS_Order import Model_DIS_Order
 from models.model_DIS_TT_Order import Model_DIS_TT_Order
 from models.model_Cent_Hds_Order import Coh_Model_Cent_Hds_Order
+from models.model_Cent_Hds_MaxMin import Coh_Model_Cent_Hds_MaxMin
+from models.model_Cent_Hds_Order_MM import Coh_Model_Cent_Hds_Order_MM
 
 from torch.utils.data import Dataset, DataLoader, RandomSampler
 from torch.utils.data.distributed import DistributedSampler
@@ -140,13 +142,20 @@ def get_model_target(config, corpus_target, embReader):
     elif config.target_model.lower() == "dis_tt_order":
         logger.info("Model: DIS_Simple Avg Plus Sentence Ordering")
         model = Model_DIS_TT_Order(config=config, corpus_target=corpus_target, embReader=embReader)
-        for name, value in model.named_parameters():
-            print(name, value.requires_grad)
+        # for name, value in model.named_parameters():
+        #     print(name, value.requires_grad)
     elif config.target_model.lower() == "cent_hds_order":
         logger.info("Model: DIS_Simple Avg Plus Sentence Ordering")
         model = Coh_Model_Cent_Hds_Order(config=config, corpus_target=corpus_target, embReader=embReader)
-        # for name, value in model.named_parameters():
-        #     print(name, value.requires_grad)
+
+    elif config.target_model.lower() == "cent_hds_maxmin":
+        logger.info("Model: DIS_Simple Avg Plus Max_Min")
+        model = Coh_Model_Cent_Hds_MaxMin(config=config, corpus_target=corpus_target, embReader=embReader)
+    
+    elif config.target_model.lower() == "cent_hds_order_mm":
+        logger.info("Model: DIS_Simple Avg Order Plus Max_Min")
+        model = Coh_Model_Cent_Hds_Order_MM(config=config, corpus_target=corpus_target, embReader=embReader)
+
 
 
     elif config.target_model.lower() == "cent_hds":
@@ -297,10 +306,25 @@ if __name__=='__main__':
     target_attempts = config.cv_attempts
     
     if config.cur_fold > -1:  # test for specific fold
-        if cur_domain_train is not None:
-            logger.info("Source domain: {}, Target domain: {}, Cur_fold {}".format(cur_domain_train, cur_domain_test, config.cur_fold))
-        eval_best_fold, valid_fold = exp_model(config)
-        logger.info("{}-fold eval {}".format(config.cur_fold, eval_best_fold))
+        list_eval_fold = []
+        list_valid_fold = []
+        for cur_fold in range(config.cur_fold, config.cur_fold + config.num_fold):
+            config.cur_fold = cur_fold
+            if cur_domain_train is not None:
+                logger.info("Source domain: {}, Target domain: {}, Cur_fold {}".format(cur_domain_train, cur_domain_test, config.cur_fold))
+            cur_eval_best_fold, cur_valid_fold = exp_model(config)
+            list_eval_fold.append(cur_eval_best_fold)
+            list_valid_fold.append(cur_valid_fold)
+            # logger.info("{}-fold eval {}".format(config.cur_fold, eval_best_fold))
+        avg_cv_valid = sum(list_valid_fold) / float(len(list_valid_fold))
+        logger.info("Final k-fold valid {}".format(avg_cv_valid))
+        logger.info(list_valid_fold)
+        list_cv_valid.append(avg_cv_valid)
+            
+        avg_cv_eval = sum(list_eval_fold) / float(len(list_eval_fold))
+        logger.info("Final k-fold eval {}".format(avg_cv_eval))
+        logger.info(list_eval_fold)
+        list_cv_attempts.append(avg_cv_eval)
     else:
         for cur_attempt in range(target_attempts):  # CV only works when whole k-fold eval mode
 

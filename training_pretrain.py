@@ -434,9 +434,11 @@ def train(model, pretrain_optimizer, optimizer, scheduler, dataset_train, datase
                     loss_valid, eval_cur_valid, _, valid_itpt = validate(model, evaluator, dataset_valid, config, loss_func, is_test=False)
                     logger.info("")
 
-                if eval_cur_valid >= best_eval_valid or dataset_valid is None:
-                    logger.info("Best {} on Valid {}".format(evaluator.eval_type, eval_cur_valid))
-                    best_eval_valid = eval_cur_valid
+                if eval_cur_valid >= best_eval_valid or dataset_valid is None or True:
+                    if eval_cur_valid >= best_eval_valid: 
+                        best_eval_valid = eval_cur_valid
+                        logger.info("Best {} on Valid {}".format(evaluator.eval_type, eval_cur_valid))
+                        # best_eval_valid = eval_cur_valid
 
                     valid_loss, eval_last, eval_best, valid_itpt = validate(model, evaluator, dataset_test, config, loss_func, is_test=True)
 

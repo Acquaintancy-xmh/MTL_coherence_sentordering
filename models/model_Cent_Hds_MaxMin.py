@@ -41,7 +41,7 @@ import copy
 
 logger = logging.getLogger()
 
-class Coh_Model_Cent_Hds_Order(models.model_base.BaseModel):
+class Coh_Model_Cent_Hds_MaxMin(models.model_base.BaseModel):
     def __init__(self, config, corpus_target, embReader):
         super().__init__(config)
 
@@ -160,9 +160,6 @@ class Coh_Model_Cent_Hds_Order(models.model_base.BaseModel):
         self.dropout_02 = nn.Dropout(0.2)
 
         self.softmax = nn.Softmax(dim=1)
-
-        # self.layer_norm1 = nn.LayerNorm(linear_1_out, eps=1e-6)
-        # self.layer_norm2 = nn.LayerNorm(linear_2_out, eps=1e-6)
 
         return
     # end __init__
@@ -610,55 +607,39 @@ class Coh_Model_Cent_Hds_Order(models.model_base.BaseModel):
 
 
         ## Train过程
-        order_label_list = []
         order_score_list = []
         for batch_i in range(batch_size):
-            order_label = []
             order_score = []
-            shuffled_sents = torch.randperm(int(num_sents[batch_i].item()))
-            # print("shuffled_sents: ", len(shuffled_sents))
-            for sent_i in range(shuffled_sents.shape[0]-1):
-                sent_embed_1 = encoded_sents[batch_i, shuffled_sents[sent_i].item()]
-                sent_embed_2 = encoded_sents[batch_i, shuffled_sents[sent_i+1].item()]
-                if shuffled_sents[sent_i].item() < shuffled_sents[sent_i+1].item() : order_label.append(1.0)
-                else : order_label.append(0.0)
+            order_score_MaxMin = []
+            for sent_i in range(int(num_sents[batch_i].item())-1):
+                sent_embed_1 = encoded_sents[batch_i, sent_i]
+                sent_embed_2 = encoded_sents[batch_i, sent_i+1]
                 so_fc_out = self.so_linear_1(torch.cat((sent_embed_1, sent_embed_2), dim=0))
-                # so_fc_out = self.leak_relu(so_fc_out)
-                # so_fc_out = self.dropout_layer(so_fc_out)
+                so_fc_out = self.leak_relu(so_fc_out)
+                so_fc_out = self.dropout_layer(so_fc_out)
 
                 so_fc_out = self.so_linear_2(so_fc_out)
-                # so_fc_out = self.leak_relu(so_fc_out)
-                # so_fc_out = self.dropout_layer(so_fc_out)
+                so_fc_out = self.leak_relu(so_fc_out)
+                so_fc_out = self.dropout_layer(so_fc_out)
 
                 so_fc_out = self.so_linear_out(so_fc_out)
 
                 so_fc_out = self.sigmoid(so_fc_out)
-                # print(so_fc_out)
+
                 order_score.append(so_fc_out)
 
-                # if order_score.shape[0] == 0: order_score = so_fc_out
-                # else : order_score = torch.cat((order_score, so_fc_out), dim=0)
-
-            order_label_list.append(order_label)
-            order_score_list.append(order_score)
-            # print("order_label: ", order_label, sum(order_label))
-            # print("order_score: ", order_score)
-
-
-            # if order_score == 0: order_score = torch.Tensor([0.0]).cuda()
-            # if order_score_list.shape[0] == 0: 
-            #     order_score_list = order_score
-            # else:
-            #     order_score_list = torch.cat((order_score_list, order_score), dim=0)
+            if len(order_score) != 0:
+                order_score_MaxMin.append(max(order_score))
+                order_score_MaxMin.append(min(order_score))
+            order_score_list.append(order_score_MaxMin)
+            
         # print(order_label_list) # [6, 8, 8, 6, 3, 8, 8, 7, 5, 6, 7, 12, 5, 4, 11, 4]
         # print(order_score_list) # tensor([4.6839, 2.7560, 3.9098, 5.5054, 0.7618, 3.9745, 7.4416, 6.4322, 1.1115,2.5257, 2.6214, 6.3680, 1.9489, 3.5597, 6.2616, 1.5653],device='cuda:0', grad_fn=<CatBackward>)
 
-        if len(order_label_list) != len(order_score_list) :
-            order_label_list = []
+        if len(order_score_list) != batch_size:
             order_score_list = []
         
         outputs.append(fc_out)
-        outputs.append(order_label_list)
         outputs.append(order_score_list)
 
         # return fc_out

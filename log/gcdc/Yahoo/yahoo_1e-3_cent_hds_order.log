@@ -1,0 +1,5703 @@
+Whole k-fold eval mode
+Source domain: Yahoo, Target domain: Yahoo, Cur_fold 0
+Corpus: GCDC
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+172.5
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin HTTP/1.1" 200 0
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Optimizer: adam
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/30 ****
+Use CrossEntropyLoss
+15/33-(2.239)
+30/33-(1.339)
+12/33-(1.465)
+
+=== Evaluating Model ===
+Total valid loss 1.0347804377476375
+accuracy on Test 0.4666666666666667
+Best accuracy on Test 0.4666666666666667
+
+**** Epoch 0/30 ****
+27/33-(1.224)
+9/33-(1.215)
+24/33-(0.983)
+6/33-(1.420)
+
+=== Evaluating Model ===
+Total valid loss 0.9921504010756811
+accuracy on Test 0.5055555555555555
+Best accuracy on Test 0.5055555555555555
+
+**** Epoch 1/30 ****
+21/33-(0.987)
+3/33-(1.071)
+18/33-(1.074)
+0/33-(1.464)
+
+=== Evaluating Model ===
+Total valid loss 0.9519061843554179
+accuracy on Test 0.5333333333333333
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 2/30 ****
+15/33-(0.935)
+30/33-(0.882)
+12/33-(1.129)
+
+=== Evaluating Model ===
+Total valid loss 1.0222129275401433
+accuracy on Test 0.43333333333333335
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 3/30 ****
+27/33-(1.185)
+9/33-(1.004)
+24/33-(1.062)
+6/33-(1.307)
+
+=== Evaluating Model ===
+Total valid loss 1.0855899527668953
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 4/30 ****
+21/33-(1.271)
+3/33-(0.926)
+18/33-(1.063)
+0/33-(1.033)
+
+=== Evaluating Model ===
+Total valid loss 0.9645886570215225
+accuracy on Test 0.5388888888888889
+Best accuracy on Test 0.5388888888888889
+
+**** Epoch 5/30 ****
+15/33-(0.736)
+30/33-(0.967)
+12/33-(0.785)
+27/33-(0.825)
+
+=== Evaluating Model ===
+Total valid loss 0.9788768788178762
+accuracy on Test 0.5444444444444444
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 6/30 ****
+9/33-(0.955)
+24/33-(0.717)
+6/33-(0.642)
+
+=== Evaluating Model ===
+Total valid loss 1.0845178787906964
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 7/30 ****
+21/33-(0.692)
+3/33-(0.853)
+18/33-(0.625)
+0/33-(1.370)
+
+=== Evaluating Model ===
+Total valid loss 1.196695437033971
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 8/30 ****
+15/33-(1.410)
+30/33-(0.586)
+12/33-(0.644)
+27/33-(0.855)
+
+=== Evaluating Model ===
+Total valid loss 1.1513172934452693
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 9/30 ****
+9/33-(0.478)
+24/33-(0.415)
+6/33-(0.747)
+21/33-(0.564)
+
+=== Evaluating Model ===
+Total valid loss 1.0613461434841156
+accuracy on Test 0.5611111111111111
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 10/30 ****
+3/33-(0.539)
+18/33-(0.515)
+0/33-(0.760)
+
+=== Evaluating Model ===
+Total valid loss 1.2198893576860428
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 11/30 ****
+15/33-(0.204)
+30/33-(1.338)
+12/33-(0.709)
+27/33-(1.098)
+
+=== Evaluating Model ===
+Total valid loss 1.3521348436673482
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 12/30 ****
+9/33-(0.395)
+24/33-(0.561)
+6/33-(0.529)
+21/33-(0.525)
+
+=== Evaluating Model ===
+Total valid loss 2.2989437406261763
+accuracy on Test 0.5166666666666667
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 13/30 ****
+3/33-(0.415)
+18/33-(0.386)
+0/33-(0.489)
+15/33-(0.419)
+
+=== Evaluating Model ===
+Total valid loss 1.9259309073289235
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 14/30 ****
+30/33-(0.709)
+12/33-(0.383)
+27/33-(0.771)
+
+=== Evaluating Model ===
+Total valid loss 1.8193281690279643
+accuracy on Test 0.4722222222222222
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 15/30 ****
+9/33-(0.408)
+24/33-(0.352)
+6/33-(0.312)
+21/33-(0.277)
+
+=== Evaluating Model ===
+Total valid loss 2.29593292872111
+accuracy on Test 0.5111111111111111
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 16/30 ****
+3/33-(0.472)
+18/33-(0.184)
+0/33-(0.192)
+15/33-(0.404)
+
+=== Evaluating Model ===
+Total valid loss 3.8566314578056335
+accuracy on Test 0.43333333333333335
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 17/30 ****
+30/33-(0.216)
+12/33-(0.460)
+27/33-(0.277)
+
+=== Evaluating Model ===
+Total valid loss 2.393860017259916
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 18/30 ****
+9/33-(0.207)
+24/33-(0.488)
+6/33-(0.102)
+21/33-(0.149)
+
+=== Evaluating Model ===
+Total valid loss 2.7853901088237762
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 19/30 ****
+3/33-(0.148)
+18/33-(0.220)
+0/33-(0.115)
+15/33-(0.671)
+
+=== Evaluating Model ===
+Total valid loss 2.7215839525063834
+accuracy on Test 0.4722222222222222
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 20/30 ****
+30/33-(0.892)
+12/33-(0.134)
+27/33-(0.959)
+9/33-(0.163)
+
+=== Evaluating Model ===
+Total valid loss 2.982008069753647
+accuracy on Test 0.5111111111111111
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 21/30 ****
+24/33-(0.042)
+6/33-(0.125)
+21/33-(0.182)
+
+=== Evaluating Model ===
+Total valid loss 3.0985416571299234
+accuracy on Test 0.45
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 22/30 ****
+3/33-(0.387)
+18/33-(0.078)
+0/33-(0.207)
+15/33-(0.154)
+
+=== Evaluating Model ===
+Total valid loss 3.091510425011317
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 23/30 ****
+30/33-(0.923)
+12/33-(0.523)
+27/33-(0.626)
+9/33-(0.049)
+
+=== Evaluating Model ===
+Total valid loss 2.7551997701327005
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 24/30 ****
+24/33-(0.422)
+6/33-(0.045)
+21/33-(0.297)
+3/33-(0.326)
+
+=== Evaluating Model ===
+Total valid loss 3.9587071537971497
+accuracy on Test 0.4222222222222222
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 25/30 ****
+18/33-(0.071)
+0/33-(0.023)
+15/33-(0.053)
+
+=== Evaluating Model ===
+Total valid loss 4.61802280942599
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 26/30 ****
+30/33-(0.368)
+12/33-(0.137)
+27/33-(0.074)
+9/33-(0.230)
+
+=== Evaluating Model ===
+Total valid loss 3.349972208340963
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 27/30 ****
+24/33-(0.067)
+6/33-(0.208)
+21/33-(0.101)
+3/33-(0.099)
+
+=== Evaluating Model ===
+Total valid loss 4.1851078768571215
+accuracy on Test 0.45555555555555555
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 28/30 ****
+18/33-(0.012)
+0/33-(0.036)
+15/33-(0.131)
+30/33-(0.330)
+
+=== Evaluating Model ===
+Total valid loss 3.610624690850576
+accuracy on Test 0.4388888888888889
+Best accuracy on Test 0.5611111111111111
+
+**** Epoch 29/30 ****
+12/33-(0.207)
+27/33-(0.001)
+Best accuracy on Test 0.5611111111111111
+
+Source domain: Yahoo, Target domain: Yahoo, Cur_fold 1
+Corpus: GCDC
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+172.5
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Optimizer: adam
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/30 ****
+Use CrossEntropyLoss
+15/33-(1.637)
+30/33-(1.219)
+12/33-(1.360)
+
+=== Evaluating Model ===
+Total valid loss 1.0903529475132625
+accuracy on Test 0.4166666666666667
+Best accuracy on Test 0.4166666666666667
+
+**** Epoch 0/30 ****
+27/33-(1.327)
+9/33-(1.242)
+24/33-(1.284)
+6/33-(1.421)
+
+=== Evaluating Model ===
+Total valid loss 1.0635535269975662
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.46111111111111114
+
+**** Epoch 1/30 ****
+21/33-(1.154)
+3/33-(0.987)
+18/33-(1.045)
+0/33-(0.897)
+
+=== Evaluating Model ===
+Total valid loss 1.0744963884353638
+accuracy on Test 0.5055555555555555
+Best accuracy on Test 0.5055555555555555
+
+**** Epoch 2/30 ****
+15/33-(1.197)
+30/33-(0.700)
+12/33-(1.114)
+
+=== Evaluating Model ===
+Total valid loss 1.1601653943459194
+accuracy on Test 0.42777777777777776
+Best accuracy on Test 0.5055555555555555
+
+**** Epoch 3/30 ****
+27/33-(1.169)
+9/33-(0.694)
+24/33-(1.065)
+6/33-(0.702)
+
+=== Evaluating Model ===
+Total valid loss 1.0698045541842778
+accuracy on Test 0.5388888888888889
+Best accuracy on Test 0.5388888888888889
+
+**** Epoch 4/30 ****
+21/33-(0.797)
+3/33-(0.944)
+18/33-(0.820)
+0/33-(1.361)
+
+=== Evaluating Model ===
+Total valid loss 1.0521076768636703
+accuracy on Test 0.5388888888888889
+Best accuracy on Test 0.5388888888888889
+
+**** Epoch 5/30 ****
+15/33-(1.017)
+30/33-(1.194)
+12/33-(0.686)
+27/33-(1.106)
+
+=== Evaluating Model ===
+Total valid loss 1.2133946667114894
+accuracy on Test 0.5111111111111111
+Best accuracy on Test 0.5388888888888889
+
+**** Epoch 6/30 ****
+9/33-(1.091)
+24/33-(1.007)
+6/33-(0.788)
+
+=== Evaluating Model ===
+Total valid loss 1.1974276453256607
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.5388888888888889
+
+**** Epoch 7/30 ****
+21/33-(0.807)
+3/33-(0.772)
+18/33-(0.604)
+0/33-(0.548)
+
+=== Evaluating Model ===
+Total valid loss 1.1663075536489487
+accuracy on Test 0.4722222222222222
+Best accuracy on Test 0.5388888888888889
+
+**** Epoch 8/30 ****
+15/33-(0.718)
+30/33-(0.480)
+12/33-(1.628)
+27/33-(0.746)
+
+=== Evaluating Model ===
+Total valid loss 1.3447439471880596
+accuracy on Test 0.5444444444444444
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 9/30 ****
+9/33-(0.789)
+24/33-(0.477)
+6/33-(0.622)
+21/33-(0.701)
+
+=== Evaluating Model ===
+Total valid loss 1.862568736076355
+accuracy on Test 0.5055555555555555
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 10/30 ****
+3/33-(0.857)
+18/33-(0.333)
+0/33-(0.453)
+
+=== Evaluating Model ===
+Total valid loss 1.4071941028038661
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 11/30 ****
+15/33-(0.613)
+30/33-(0.555)
+12/33-(0.674)
+27/33-(0.338)
+
+=== Evaluating Model ===
+Total valid loss 1.547403375307719
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 12/30 ****
+9/33-(0.496)
+24/33-(0.542)
+6/33-(0.704)
+21/33-(0.320)
+
+=== Evaluating Model ===
+Total valid loss 2.1034044871727624
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 13/30 ****
+3/33-(0.804)
+18/33-(0.572)
+0/33-(0.315)
+15/33-(0.499)
+
+=== Evaluating Model ===
+Total valid loss 2.296824167172114
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 14/30 ****
+30/33-(1.288)
+12/33-(0.197)
+27/33-(0.553)
+
+=== Evaluating Model ===
+Total valid loss 1.5460512439409893
+accuracy on Test 0.4666666666666667
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 15/30 ****
+9/33-(0.509)
+24/33-(0.865)
+6/33-(0.452)
+21/33-(0.133)
+
+=== Evaluating Model ===
+Total valid loss 2.4806754291057587
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 16/30 ****
+3/33-(0.166)
+18/33-(0.388)
+0/33-(0.162)
+15/33-(0.336)
+
+=== Evaluating Model ===
+Total valid loss 2.454763804872831
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 17/30 ****
+30/33-(0.417)
+12/33-(1.086)
+27/33-(0.455)
+
+=== Evaluating Model ===
+Total valid loss 2.6736535876989365
+accuracy on Test 0.45
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 18/30 ****
+9/33-(0.436)
+24/33-(0.524)
+6/33-(0.052)
+21/33-(0.166)
+
+=== Evaluating Model ===
+Total valid loss 2.9200743436813354
+accuracy on Test 0.4111111111111111
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 19/30 ****
+3/33-(0.253)
+18/33-(1.172)
+0/33-(0.088)
+15/33-(0.647)
+
+=== Evaluating Model ===
+Total valid loss 3.2356444795926413
+accuracy on Test 0.4
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 20/30 ****
+30/33-(0.177)
+12/33-(0.246)
+27/33-(0.141)
+9/33-(0.310)
+
+=== Evaluating Model ===
+Total valid loss 3.127808635433515
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 21/30 ****
+24/33-(0.146)
+6/33-(0.146)
+21/33-(0.082)
+
+=== Evaluating Model ===
+Total valid loss 2.853171149889628
+accuracy on Test 0.4666666666666667
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 22/30 ****
+3/33-(0.463)
+18/33-(0.452)
+0/33-(0.033)
+15/33-(0.060)
+
+=== Evaluating Model ===
+Total valid loss 3.2839998801549277
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 23/30 ****
+30/33-(0.033)
+12/33-(0.457)
+27/33-(0.694)
+9/33-(0.095)
+
+=== Evaluating Model ===
+Total valid loss 2.794371634721756
+accuracy on Test 0.4722222222222222
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 24/30 ****
+24/33-(0.088)
+6/33-(0.174)
+21/33-(0.193)
+3/33-(0.257)
+
+=== Evaluating Model ===
+Total valid loss 3.5594762365023294
+accuracy on Test 0.45
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 25/30 ****
+18/33-(0.061)
+0/33-(0.076)
+15/33-(0.336)
+
+=== Evaluating Model ===
+Total valid loss 3.4312071005503335
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 26/30 ****
+30/33-(0.152)
+12/33-(0.207)
+27/33-(0.339)
+9/33-(0.220)
+
+=== Evaluating Model ===
+Total valid loss 3.825644016265869
+accuracy on Test 0.4722222222222222
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 27/30 ****
+24/33-(0.375)
+6/33-(0.050)
+21/33-(0.046)
+3/33-(0.211)
+
+=== Evaluating Model ===
+Total valid loss 3.4896145462989807
+accuracy on Test 0.4444444444444444
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 28/30 ****
+18/33-(0.063)
+0/33-(0.041)
+15/33-(0.054)
+30/33-(0.721)
+
+=== Evaluating Model ===
+Total valid loss 4.236488610506058
+accuracy on Test 0.45
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 29/30 ****
+12/33-(0.175)
+27/33-(0.118)
+Best accuracy on Test 0.5444444444444444
+
+Source domain: Yahoo, Target domain: Yahoo, Cur_fold 2
+Corpus: GCDC
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+172.5
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Optimizer: adam
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/30 ****
+Use CrossEntropyLoss
+15/33-(1.665)
+30/33-(1.749)
+12/33-(1.423)
+
+=== Evaluating Model ===
+Total valid loss 1.047503262758255
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.4777777777777778
+
+**** Epoch 0/30 ****
+27/33-(1.225)
+9/33-(1.258)
+24/33-(1.529)
+6/33-(1.022)
+
+=== Evaluating Model ===
+Total valid loss 1.0510759154955547
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.49444444444444446
+
+**** Epoch 1/30 ****
+21/33-(1.230)
+3/33-(1.178)
+18/33-(1.149)
+0/33-(1.078)
+
+=== Evaluating Model ===
+Total valid loss 1.0911090125640233
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.49444444444444446
+
+**** Epoch 2/30 ****
+15/33-(1.366)
+30/33-(1.103)
+12/33-(1.221)
+
+=== Evaluating Model ===
+Total valid loss 1.0238137890895207
+accuracy on Test 0.5333333333333333
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 3/30 ****
+27/33-(0.929)
+9/33-(0.959)
+24/33-(1.215)
+6/33-(0.817)
+
+=== Evaluating Model ===
+Total valid loss 1.0343085130055745
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 4/30 ****
+21/33-(1.356)
+3/33-(1.207)
+18/33-(1.214)
+0/33-(1.077)
+
+=== Evaluating Model ===
+Total valid loss 1.0617237836122513
+accuracy on Test 0.5555555555555556
+Best accuracy on Test 0.5555555555555556
+
+**** Epoch 5/30 ****
+15/33-(0.597)
+30/33-(0.921)
+12/33-(0.704)
+27/33-(1.013)
+
+=== Evaluating Model ===
+Total valid loss 0.9872229844331741
+accuracy on Test 0.5833333333333334
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 6/30 ****
+9/33-(0.926)
+24/33-(0.696)
+6/33-(0.961)
+
+=== Evaluating Model ===
+Total valid loss 1.3087205290794373
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 7/30 ****
+21/33-(1.179)
+3/33-(0.641)
+18/33-(0.899)
+0/33-(0.478)
+
+=== Evaluating Model ===
+Total valid loss 1.3293835520744324
+accuracy on Test 0.5166666666666667
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 8/30 ****
+15/33-(0.714)
+30/33-(0.690)
+12/33-(0.938)
+27/33-(0.739)
+
+=== Evaluating Model ===
+Total valid loss 1.3514759838581085
+accuracy on Test 0.5111111111111111
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 9/30 ****
+9/33-(0.409)
+24/33-(0.369)
+6/33-(0.833)
+21/33-(0.554)
+
+=== Evaluating Model ===
+Total valid loss 1.3363837997118633
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 10/30 ****
+3/33-(0.617)
+18/33-(0.234)
+0/33-(0.709)
+
+=== Evaluating Model ===
+Total valid loss 1.642469475666682
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 11/30 ****
+15/33-(0.742)
+30/33-(0.395)
+12/33-(0.462)
+27/33-(0.559)
+
+=== Evaluating Model ===
+Total valid loss 1.8885178416967392
+accuracy on Test 0.5055555555555555
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 12/30 ****
+9/33-(0.510)
+24/33-(0.524)
+6/33-(0.568)
+21/33-(0.326)
+
+=== Evaluating Model ===
+Total valid loss 2.4249965945879617
+accuracy on Test 0.5
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 13/30 ****
+3/33-(0.510)
+18/33-(0.513)
+0/33-(0.258)
+15/33-(0.156)
+
+=== Evaluating Model ===
+Total valid loss 2.3352472484111786
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 14/30 ****
+30/33-(0.210)
+12/33-(0.183)
+27/33-(0.347)
+
+=== Evaluating Model ===
+Total valid loss 2.356541176637014
+accuracy on Test 0.5444444444444444
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 15/30 ****
+9/33-(0.768)
+24/33-(0.417)
+6/33-(1.327)
+21/33-(0.182)
+
+=== Evaluating Model ===
+Total valid loss 3.322784880797068
+accuracy on Test 0.5333333333333333
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 16/30 ****
+3/33-(0.688)
+18/33-(0.355)
+0/33-(0.953)
+15/33-(0.295)
+
+=== Evaluating Model ===
+Total valid loss 2.064997509121895
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 17/30 ****
+30/33-(0.541)
+12/33-(0.502)
+27/33-(0.257)
+
+=== Evaluating Model ===
+Total valid loss 2.298776219288508
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 18/30 ****
+9/33-(0.414)
+24/33-(0.359)
+6/33-(0.697)
+21/33-(0.524)
+
+=== Evaluating Model ===
+Total valid loss 2.8999837835629783
+accuracy on Test 0.5
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 19/30 ****
+3/33-(0.304)
+18/33-(0.061)
+0/33-(0.178)
+15/33-(0.458)
+
+=== Evaluating Model ===
+Total valid loss 2.92492867509524
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 20/30 ****
+30/33-(0.269)
+12/33-(0.407)
+27/33-(0.615)
+9/33-(0.081)
+
+=== Evaluating Model ===
+Total valid loss 3.1906895538171134
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 21/30 ****
+24/33-(0.348)
+6/33-(2.064)
+21/33-(0.115)
+
+=== Evaluating Model ===
+Total valid loss 3.1229099730650582
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 22/30 ****
+3/33-(0.077)
+18/33-(1.089)
+0/33-(0.097)
+15/33-(0.106)
+
+=== Evaluating Model ===
+Total valid loss 3.3341667453447976
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 23/30 ****
+30/33-(0.136)
+12/33-(0.175)
+27/33-(0.226)
+9/33-(0.252)
+
+=== Evaluating Model ===
+Total valid loss 2.774100581804911
+accuracy on Test 0.4166666666666667
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 24/30 ****
+24/33-(0.055)
+6/33-(0.017)
+21/33-(0.438)
+3/33-(0.082)
+
+=== Evaluating Model ===
+Total valid loss 4.3184552391370135
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 25/30 ****
+18/33-(0.268)
+0/33-(0.304)
+15/33-(0.092)
+
+=== Evaluating Model ===
+Total valid loss 2.3933834532896676
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 26/30 ****
+30/33-(0.414)
+12/33-(0.521)
+27/33-(0.198)
+9/33-(0.199)
+
+=== Evaluating Model ===
+Total valid loss 4.284391125043233
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 27/30 ****
+24/33-(0.277)
+6/33-(0.087)
+21/33-(0.305)
+3/33-(0.244)
+
+=== Evaluating Model ===
+Total valid loss 3.6513115564982095
+accuracy on Test 0.4388888888888889
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 28/30 ****
+18/33-(0.052)
+0/33-(0.197)
+15/33-(0.068)
+30/33-(0.437)
+
+=== Evaluating Model ===
+Total valid loss 3.4667963484923043
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.5833333333333334
+
+**** Epoch 29/30 ****
+12/33-(0.456)
+27/33-(0.012)
+Best accuracy on Test 0.5833333333333334
+
+Source domain: Yahoo, Target domain: Yahoo, Cur_fold 3
+Corpus: GCDC
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+172.5
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin HTTP/1.1" 200 0
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Optimizer: adam
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/30 ****
+Use CrossEntropyLoss
+15/33-(1.888)
+30/33-(1.423)
+12/33-(1.517)
+
+=== Evaluating Model ===
+Total valid loss 1.1126073996225994
+accuracy on Test 0.4111111111111111
+Best accuracy on Test 0.4111111111111111
+
+**** Epoch 0/30 ****
+27/33-(1.140)
+9/33-(1.116)
+24/33-(1.043)
+6/33-(1.132)
+
+=== Evaluating Model ===
+Total valid loss 1.078090324997902
+accuracy on Test 0.42777777777777776
+Best accuracy on Test 0.42777777777777776
+
+**** Epoch 1/30 ****
+21/33-(1.218)
+3/33-(0.864)
+18/33-(1.126)
+0/33-(1.282)
+
+=== Evaluating Model ===
+Total valid loss 1.0323128700256348
+accuracy on Test 0.5111111111111111
+Best accuracy on Test 0.5111111111111111
+
+**** Epoch 2/30 ****
+15/33-(1.356)
+30/33-(1.410)
+12/33-(1.050)
+
+=== Evaluating Model ===
+Total valid loss 1.051487758755684
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.5111111111111111
+
+**** Epoch 3/30 ****
+27/33-(1.152)
+9/33-(0.830)
+24/33-(1.090)
+6/33-(0.829)
+
+=== Evaluating Model ===
+Total valid loss 1.0619358321030934
+accuracy on Test 0.5166666666666667
+Best accuracy on Test 0.5166666666666667
+
+**** Epoch 4/30 ****
+21/33-(1.514)
+3/33-(0.829)
+18/33-(0.835)
+0/33-(0.935)
+
+=== Evaluating Model ===
+Total valid loss 1.116828938325246
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.5166666666666667
+
+**** Epoch 5/30 ****
+15/33-(0.836)
+30/33-(1.018)
+12/33-(0.919)
+27/33-(1.324)
+
+=== Evaluating Model ===
+Total valid loss 1.1140008121728897
+accuracy on Test 0.5
+Best accuracy on Test 0.5166666666666667
+
+**** Epoch 6/30 ****
+9/33-(0.781)
+24/33-(0.598)
+6/33-(0.807)
+
+=== Evaluating Model ===
+Total valid loss 1.242312490940094
+accuracy on Test 0.5
+Best accuracy on Test 0.5166666666666667
+
+**** Epoch 7/30 ****
+21/33-(0.730)
+3/33-(1.209)
+18/33-(1.101)
+0/33-(1.075)
+
+=== Evaluating Model ===
+Total valid loss 1.3120675434668858
+accuracy on Test 0.5
+Best accuracy on Test 0.5166666666666667
+
+**** Epoch 8/30 ****
+15/33-(0.871)
+30/33-(0.561)
+12/33-(0.736)
+27/33-(0.586)
+
+=== Evaluating Model ===
+Total valid loss 1.3320066779851913
+accuracy on Test 0.5166666666666667
+Best accuracy on Test 0.5166666666666667
+
+**** Epoch 9/30 ****
+9/33-(0.437)
+24/33-(0.737)
+6/33-(1.003)
+21/33-(0.507)
+
+=== Evaluating Model ===
+Total valid loss 1.7488075296084087
+accuracy on Test 0.5
+Best accuracy on Test 0.5166666666666667
+
+**** Epoch 10/30 ****
+3/33-(0.500)
+18/33-(0.801)
+0/33-(0.644)
+
+=== Evaluating Model ===
+Total valid loss 1.6686297257741292
+accuracy on Test 0.5166666666666667
+Best accuracy on Test 0.5166666666666667
+
+**** Epoch 11/30 ****
+15/33-(0.387)
+30/33-(0.363)
+12/33-(0.625)
+27/33-(0.525)
+
+=== Evaluating Model ===
+Total valid loss 1.920493761698405
+accuracy on Test 0.5444444444444444
+Best accuracy on Test 0.5444444444444444
+
+**** Epoch 12/30 ****
+9/33-(0.324)
+24/33-(0.737)
+6/33-(0.190)
+21/33-(0.396)
+
+=== Evaluating Model ===
+Total valid loss 1.7184159954388936
+accuracy on Test 0.55
+Best accuracy on Test 0.55
+
+**** Epoch 13/30 ****
+3/33-(1.109)
+18/33-(0.370)
+0/33-(0.429)
+15/33-(0.389)
+
+=== Evaluating Model ===
+Total valid loss 2.333901842435201
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.55
+
+**** Epoch 14/30 ****
+30/33-(2.405)
+12/33-(0.403)
+27/33-(0.375)
+
+=== Evaluating Model ===
+Total valid loss 2.8221724033355713
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.55
+
+**** Epoch 15/30 ****
+9/33-(0.327)
+24/33-(0.398)
+6/33-(0.538)
+21/33-(0.353)
+
+=== Evaluating Model ===
+Total valid loss 2.146788706382116
+accuracy on Test 0.42777777777777776
+Best accuracy on Test 0.55
+
+**** Epoch 16/30 ****
+3/33-(0.211)
+18/33-(0.251)
+0/33-(0.472)
+15/33-(0.244)
+
+=== Evaluating Model ===
+Total valid loss 3.2121088206768036
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.55
+
+**** Epoch 17/30 ****
+30/33-(0.337)
+12/33-(0.312)
+27/33-(0.441)
+
+=== Evaluating Model ===
+Total valid loss 2.2145046293735504
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.55
+
+**** Epoch 18/30 ****
+9/33-(0.144)
+24/33-(0.398)
+6/33-(0.518)
+21/33-(0.356)
+
+=== Evaluating Model ===
+Total valid loss 2.272332896788915
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.55
+
+**** Epoch 19/30 ****
+3/33-(0.306)
+18/33-(0.275)
+0/33-(0.025)
+15/33-(0.078)
+
+=== Evaluating Model ===
+Total valid loss 3.9188209970792136
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.55
+
+**** Epoch 20/30 ****
+30/33-(0.376)
+12/33-(0.209)
+27/33-(0.278)
+9/33-(0.301)
+
+=== Evaluating Model ===
+Total valid loss 2.7800776064395905
+accuracy on Test 0.42777777777777776
+Best accuracy on Test 0.55
+
+**** Epoch 21/30 ****
+24/33-(0.022)
+6/33-(0.105)
+21/33-(0.050)
+
+=== Evaluating Model ===
+Total valid loss 3.300698379675547
+accuracy on Test 0.43333333333333335
+Best accuracy on Test 0.55
+
+**** Epoch 22/30 ****
+3/33-(0.199)
+18/33-(0.335)
+0/33-(0.137)
+15/33-(0.172)
+
+=== Evaluating Model ===
+Total valid loss 3.487937271595001
+accuracy on Test 0.5111111111111111
+Best accuracy on Test 0.55
+
+**** Epoch 23/30 ****
+30/33-(0.129)
+12/33-(0.861)
+27/33-(0.140)
+9/33-(0.231)
+
+=== Evaluating Model ===
+Total valid loss 3.0322709878285727
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.55
+
+**** Epoch 24/30 ****
+24/33-(0.120)
+6/33-(0.087)
+21/33-(0.051)
+3/33-(0.047)
+
+=== Evaluating Model ===
+Total valid loss 3.8178613781929016
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.55
+
+**** Epoch 25/30 ****
+18/33-(0.079)
+0/33-(0.184)
+15/33-(0.700)
+
+=== Evaluating Model ===
+Total valid loss 3.8777600526809692
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.55
+
+**** Epoch 26/30 ****
+30/33-(0.598)
+12/33-(0.104)
+27/33-(0.041)
+9/33-(0.075)
+
+=== Evaluating Model ===
+Total valid loss 4.1227812965710955
+accuracy on Test 0.5055555555555555
+Best accuracy on Test 0.55
+
+**** Epoch 27/30 ****
+24/33-(0.291)
+6/33-(0.084)
+21/33-(0.015)
+3/33-(0.142)
+
+=== Evaluating Model ===
+Total valid loss 4.451493938763936
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.55
+
+**** Epoch 28/30 ****
+18/33-(0.008)
+0/33-(0.298)
+15/33-(0.400)
+30/33-(0.011)
+
+=== Evaluating Model ===
+Total valid loss 4.768070300420125
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.55
+
+**** Epoch 29/30 ****
+12/33-(0.058)
+27/33-(0.082)
+Best accuracy on Test 0.55
+
+Source domain: Yahoo, Target domain: Yahoo, Cur_fold 4
+Corpus: GCDC
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+172.5
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin HTTP/1.1" 200 0
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Optimizer: adam
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/30 ****
+Use CrossEntropyLoss
+15/33-(1.553)
+30/33-(1.519)
+12/33-(1.679)
+
+=== Evaluating Model ===
+Total valid loss 1.0856814086437225
+accuracy on Test 0.39444444444444443
+Best accuracy on Test 0.39444444444444443
+
+**** Epoch 0/30 ****
+27/33-(1.286)
+9/33-(1.237)
+24/33-(1.095)
+6/33-(1.394)
+
+=== Evaluating Model ===
+Total valid loss 1.1004454841216404
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.46111111111111114
+
+**** Epoch 1/30 ****
+21/33-(1.293)
+3/33-(1.043)
+18/33-(1.090)
+0/33-(1.207)
+
+=== Evaluating Model ===
+Total valid loss 1.0300569583972294
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.5222222222222223
+
+**** Epoch 2/30 ****
+15/33-(1.040)
+30/33-(1.306)
+12/33-(0.777)
+
+=== Evaluating Model ===
+Total valid loss 1.177604392170906
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5222222222222223
+
+**** Epoch 3/30 ****
+27/33-(0.987)
+9/33-(0.812)
+24/33-(1.069)
+6/33-(1.067)
+
+=== Evaluating Model ===
+Total valid loss 1.0141380180915196
+accuracy on Test 0.5388888888888889
+Best accuracy on Test 0.5388888888888889
+
+**** Epoch 4/30 ****
+21/33-(0.801)
+3/33-(0.995)
+18/33-(1.198)
+0/33-(0.904)
+
+=== Evaluating Model ===
+Total valid loss 1.1059713264306386
+accuracy on Test 0.55
+Best accuracy on Test 0.55
+
+**** Epoch 5/30 ****
+15/33-(0.901)
+30/33-(0.692)
+12/33-(1.305)
+27/33-(1.305)
+
+=== Evaluating Model ===
+Total valid loss 1.133964329957962
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.55
+
+**** Epoch 6/30 ****
+9/33-(0.692)
+24/33-(0.837)
+6/33-(1.398)
+
+=== Evaluating Model ===
+Total valid loss 1.1421343833208084
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.55
+
+**** Epoch 7/30 ****
+21/33-(0.754)
+3/33-(0.701)
+18/33-(0.910)
+0/33-(0.863)
+
+=== Evaluating Model ===
+Total valid loss 1.1294638067483902
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.55
+
+**** Epoch 8/30 ****
+15/33-(0.815)
+30/33-(1.949)
+12/33-(1.403)
+27/33-(0.915)
+
+=== Evaluating Model ===
+Total valid loss 1.693017880121867
+accuracy on Test 0.5333333333333333
+Best accuracy on Test 0.55
+
+**** Epoch 9/30 ****
+9/33-(0.331)
+24/33-(0.731)
+6/33-(0.387)
+21/33-(0.866)
+
+=== Evaluating Model ===
+Total valid loss 1.529662013053894
+accuracy on Test 0.5
+Best accuracy on Test 0.55
+
+**** Epoch 10/30 ****
+3/33-(2.047)
+18/33-(0.508)
+0/33-(1.080)
+
+=== Evaluating Model ===
+Total valid loss 1.6335586408774059
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.55
+
+**** Epoch 11/30 ****
+15/33-(1.095)
+30/33-(0.413)
+12/33-(0.465)
+27/33-(0.396)
+
+=== Evaluating Model ===
+Total valid loss 2.0905684928099313
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.55
+
+**** Epoch 12/30 ****
+9/33-(0.537)
+24/33-(0.489)
+6/33-(0.465)
+21/33-(0.548)
+
+=== Evaluating Model ===
+Total valid loss 1.4219096650679905
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.55
+
+**** Epoch 13/30 ****
+3/33-(0.444)
+18/33-(0.139)
+0/33-(0.821)
+15/33-(0.331)
+
+=== Evaluating Model ===
+Total valid loss 2.096146355072657
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.55
+
+**** Epoch 14/30 ****
+30/33-(0.352)
+12/33-(0.354)
+27/33-(0.237)
+
+=== Evaluating Model ===
+Total valid loss 2.0718444486459098
+accuracy on Test 0.5111111111111111
+Best accuracy on Test 0.55
+
+**** Epoch 15/30 ****
+9/33-(0.129)
+24/33-(0.261)
+6/33-(0.693)
+21/33-(0.225)
+
+=== Evaluating Model ===
+Total valid loss 2.50527956088384
+accuracy on Test 0.4666666666666667
+Best accuracy on Test 0.55
+
+**** Epoch 16/30 ****
+3/33-(0.290)
+18/33-(0.275)
+0/33-(0.743)
+15/33-(0.256)
+
+=== Evaluating Model ===
+Total valid loss 2.1674792567888894
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.55
+
+**** Epoch 17/30 ****
+30/33-(0.181)
+12/33-(0.818)
+27/33-(0.057)
+
+=== Evaluating Model ===
+Total valid loss 2.8217028280099234
+accuracy on Test 0.43333333333333335
+Best accuracy on Test 0.55
+
+**** Epoch 18/30 ****
+9/33-(0.314)
+24/33-(0.173)
+6/33-(0.215)
+21/33-(0.252)
+
+=== Evaluating Model ===
+Total valid loss 3.3387625316778817
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.55
+
+**** Epoch 19/30 ****
+3/33-(0.245)
+18/33-(0.172)
+0/33-(0.261)
+15/33-(0.335)
+
+=== Evaluating Model ===
+Total valid loss 3.103547543287277
+accuracy on Test 0.45
+Best accuracy on Test 0.55
+
+**** Epoch 20/30 ****
+30/33-(0.080)
+12/33-(0.483)
+27/33-(0.080)
+9/33-(0.236)
+
+=== Evaluating Model ===
+Total valid loss 3.088571618000666
+accuracy on Test 0.39444444444444443
+Best accuracy on Test 0.55
+
+**** Epoch 21/30 ****
+24/33-(0.045)
+6/33-(0.072)
+21/33-(0.363)
+
+=== Evaluating Model ===
+Total valid loss 3.536071131626765
+accuracy on Test 0.45555555555555555
+Best accuracy on Test 0.55
+
+**** Epoch 22/30 ****
+3/33-(0.180)
+18/33-(0.267)
+0/33-(0.077)
+15/33-(0.709)
+
+=== Evaluating Model ===
+Total valid loss 3.764604469140371
+accuracy on Test 0.4111111111111111
+Best accuracy on Test 0.55
+
+**** Epoch 23/30 ****
+30/33-(0.316)
+12/33-(0.183)
+27/33-(0.023)
+9/33-(0.101)
+
+=== Evaluating Model ===
+Total valid loss 3.4221407373746238
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.55
+
+**** Epoch 24/30 ****
+24/33-(0.048)
+6/33-(0.057)
+21/33-(1.519)
+3/33-(0.071)
+
+=== Evaluating Model ===
+Total valid loss 3.9246508479118347
+accuracy on Test 0.45555555555555555
+Best accuracy on Test 0.55
+
+**** Epoch 25/30 ****
+18/33-(1.895)
+0/33-(0.088)
+15/33-(0.582)
+
+=== Evaluating Model ===
+Total valid loss 4.172252277533214
+accuracy on Test 0.5333333333333333
+Best accuracy on Test 0.55
+
+**** Epoch 26/30 ****
+30/33-(0.031)
+12/33-(0.095)
+27/33-(0.581)
+9/33-(0.528)
+
+=== Evaluating Model ===
+Total valid loss 4.74043607711792
+accuracy on Test 0.4444444444444444
+Best accuracy on Test 0.55
+
+**** Epoch 27/30 ****
+24/33-(0.355)
+6/33-(0.120)
+21/33-(0.055)
+3/33-(0.047)
+
+=== Evaluating Model ===
+Total valid loss 4.889317492643992
+accuracy on Test 0.45555555555555555
+Best accuracy on Test 0.55
+
+**** Epoch 28/30 ****
+18/33-(0.043)
+0/33-(0.063)
+15/33-(0.061)
+30/33-(0.432)
+
+=== Evaluating Model ===
+Total valid loss 3.504978209733963
+accuracy on Test 0.4388888888888889
+Best accuracy on Test 0.55
+
+**** Epoch 29/30 ****
+12/33-(0.186)
+27/33-(0.792)
+Best accuracy on Test 0.55
+
+Final k-fold valid -1.0
+[-1, -1, -1, -1, -1]
+Final k-fold eval 0.5577777777777777
+[0.5611111111111111, 0.5444444444444444, 0.5833333333333334, 0.55, 0.55]
+
+Source domain: Yahoo, Target domain: Yahoo, Cur_fold 5
+Corpus: GCDC
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+172.5
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin HTTP/1.1" 200 0
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Optimizer: adam
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/30 ****
+Use CrossEntropyLoss
+15/33-(2.095)
+30/33-(1.372)
+12/33-(1.434)
+
+=== Evaluating Model ===
+Total valid loss 1.08202929298083
+accuracy on Test 0.4166666666666667
+Best accuracy on Test 0.4166666666666667
+
+**** Epoch 0/30 ****
+27/33-(1.374)
+9/33-(1.301)
+24/33-(1.086)
+6/33-(1.109)
+
+=== Evaluating Model ===
+Total valid loss 1.0734483549992244
+accuracy on Test 0.4444444444444444
+Best accuracy on Test 0.4444444444444444
+
+**** Epoch 1/30 ****
+21/33-(1.154)
+3/33-(1.248)
+18/33-(0.792)
+0/33-(1.011)
+
+=== Evaluating Model ===
+Total valid loss 1.0402007848024368
+accuracy on Test 0.5111111111111111
+Best accuracy on Test 0.5111111111111111
+
+**** Epoch 2/30 ****
+15/33-(0.884)
+30/33-(1.089)
+12/33-(0.953)
+
+=== Evaluating Model ===
+Total valid loss 1.110092505812645
+accuracy on Test 0.5333333333333333
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 3/30 ****
+27/33-(0.951)
+9/33-(0.821)
+24/33-(0.652)
+6/33-(1.111)
+
+=== Evaluating Model ===
+Total valid loss 1.117579499880473
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 4/30 ****
+21/33-(1.206)
+3/33-(0.961)
+18/33-(1.363)
+0/33-(1.009)
+
+=== Evaluating Model ===
+Total valid loss 1.0413822730382283
+accuracy on Test 0.5055555555555555
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 5/30 ****
+15/33-(1.188)
+30/33-(0.777)
+12/33-(0.887)
+27/33-(0.753)
+
+=== Evaluating Model ===
+Total valid loss 1.3550375600655873
+accuracy on Test 0.4722222222222222
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 6/30 ****
+9/33-(0.737)
+24/33-(0.682)
+6/33-(0.492)
+
+=== Evaluating Model ===
+Total valid loss 1.3246446202198665
+accuracy on Test 0.5055555555555555
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 7/30 ****
+21/33-(0.421)
+3/33-(0.609)
+18/33-(1.048)
+0/33-(0.711)
+
+=== Evaluating Model ===
+Total valid loss 1.181763047973315
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 8/30 ****
+15/33-(0.673)
+30/33-(0.904)
+12/33-(0.860)
+27/33-(0.777)
+
+=== Evaluating Model ===
+Total valid loss 1.4183997909228008
+accuracy on Test 0.4444444444444444
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 9/30 ****
+9/33-(0.677)
+24/33-(0.695)
+6/33-(0.919)
+21/33-(0.707)
+
+=== Evaluating Model ===
+Total valid loss 1.5938474535942078
+accuracy on Test 0.5111111111111111
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 10/30 ****
+3/33-(0.297)
+18/33-(0.668)
+0/33-(0.678)
+
+=== Evaluating Model ===
+Total valid loss 1.7383611450592678
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 11/30 ****
+15/33-(0.636)
+30/33-(0.492)
+12/33-(0.989)
+27/33-(0.287)
+
+=== Evaluating Model ===
+Total valid loss 1.7454481820265453
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 12/30 ****
+9/33-(0.567)
+24/33-(0.216)
+6/33-(0.500)
+21/33-(0.585)
+
+=== Evaluating Model ===
+Total valid loss 1.9343211352825165
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 13/30 ****
+3/33-(0.623)
+18/33-(0.591)
+0/33-(0.166)
+15/33-(0.492)
+
+=== Evaluating Model ===
+Total valid loss 2.4047296146551767
+accuracy on Test 0.45555555555555555
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 14/30 ****
+30/33-(0.405)
+12/33-(0.107)
+27/33-(0.349)
+
+=== Evaluating Model ===
+Total valid loss 2.3035614788532257
+accuracy on Test 0.40555555555555556
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 15/30 ****
+9/33-(0.804)
+24/33-(0.893)
+6/33-(0.176)
+21/33-(0.785)
+
+=== Evaluating Model ===
+Total valid loss 2.3971274395783744
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 16/30 ****
+3/33-(0.534)
+18/33-(0.397)
+0/33-(0.174)
+15/33-(0.388)
+
+=== Evaluating Model ===
+Total valid loss 2.142488270998001
+accuracy on Test 0.5
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 17/30 ****
+30/33-(0.701)
+12/33-(0.155)
+27/33-(0.254)
+
+=== Evaluating Model ===
+Total valid loss 2.9442669252554574
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 18/30 ****
+9/33-(0.135)
+24/33-(0.160)
+6/33-(0.109)
+21/33-(0.095)
+
+=== Evaluating Model ===
+Total valid loss 2.820596714814504
+accuracy on Test 0.55
+Best accuracy on Test 0.55
+
+**** Epoch 19/30 ****
+3/33-(0.176)
+18/33-(0.039)
+0/33-(0.209)
+15/33-(0.856)
+
+=== Evaluating Model ===
+Total valid loss 2.957494775454203
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.55
+
+**** Epoch 20/30 ****
+30/33-(0.314)
+12/33-(0.170)
+27/33-(0.163)
+9/33-(0.591)
+
+=== Evaluating Model ===
+Total valid loss 3.345188250144323
+accuracy on Test 0.43333333333333335
+Best accuracy on Test 0.55
+
+**** Epoch 21/30 ****
+24/33-(0.160)
+6/33-(0.148)
+21/33-(0.078)
+
+=== Evaluating Model ===
+Total valid loss 4.0455233454704285
+accuracy on Test 0.45555555555555555
+Best accuracy on Test 0.55
+
+**** Epoch 22/30 ****
+3/33-(0.379)
+18/33-(0.165)
+0/33-(0.311)
+15/33-(0.357)
+
+=== Evaluating Model ===
+Total valid loss 3.4258353610833487
+accuracy on Test 0.4
+Best accuracy on Test 0.55
+
+**** Epoch 23/30 ****
+30/33-(0.069)
+12/33-(0.172)
+27/33-(0.134)
+9/33-(0.231)
+
+=== Evaluating Model ===
+Total valid loss 3.1655398309230804
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.55
+
+**** Epoch 24/30 ****
+24/33-(0.037)
+6/33-(1.432)
+21/33-(0.689)
+3/33-(0.309)
+
+=== Evaluating Model ===
+Total valid loss 3.382698098818461
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.55
+
+**** Epoch 25/30 ****
+18/33-(0.124)
+0/33-(0.247)
+15/33-(0.174)
+
+=== Evaluating Model ===
+Total valid loss 4.665689359108607
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.55
+
+**** Epoch 26/30 ****
+30/33-(0.080)
+12/33-(0.217)
+27/33-(0.146)
+9/33-(0.150)
+
+=== Evaluating Model ===
+Total valid loss 4.142970105012258
+accuracy on Test 0.42777777777777776
+Best accuracy on Test 0.55
+
+**** Epoch 27/30 ****
+24/33-(0.046)
+6/33-(0.049)
+21/33-(0.015)
+3/33-(0.323)
+
+=== Evaluating Model ===
+Total valid loss 3.9397851129372916
+accuracy on Test 0.45555555555555555
+Best accuracy on Test 0.55
+
+**** Epoch 28/30 ****
+18/33-(0.075)
+0/33-(0.046)
+15/33-(0.025)
+30/33-(0.691)
+
+=== Evaluating Model ===
+Total valid loss 4.877451101938884
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.55
+
+**** Epoch 29/30 ****
+12/33-(0.271)
+27/33-(0.460)
+Best accuracy on Test 0.55
+
+Source domain: Yahoo, Target domain: Yahoo, Cur_fold 6
+Corpus: GCDC
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+172.5
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin HTTP/1.1" 200 0
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Optimizer: adam
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/30 ****
+Use CrossEntropyLoss
+15/33-(1.527)
+30/33-(1.583)
+12/33-(1.403)
+
+=== Evaluating Model ===
+Total valid loss 1.043616071343422
+accuracy on Test 0.43333333333333335
+Best accuracy on Test 0.43333333333333335
+
+**** Epoch 0/30 ****
+27/33-(1.192)
+9/33-(1.386)
+24/33-(1.199)
+6/33-(1.085)
+
+=== Evaluating Model ===
+Total valid loss 1.0080681145191193
+accuracy on Test 0.5
+Best accuracy on Test 0.5
+
+**** Epoch 1/30 ****
+21/33-(1.156)
+3/33-(1.028)
+18/33-(1.027)
+0/33-(1.433)
+
+=== Evaluating Model ===
+Total valid loss 1.070456549525261
+accuracy on Test 0.5166666666666667
+Best accuracy on Test 0.5166666666666667
+
+**** Epoch 2/30 ****
+15/33-(1.517)
+30/33-(0.814)
+12/33-(0.989)
+
+=== Evaluating Model ===
+Total valid loss 1.140769029657046
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.5222222222222223
+
+**** Epoch 3/30 ****
+27/33-(0.799)
+9/33-(0.785)
+24/33-(1.104)
+6/33-(0.746)
+
+=== Evaluating Model ===
+Total valid loss 1.4553222060203552
+accuracy on Test 0.45555555555555555
+Best accuracy on Test 0.5222222222222223
+
+**** Epoch 4/30 ****
+21/33-(1.265)
+3/33-(0.687)
+18/33-(1.199)
+0/33-(0.770)
+
+=== Evaluating Model ===
+Total valid loss 1.008352905511856
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.5222222222222223
+
+**** Epoch 5/30 ****
+15/33-(0.769)
+30/33-(0.646)
+12/33-(0.821)
+27/33-(0.630)
+
+=== Evaluating Model ===
+Total valid loss 1.1661663005749385
+accuracy on Test 0.5333333333333333
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 6/30 ****
+9/33-(0.857)
+24/33-(0.803)
+6/33-(1.022)
+
+=== Evaluating Model ===
+Total valid loss 1.1245697885751724
+accuracy on Test 0.5166666666666667
+Best accuracy on Test 0.5333333333333333
+
+**** Epoch 7/30 ****
+21/33-(0.721)
+3/33-(0.472)
+18/33-(0.664)
+0/33-(0.991)
+
+=== Evaluating Model ===
+Total valid loss 1.189863125483195
+accuracy on Test 0.55
+Best accuracy on Test 0.55
+
+**** Epoch 8/30 ****
+15/33-(1.309)
+30/33-(0.778)
+12/33-(0.817)
+27/33-(0.679)
+
+=== Evaluating Model ===
+Total valid loss 1.3803378244241078
+accuracy on Test 0.5444444444444444
+Best accuracy on Test 0.55
+
+**** Epoch 9/30 ****
+9/33-(0.293)
+24/33-(0.552)
+6/33-(1.023)
+21/33-(0.697)
+
+=== Evaluating Model ===
+Total valid loss 1.4077683836221695
+accuracy on Test 0.55
+Best accuracy on Test 0.55
+
+**** Epoch 10/30 ****
+3/33-(0.261)
+18/33-(0.580)
+0/33-(0.997)
+
+=== Evaluating Model ===
+Total valid loss 1.6809630692005157
+accuracy on Test 0.5166666666666667
+Best accuracy on Test 0.55
+
+**** Epoch 11/30 ****
+15/33-(0.875)
+30/33-(0.597)
+12/33-(0.457)
+27/33-(0.601)
+
+=== Evaluating Model ===
+Total valid loss 1.525056724747022
+accuracy on Test 0.5333333333333333
+Best accuracy on Test 0.55
+
+**** Epoch 12/30 ****
+9/33-(0.490)
+24/33-(0.259)
+6/33-(0.190)
+21/33-(0.814)
+
+=== Evaluating Model ===
+Total valid loss 2.2393773098786673
+accuracy on Test 0.5
+Best accuracy on Test 0.55
+
+**** Epoch 13/30 ****
+3/33-(0.774)
+18/33-(0.953)
+0/33-(0.391)
+15/33-(0.541)
+
+=== Evaluating Model ===
+Total valid loss 2.106281101703644
+accuracy on Test 0.4388888888888889
+Best accuracy on Test 0.55
+
+**** Epoch 14/30 ****
+30/33-(0.008)
+12/33-(0.702)
+27/33-(0.505)
+
+=== Evaluating Model ===
+Total valid loss 1.963589106996854
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.55
+
+**** Epoch 15/30 ****
+9/33-(0.306)
+24/33-(0.370)
+6/33-(0.483)
+21/33-(0.159)
+
+=== Evaluating Model ===
+Total valid loss 2.2414920926094055
+accuracy on Test 0.5
+Best accuracy on Test 0.55
+
+**** Epoch 16/30 ****
+3/33-(0.187)
+18/33-(0.206)
+0/33-(0.395)
+15/33-(0.216)
+
+=== Evaluating Model ===
+Total valid loss 3.1209870080153146
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.55
+
+**** Epoch 17/30 ****
+30/33-(0.542)
+12/33-(0.163)
+27/33-(0.430)
+
+=== Evaluating Model ===
+Total valid loss 2.7828430086374283
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.55
+
+**** Epoch 18/30 ****
+9/33-(0.088)
+24/33-(0.606)
+6/33-(0.218)
+21/33-(0.144)
+
+=== Evaluating Model ===
+Total valid loss 2.947252074877421
+accuracy on Test 0.5055555555555555
+Best accuracy on Test 0.55
+
+**** Epoch 19/30 ****
+3/33-(0.404)
+18/33-(0.506)
+0/33-(0.081)
+15/33-(0.031)
+
+=== Evaluating Model ===
+Total valid loss 3.3012045522530875
+accuracy on Test 0.5
+Best accuracy on Test 0.55
+
+**** Epoch 20/30 ****
+30/33-(0.339)
+12/33-(0.129)
+27/33-(0.111)
+9/33-(0.133)
+
+=== Evaluating Model ===
+Total valid loss 3.473506679137548
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.55
+
+**** Epoch 21/30 ****
+24/33-(0.304)
+6/33-(0.418)
+21/33-(0.925)
+
+=== Evaluating Model ===
+Total valid loss 3.2478952457507453
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.55
+
+**** Epoch 22/30 ****
+3/33-(0.331)
+18/33-(0.041)
+0/33-(0.036)
+15/33-(0.072)
+
+=== Evaluating Model ===
+Total valid loss 2.819079945484797
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.55
+
+**** Epoch 23/30 ****
+30/33-(0.065)
+12/33-(0.698)
+27/33-(0.046)
+9/33-(0.373)
+
+=== Evaluating Model ===
+Total valid loss 3.554594079653422
+accuracy on Test 0.5111111111111111
+Best accuracy on Test 0.55
+
+**** Epoch 24/30 ****
+24/33-(0.541)
+6/33-(0.829)
+21/33-(0.036)
+3/33-(0.342)
+
+=== Evaluating Model ===
+Total valid loss 3.356831416487694
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.55
+
+**** Epoch 25/30 ****
+18/33-(0.150)
+0/33-(0.125)
+15/33-(0.038)
+
+=== Evaluating Model ===
+Total valid loss 3.3366739402214685
+accuracy on Test 0.5
+Best accuracy on Test 0.55
+
+**** Epoch 26/30 ****
+30/33-(0.177)
+12/33-(0.487)
+27/33-(0.048)
+9/33-(0.060)
+
+=== Evaluating Model ===
+Total valid loss 3.6745889087518058
+accuracy on Test 0.45
+Best accuracy on Test 0.55
+
+**** Epoch 27/30 ****
+24/33-(0.204)
+6/33-(0.495)
+21/33-(0.042)
+3/33-(0.178)
+
+=== Evaluating Model ===
+Total valid loss 3.929222216208776
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.55
+
+**** Epoch 28/30 ****
+18/33-(0.065)
+0/33-(0.132)
+15/33-(0.015)
+30/33-(0.031)
+
+=== Evaluating Model ===
+Total valid loss 5.096549312273662
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.55
+
+**** Epoch 29/30 ****
+12/33-(0.124)
+27/33-(0.007)
+Best accuracy on Test 0.55
+
+Source domain: Yahoo, Target domain: Yahoo, Cur_fold 7
+Corpus: GCDC
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+172.5
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin HTTP/1.1" 200 0
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Optimizer: adam
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/30 ****
+Use CrossEntropyLoss
+15/33-(1.754)
+30/33-(1.291)
+12/33-(1.274)
+
+=== Evaluating Model ===
+Total valid loss 1.078177660703659
+accuracy on Test 0.37777777777777777
+Best accuracy on Test 0.37777777777777777
+
+**** Epoch 0/30 ****
+27/33-(1.341)
+9/33-(1.340)
+24/33-(1.335)
+6/33-(1.017)
+
+=== Evaluating Model ===
+Total valid loss 1.039909581343333
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.5277777777777778
+
+**** Epoch 1/30 ****
+21/33-(1.269)
+3/33-(1.194)
+18/33-(0.934)
+0/33-(0.929)
+
+=== Evaluating Model ===
+Total valid loss 1.166494106252988
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.5277777777777778
+
+**** Epoch 2/30 ****
+15/33-(0.931)
+30/33-(0.956)
+12/33-(0.801)
+
+=== Evaluating Model ===
+Total valid loss 1.2905837347110112
+accuracy on Test 0.43333333333333335
+Best accuracy on Test 0.5277777777777778
+
+**** Epoch 3/30 ****
+27/33-(1.128)
+9/33-(1.112)
+24/33-(0.915)
+6/33-(0.911)
+
+=== Evaluating Model ===
+Total valid loss 1.0498798390229542
+accuracy on Test 0.45555555555555555
+Best accuracy on Test 0.5277777777777778
+
+**** Epoch 4/30 ****
+21/33-(0.936)
+3/33-(0.737)
+18/33-(0.883)
+0/33-(1.029)
+
+=== Evaluating Model ===
+Total valid loss 1.0139910976092021
+accuracy on Test 0.5388888888888889
+Best accuracy on Test 0.5388888888888889
+
+**** Epoch 5/30 ****
+15/33-(0.618)
+30/33-(1.013)
+12/33-(1.114)
+27/33-(0.637)
+
+=== Evaluating Model ===
+Total valid loss 1.045434186855952
+accuracy on Test 0.5666666666666667
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 6/30 ****
+9/33-(1.024)
+24/33-(0.788)
+6/33-(0.879)
+
+=== Evaluating Model ===
+Total valid loss 1.0810500333706539
+accuracy on Test 0.5333333333333333
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 7/30 ****
+21/33-(0.901)
+3/33-(0.696)
+18/33-(0.967)
+0/33-(0.824)
+
+=== Evaluating Model ===
+Total valid loss 1.1738475834329922
+accuracy on Test 0.5333333333333333
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 8/30 ****
+15/33-(0.886)
+30/33-(0.680)
+12/33-(0.678)
+27/33-(0.610)
+
+=== Evaluating Model ===
+Total valid loss 1.2992561260859172
+accuracy on Test 0.5111111111111111
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 9/30 ****
+9/33-(0.994)
+24/33-(0.439)
+6/33-(0.645)
+21/33-(0.380)
+
+=== Evaluating Model ===
+Total valid loss 1.510097250342369
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 10/30 ****
+3/33-(0.693)
+18/33-(0.588)
+0/33-(1.106)
+
+=== Evaluating Model ===
+Total valid loss 1.5440031538407009
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 11/30 ****
+15/33-(0.569)
+30/33-(0.305)
+12/33-(0.482)
+27/33-(0.655)
+
+=== Evaluating Model ===
+Total valid loss 1.5322084724903107
+accuracy on Test 0.5055555555555555
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 12/30 ****
+9/33-(0.279)
+24/33-(0.552)
+6/33-(0.274)
+21/33-(0.420)
+
+=== Evaluating Model ===
+Total valid loss 1.7361366301774979
+accuracy on Test 0.5
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 13/30 ****
+3/33-(0.644)
+18/33-(0.594)
+0/33-(0.570)
+15/33-(0.726)
+
+=== Evaluating Model ===
+Total valid loss 1.9276042580604553
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 14/30 ****
+30/33-(0.371)
+12/33-(0.195)
+27/33-(0.384)
+
+=== Evaluating Model ===
+Total valid loss 2.458218907316526
+accuracy on Test 0.5055555555555555
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 15/30 ****
+9/33-(0.253)
+24/33-(0.244)
+6/33-(0.458)
+21/33-(0.379)
+
+=== Evaluating Model ===
+Total valid loss 2.535519927740097
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 16/30 ****
+3/33-(0.486)
+18/33-(0.161)
+0/33-(0.390)
+15/33-(1.163)
+
+=== Evaluating Model ===
+Total valid loss 2.0143038233121238
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 17/30 ****
+30/33-(0.262)
+12/33-(0.234)
+27/33-(0.048)
+
+=== Evaluating Model ===
+Total valid loss 3.1071062286694846
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 18/30 ****
+9/33-(0.500)
+24/33-(0.436)
+6/33-(0.201)
+21/33-(0.197)
+
+=== Evaluating Model ===
+Total valid loss 2.3991613586743674
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 19/30 ****
+3/33-(0.125)
+18/33-(0.365)
+0/33-(1.079)
+15/33-(0.118)
+
+=== Evaluating Model ===
+Total valid loss 3.3704564770062766
+accuracy on Test 0.43333333333333335
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 20/30 ****
+30/33-(0.253)
+12/33-(0.314)
+27/33-(1.182)
+9/33-(0.313)
+
+=== Evaluating Model ===
+Total valid loss 2.975355709592501
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 21/30 ****
+24/33-(0.075)
+6/33-(0.168)
+21/33-(0.179)
+
+=== Evaluating Model ===
+Total valid loss 4.011911571025848
+accuracy on Test 0.39444444444444443
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 22/30 ****
+3/33-(1.108)
+18/33-(0.070)
+0/33-(0.268)
+15/33-(0.118)
+
+=== Evaluating Model ===
+Total valid loss 3.1865293780962625
+accuracy on Test 0.40555555555555556
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 23/30 ****
+30/33-(0.245)
+12/33-(0.062)
+27/33-(0.080)
+9/33-(0.257)
+
+=== Evaluating Model ===
+Total valid loss 3.604212005933126
+accuracy on Test 0.3888888888888889
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 24/30 ****
+24/33-(0.883)
+6/33-(0.070)
+21/33-(1.228)
+3/33-(0.024)
+
+=== Evaluating Model ===
+Total valid loss 3.2029937704404197
+accuracy on Test 0.4722222222222222
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 25/30 ****
+18/33-(0.181)
+0/33-(0.176)
+15/33-(0.168)
+
+=== Evaluating Model ===
+Total valid loss 3.80331023534139
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 26/30 ****
+30/33-(0.324)
+12/33-(0.028)
+27/33-(0.090)
+9/33-(0.685)
+
+=== Evaluating Model ===
+Total valid loss 3.27479217449824
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 27/30 ****
+24/33-(0.088)
+6/33-(0.176)
+21/33-(0.112)
+3/33-(0.597)
+
+=== Evaluating Model ===
+Total valid loss 3.5208207766215005
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 28/30 ****
+18/33-(0.034)
+0/33-(0.025)
+15/33-(0.016)
+30/33-(0.023)
+
+=== Evaluating Model ===
+Total valid loss 3.9068738420804343
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 29/30 ****
+12/33-(0.099)
+27/33-(0.255)
+Best accuracy on Test 0.5666666666666667
+
+Source domain: Yahoo, Target domain: Yahoo, Cur_fold 8
+Corpus: GCDC
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+172.5
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin HTTP/1.1" 200 0
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Optimizer: adam
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/30 ****
+Use CrossEntropyLoss
+15/33-(1.830)
+30/33-(1.446)
+12/33-(1.374)
+
+=== Evaluating Model ===
+Total valid loss 1.1894416709740956
+accuracy on Test 0.4111111111111111
+Best accuracy on Test 0.4111111111111111
+
+**** Epoch 0/30 ****
+27/33-(1.367)
+9/33-(1.103)
+24/33-(1.150)
+6/33-(1.395)
+
+=== Evaluating Model ===
+Total valid loss 1.0476082265377045
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.4888888888888889
+
+**** Epoch 1/30 ****
+21/33-(1.639)
+3/33-(1.100)
+18/33-(0.931)
+0/33-(0.911)
+
+=== Evaluating Model ===
+Total valid loss 0.9794174780448278
+accuracy on Test 0.5666666666666667
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 2/30 ****
+15/33-(0.862)
+30/33-(1.121)
+12/33-(1.070)
+
+=== Evaluating Model ===
+Total valid loss 0.9914026409387589
+accuracy on Test 0.5666666666666667
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 3/30 ****
+27/33-(0.939)
+9/33-(0.969)
+24/33-(0.865)
+6/33-(1.200)
+
+=== Evaluating Model ===
+Total valid loss 1.0453068961699803
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 4/30 ****
+21/33-(0.548)
+3/33-(0.840)
+18/33-(0.707)
+0/33-(0.764)
+
+=== Evaluating Model ===
+Total valid loss 1.0973220219214757
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 5/30 ****
+15/33-(0.877)
+30/33-(0.850)
+12/33-(0.800)
+27/33-(0.789)
+
+=== Evaluating Model ===
+Total valid loss 1.13756462931633
+accuracy on Test 0.5
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 6/30 ****
+9/33-(0.366)
+24/33-(0.924)
+6/33-(0.639)
+
+=== Evaluating Model ===
+Total valid loss 1.4032569626967113
+accuracy on Test 0.4666666666666667
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 7/30 ****
+21/33-(0.900)
+3/33-(0.432)
+18/33-(0.309)
+0/33-(0.566)
+
+=== Evaluating Model ===
+Total valid loss 1.4027166366577148
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 8/30 ****
+15/33-(0.769)
+30/33-(0.390)
+12/33-(0.550)
+27/33-(1.162)
+
+=== Evaluating Model ===
+Total valid loss 1.4055367360512416
+accuracy on Test 0.4388888888888889
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 9/30 ****
+9/33-(0.644)
+24/33-(0.430)
+6/33-(0.644)
+21/33-(0.584)
+
+=== Evaluating Model ===
+Total valid loss 1.480125034848849
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 10/30 ****
+3/33-(0.411)
+18/33-(0.766)
+0/33-(0.530)
+
+=== Evaluating Model ===
+Total valid loss 1.343683550755183
+accuracy on Test 0.5
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 11/30 ****
+15/33-(0.649)
+30/33-(0.558)
+12/33-(0.769)
+27/33-(0.791)
+
+=== Evaluating Model ===
+Total valid loss 1.5782331724961598
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 12/30 ****
+9/33-(0.423)
+24/33-(0.509)
+6/33-(0.480)
+21/33-(0.863)
+
+=== Evaluating Model ===
+Total valid loss 1.7292189995447795
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 13/30 ****
+3/33-(0.591)
+18/33-(1.428)
+0/33-(1.314)
+15/33-(0.356)
+
+=== Evaluating Model ===
+Total valid loss 1.5207938700914383
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 14/30 ****
+30/33-(0.231)
+12/33-(0.798)
+27/33-(0.172)
+
+=== Evaluating Model ===
+Total valid loss 1.9671912093957264
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 15/30 ****
+9/33-(0.349)
+24/33-(0.066)
+6/33-(0.972)
+21/33-(0.508)
+
+=== Evaluating Model ===
+Total valid loss 2.028695931037267
+accuracy on Test 0.5333333333333333
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 16/30 ****
+3/33-(0.277)
+18/33-(0.114)
+0/33-(0.324)
+15/33-(0.051)
+
+=== Evaluating Model ===
+Total valid loss 2.697428743044535
+accuracy on Test 0.5
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 17/30 ****
+30/33-(0.353)
+12/33-(0.724)
+27/33-(0.502)
+
+=== Evaluating Model ===
+Total valid loss 2.3812892784674964
+accuracy on Test 0.4722222222222222
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 18/30 ****
+9/33-(0.249)
+24/33-(0.427)
+6/33-(0.491)
+21/33-(0.224)
+
+=== Evaluating Model ===
+Total valid loss 2.635132978359858
+accuracy on Test 0.46111111111111114
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 19/30 ****
+3/33-(0.476)
+18/33-(0.526)
+0/33-(0.250)
+15/33-(0.074)
+
+=== Evaluating Model ===
+Total valid loss 2.5668768088022866
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 20/30 ****
+30/33-(1.303)
+12/33-(0.316)
+27/33-(0.523)
+9/33-(0.859)
+
+=== Evaluating Model ===
+Total valid loss 2.6147714803616204
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 21/30 ****
+24/33-(0.147)
+6/33-(0.265)
+21/33-(0.328)
+
+=== Evaluating Model ===
+Total valid loss 3.310039828221003
+accuracy on Test 0.45
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 22/30 ****
+3/33-(0.225)
+18/33-(0.038)
+0/33-(0.175)
+15/33-(0.051)
+
+=== Evaluating Model ===
+Total valid loss 2.642204304536184
+accuracy on Test 0.4722222222222222
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 23/30 ****
+30/33-(0.210)
+12/33-(1.006)
+27/33-(0.350)
+9/33-(0.059)
+
+=== Evaluating Model ===
+Total valid loss 3.5330951859553656
+accuracy on Test 0.5111111111111111
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 24/30 ****
+24/33-(0.265)
+6/33-(0.059)
+21/33-(0.117)
+3/33-(0.251)
+
+=== Evaluating Model ===
+Total valid loss 3.3017913500467935
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 25/30 ****
+18/33-(0.203)
+0/33-(0.271)
+15/33-(0.047)
+
+=== Evaluating Model ===
+Total valid loss 4.189207235972087
+accuracy on Test 0.4166666666666667
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 26/30 ****
+30/33-(0.026)
+12/33-(0.161)
+27/33-(0.065)
+9/33-(0.243)
+
+=== Evaluating Model ===
+Total valid loss 3.907662789026896
+accuracy on Test 0.4388888888888889
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 27/30 ****
+24/33-(0.244)
+6/33-(0.242)
+21/33-(0.505)
+3/33-(0.060)
+
+=== Evaluating Model ===
+Total valid loss 3.105874627828598
+accuracy on Test 0.5166666666666667
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 28/30 ****
+18/33-(0.052)
+0/33-(0.070)
+15/33-(0.041)
+30/33-(0.138)
+
+=== Evaluating Model ===
+Total valid loss 3.8633695244789124
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.5666666666666667
+
+**** Epoch 29/30 ****
+12/33-(0.020)
+27/33-(0.020)
+Best accuracy on Test 0.5666666666666667
+
+Source domain: Yahoo, Target domain: Yahoo, Cur_fold 9
+Corpus: GCDC
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+232
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin HTTP/1.1" 200 0
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Optimizer: adam
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/30 ****
+Use CrossEntropyLoss
+15/33-(1.742)
+30/33-(1.499)
+12/33-(1.578)
+
+=== Evaluating Model ===
+Total valid loss 1.092692106962204
+accuracy on Test 0.4111111111111111
+Best accuracy on Test 0.4111111111111111
+
+**** Epoch 0/30 ****
+27/33-(1.352)
+9/33-(1.330)
+24/33-(1.152)
+6/33-(1.202)
+
+=== Evaluating Model ===
+Total valid loss 1.1078044772148132
+accuracy on Test 0.39444444444444443
+Best accuracy on Test 0.4111111111111111
+
+**** Epoch 1/30 ****
+21/33-(1.146)
+3/33-(1.041)
+18/33-(0.850)
+0/33-(1.037)
+
+=== Evaluating Model ===
+Total valid loss 1.102219820022583
+accuracy on Test 0.42777777777777776
+Best accuracy on Test 0.42777777777777776
+
+**** Epoch 2/30 ****
+15/33-(0.918)
+30/33-(1.101)
+12/33-(1.198)
+
+=== Evaluating Model ===
+Total valid loss 1.1050179054339726
+accuracy on Test 0.4166666666666667
+Best accuracy on Test 0.42777777777777776
+
+**** Epoch 3/30 ****
+27/33-(1.053)
+9/33-(0.995)
+24/33-(0.776)
+6/33-(0.902)
+
+=== Evaluating Model ===
+Total valid loss 1.064315026005109
+accuracy on Test 0.55
+Best accuracy on Test 0.55
+
+**** Epoch 4/30 ****
+21/33-(1.149)
+3/33-(0.784)
+18/33-(0.704)
+0/33-(0.916)
+
+=== Evaluating Model ===
+Total valid loss 1.049152707060178
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.55
+
+**** Epoch 5/30 ****
+15/33-(0.763)
+30/33-(0.597)
+12/33-(0.557)
+27/33-(1.202)
+
+=== Evaluating Model ===
+Total valid loss 1.0681182543436687
+accuracy on Test 0.5388888888888889
+Best accuracy on Test 0.55
+
+**** Epoch 6/30 ****
+9/33-(0.651)
+24/33-(0.853)
+6/33-(1.150)
+
+=== Evaluating Model ===
+Total valid loss 1.098368803660075
+accuracy on Test 0.5222222222222223
+Best accuracy on Test 0.55
+
+**** Epoch 7/30 ****
+21/33-(0.874)
+3/33-(0.916)
+18/33-(0.714)
+0/33-(0.703)
+
+=== Evaluating Model ===
+Total valid loss 1.27837968369325
+accuracy on Test 0.48333333333333334
+Best accuracy on Test 0.55
+
+**** Epoch 8/30 ****
+15/33-(0.966)
+30/33-(0.790)
+12/33-(0.726)
+27/33-(1.726)
+
+=== Evaluating Model ===
+Total valid loss 1.1724574665228527
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.55
+
+**** Epoch 9/30 ****
+9/33-(0.483)
+24/33-(0.286)
+6/33-(0.849)
+21/33-(0.789)
+
+=== Evaluating Model ===
+Total valid loss 1.7308927327394485
+accuracy on Test 0.5055555555555555
+Best accuracy on Test 0.55
+
+**** Epoch 10/30 ****
+3/33-(0.717)
+18/33-(0.612)
+0/33-(0.581)
+
+=== Evaluating Model ===
+Total valid loss 1.882239744067192
+accuracy on Test 0.5333333333333333
+Best accuracy on Test 0.55
+
+**** Epoch 11/30 ****
+15/33-(0.745)
+30/33-(0.636)
+12/33-(0.371)
+27/33-(0.478)
+
+=== Evaluating Model ===
+Total valid loss 1.8891366099317868
+accuracy on Test 0.5277777777777778
+Best accuracy on Test 0.55
+
+**** Epoch 12/30 ****
+9/33-(0.402)
+24/33-(0.702)
+6/33-(2.225)
+21/33-(0.913)
+
+=== Evaluating Model ===
+Total valid loss 1.5440288484096527
+accuracy on Test 0.40555555555555556
+Best accuracy on Test 0.55
+
+**** Epoch 13/30 ****
+3/33-(0.794)
+18/33-(0.267)
+0/33-(0.441)
+15/33-(0.641)
+
+=== Evaluating Model ===
+Total valid loss 2.3870258927345276
+accuracy on Test 0.5
+Best accuracy on Test 0.55
+
+**** Epoch 14/30 ****
+30/33-(0.320)
+12/33-(0.265)
+27/33-(0.511)
+
+=== Evaluating Model ===
+Total valid loss 2.5114300698041916
+accuracy on Test 0.49444444444444446
+Best accuracy on Test 0.55
+
+**** Epoch 15/30 ****
+9/33-(1.209)
+24/33-(0.130)
+6/33-(0.378)
+21/33-(0.212)
+
+=== Evaluating Model ===
+Total valid loss 2.7159615655740104
+accuracy on Test 0.5111111111111111
+Best accuracy on Test 0.55
+
+**** Epoch 16/30 ****
+3/33-(0.486)
+18/33-(0.170)
+0/33-(0.304)
+15/33-(0.633)
+
+=== Evaluating Model ===
+Total valid loss 2.609986980756124
+accuracy on Test 0.5
+Best accuracy on Test 0.55
+
+**** Epoch 17/30 ****
+30/33-(0.133)
+12/33-(0.652)
+27/33-(0.313)
+
+=== Evaluating Model ===
+Total valid loss 3.176280125975609
+accuracy on Test 0.4666666666666667
+Best accuracy on Test 0.55
+
+**** Epoch 18/30 ****
+9/33-(0.067)
+24/33-(0.622)
+6/33-(0.310)
+21/33-(0.648)
+
+=== Evaluating Model ===
+Total valid loss 2.620306889216105
+accuracy on Test 0.4777777777777778
+Best accuracy on Test 0.55
+
+**** Epoch 19/30 ****
+3/33-(0.103)
+18/33-(0.897)
+0/33-(1.331)
+15/33-(0.040)
+
+=== Evaluating Model ===
+Total valid loss 3.6994337985912957
+accuracy on Test 0.5
+Best accuracy on Test 0.55
+
+**** Epoch 20/30 ****
+30/33-(0.306)
+12/33-(0.147)
+27/33-(0.149)
+9/33-(0.136)
+
+=== Evaluating Model ===
+Total valid loss 3.083238502343496
+accuracy on Test 0.5
+Best accuracy on Test 0.55
+
+**** Epoch 21/30 ****
+24/33-(0.045)
+6/33-(0.061)
+21/33-(0.208)
+
+=== Evaluating Model ===
+Total valid loss 4.009909590085347
+accuracy on Test 0.4666666666666667
+Best accuracy on Test 0.55
+
+**** Epoch 22/30 ****
+3/33-(0.062)
+18/33-(0.335)
+0/33-(0.060)
+15/33-(0.243)
+
+=== Evaluating Model ===
+Total valid loss 3.982423057158788
+accuracy on Test 0.4444444444444444
+Best accuracy on Test 0.55
+
+**** Epoch 23/30 ****
+30/33-(0.324)
+12/33-(0.168)
+27/33-(0.132)
+9/33-(0.612)
+
+=== Evaluating Model ===
+Total valid loss 3.177267615993818
+accuracy on Test 0.4388888888888889
+Best accuracy on Test 0.55
+
+**** Epoch 24/30 ****
+24/33-(0.070)
+6/33-(0.001)
+21/33-(0.294)
+3/33-(1.099)
+
+=== Evaluating Model ===
+Total valid loss 4.711495677630107
+accuracy on Test 0.5166666666666667
+Best accuracy on Test 0.55
+
+**** Epoch 25/30 ****
+18/33-(0.059)
+0/33-(0.107)
+15/33-(0.041)
+
+=== Evaluating Model ===
+Total valid loss 4.458808720111847
+accuracy on Test 0.5
+Best accuracy on Test 0.55
+
+**** Epoch 26/30 ****
+30/33-(0.308)
+12/33-(0.182)
+27/33-(0.105)
+9/33-(0.138)
+
+=== Evaluating Model ===
+Total valid loss 4.239733507235845
+accuracy on Test 0.4666666666666667
+Best accuracy on Test 0.55
+
+**** Epoch 27/30 ****
+24/33-(0.135)
+6/33-(0.025)
+21/33-(0.078)
+3/33-(0.009)
+
+=== Evaluating Model ===
+Total valid loss 4.752948214610417
+accuracy on Test 0.4888888888888889
+Best accuracy on Test 0.55
+
+**** Epoch 28/30 ****
+18/33-(0.043)
+0/33-(0.080)
+15/33-(0.216)
+30/33-(0.242)
+
+=== Evaluating Model ===
+Total valid loss 5.086219221353531
+accuracy on Test 0.5333333333333333
+Best accuracy on Test 0.55
+
+**** Epoch 29/30 ****
+12/33-(0.010)
+27/33-(0.016)
+Best accuracy on Test 0.55
+
+Final k-fold valid -1.0
+[-1, -1, -1, -1]
+Final k-fold eval 0.5583333333333333
+[0.55, 0.5666666666666667, 0.5666666666666667, 0.55]

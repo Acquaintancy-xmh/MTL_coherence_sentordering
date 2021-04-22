@@ -1,6 +1,6 @@
 Whole k-fold eval mode
-Source domain: Yahoo, Target domain: Yahoo, Cur_fold 0
-Corpus: GCDC
+Source domain: 8, Target domain: 8, Cur_fold 0
+Corpus: TOEFL
 Starting new HTTPS connection (1): s3.amazonaws.com:443
 https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
 loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
@@ -24,7 +24,16 @@ Loading these models for language: en (English):
 Use device: gpu
 Loading: tokenize
 Done loading processors!
-172.5
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
 Starting new HTTPS connection (1): s3.amazonaws.com:443
 https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
 loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
@@ -241,93 +250,261 @@ Model config XLNetConfig {
 Optimizer: adam
 Optimizer: adam
 **** Training Begins ****
-**** Epoch 0/30 ****
+**** Epoch 0/20 ****
 Use CrossEntropyLoss
-15/33-(2.239)
-30/33-(1.339)
-12/33-(1.465)
+15/33-(1.815)
+30/33-(1.482)
+12/33-(1.240)
+27/33-(1.263)
 
 === Evaluating Model ===
-Total valid loss 1.0347804377476375
-accuracy on Test 0.4666666666666667
-Best accuracy on Test 0.4666666666666667
+accuracy on Valid 0.5922619047619048
 
-**** Epoch 0/30 ****
-27/33-(1.224)
-9/33-(1.215)
-24/33-(0.983)
-6/33-(1.420)
+Best accuracy on Valid 0.5922619047619048
+Total valid loss 0.8298966033118111
+accuracy on Test 0.5952380952380952
+Best accuracy on Test 0.5952380952380952
 
-=== Evaluating Model ===
-Total valid loss 0.9921504010756811
-accuracy on Test 0.5055555555555555
-Best accuracy on Test 0.5055555555555555
-
-**** Epoch 1/30 ****
-21/33-(0.987)
-3/33-(1.071)
-18/33-(1.074)
-0/33-(1.464)
+**** Epoch 0/20 ****
+9/33-(1.324)
+24/33-(1.306)
+6/33-(0.989)
+21/33-(1.142)
 
 === Evaluating Model ===
-Total valid loss 0.9519061843554179
-accuracy on Test 0.5333333333333333
-Best accuracy on Test 0.5333333333333333
+accuracy on Valid 0.6696428571428571
 
-**** Epoch 2/30 ****
-15/33-(0.935)
-30/33-(0.882)
-12/33-(1.129)
+Best accuracy on Valid 0.6696428571428571
+Total valid loss 0.6842146373930431
+accuracy on Test 0.7053571428571429
+Best accuracy on Test 0.7053571428571429
 
-=== Evaluating Model ===
-Total valid loss 1.0222129275401433
-accuracy on Test 0.43333333333333335
-Best accuracy on Test 0.5333333333333333
-
-**** Epoch 3/30 ****
-27/33-(1.185)
-9/33-(1.004)
-24/33-(1.062)
-6/33-(1.307)
+**** Epoch 1/20 ****
+3/33-(0.944)
+18/33-(1.394)
+0/33-(1.340)
+15/33-(0.856)
 
 === Evaluating Model ===
-Total valid loss 1.0855899527668953
-accuracy on Test 0.48333333333333334
-Best accuracy on Test 0.5333333333333333
+accuracy on Valid 0.7202380952380952
 
-**** Epoch 4/30 ****
-21/33-(1.271)
-3/33-(0.926)
-18/33-(1.063)
-0/33-(1.033)
+Best accuracy on Valid 0.7202380952380952
+Total valid loss 0.628159815356845
+accuracy on Test 0.7202380952380952
+Best accuracy on Test 0.7202380952380952
 
-=== Evaluating Model ===
-Total valid loss 0.9645886570215225
-accuracy on Test 0.5388888888888889
-Best accuracy on Test 0.5388888888888889
-
-**** Epoch 5/30 ****
-15/33-(0.736)
-30/33-(0.967)
-12/33-(0.785)
-27/33-(0.825)
+**** Epoch 2/20 ****
+30/33-(0.652)
+12/33-(0.936)
+27/33-(1.606)
+9/33-(0.661)
 
 === Evaluating Model ===
-Total valid loss 0.9788768788178762
-accuracy on Test 0.5444444444444444
-Best accuracy on Test 0.5444444444444444
+accuracy on Valid 0.6339285714285714
 
-**** Epoch 6/30 ****
-9/33-(0.955)
-24/33-(0.717)
-6/33-(0.642)
+Total valid loss 0.8594993140016284
+accuracy on Test 0.6428571428571429
+Best accuracy on Test 0.7202380952380952
+
+**** Epoch 3/20 ****
+24/33-(0.680)
+6/33-(0.769)
+21/33-(0.656)
+3/33-(0.766)
+18/33-(0.857)
 
 === Evaluating Model ===
-Total valid loss 1.0845178787906964
-accuracy on Test 0.5222222222222223
-Best accuracy on Test 0.5444444444444444
+accuracy on Valid 0.5863095238095238
 
-**** Epoch 7/30 ****
-21/33-(0.692)
-3/33-(0.853)
-18/33-(0.625)
+Total valid loss 0.7842777115958077
+accuracy on Test 0.6458333333333334
+Best accuracy on Test 0.7202380952380952
+
+**** Epoch 4/20 ****
+0/33-(0.880)
+15/33-(0.461)
+30/33-(0.768)
+12/33-(0.750)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6041666666666666
+
+Total valid loss 0.7599238753318787
+accuracy on Test 0.6666666666666666
+Best accuracy on Test 0.7202380952380952
+
+**** Epoch 5/20 ****
+27/33-(0.597)
+9/33-(0.629)
+24/33-(0.578)
+6/33-(0.819)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6369047619047619
+
+Total valid loss 0.7560887138048807
+accuracy on Test 0.6636904761904762
+Best accuracy on Test 0.7202380952380952
+
+**** Epoch 6/20 ****
+21/33-(0.698)
+3/33-(0.829)
+18/33-(1.116)
+0/33-(0.483)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6875
+
+Total valid loss 0.6072482466697693
+accuracy on Test 0.7380952380952381
+Best accuracy on Test 0.7380952380952381
+
+**** Epoch 7/20 ****
+15/33-(0.414)
+30/33-(0.584)
+12/33-(0.263)
+27/33-(0.492)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7083333333333334
+
+Total valid loss 0.5776215323380062
+accuracy on Test 0.7589285714285714
+Best accuracy on Test 0.7589285714285714
+
+**** Epoch 8/20 ****
+9/33-(0.615)
+24/33-(0.755)
+6/33-(0.660)
+21/33-(0.650)
+3/33-(0.390)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7113095238095238
+
+Total valid loss 0.5956062667426609
+accuracy on Test 0.7619047619047619
+Best accuracy on Test 0.7619047619047619
+
+**** Epoch 9/20 ****
+18/33-(0.239)
+0/33-(0.208)
+15/33-(0.655)
+30/33-(0.288)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7142857142857143
+
+Total valid loss 0.6076125346478962
+accuracy on Test 0.7321428571428571
+Best accuracy on Test 0.7619047619047619
+
+**** Epoch 10/20 ****
+12/33-(0.200)
+27/33-(0.760)
+9/33-(1.545)
+24/33-(1.075)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6696428571428571
+
+Total valid loss 0.6676408322084517
+accuracy on Test 0.7053571428571429
+Best accuracy on Test 0.7619047619047619
+
+**** Epoch 11/20 ****
+6/33-(0.672)
+21/33-(0.647)
+3/33-(0.389)
+18/33-(0.303)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6636904761904762
+
+Total valid loss 0.8814979663916996
+accuracy on Test 0.6964285714285714
+Best accuracy on Test 0.7619047619047619
+
+**** Epoch 12/20 ****
+0/33-(0.449)
+15/33-(0.619)
+30/33-(0.420)
+12/33-(0.332)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6398809523809523
+
+Total valid loss 0.9074121451094037
+accuracy on Test 0.6994047619047619
+Best accuracy on Test 0.7619047619047619
+
+**** Epoch 13/20 ****
+27/33-(0.642)
+9/33-(0.183)
+24/33-(0.541)
+6/33-(0.309)
+21/33-(0.148)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6458333333333334
+
+Total valid loss 1.098382545369012
+accuracy on Test 0.6369047619047619
+Best accuracy on Test 0.7619047619047619
+
+**** Epoch 14/20 ****
+3/33-(0.104)
+18/33-(0.195)
+0/33-(0.282)
+15/33-(0.666)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7083333333333334
+
+Total valid loss 1.0057955313296545
+accuracy on Test 0.7053571428571429
+Best accuracy on Test 0.7619047619047619
+
+**** Epoch 15/20 ****
+30/33-(0.431)
+12/33-(0.125)
+27/33-(0.289)
+9/33-(0.491)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6934523809523809
+
+Total valid loss 1.1737137536207836
+accuracy on Test 0.6785714285714286
+Best accuracy on Test 0.7619047619047619
+
+**** Epoch 16/20 ****
+24/33-(0.358)
+6/33-(0.348)
+21/33-(0.510)
+3/33-(0.461)
+
+=== Evaluating Model ===
+accuracy on Valid 0.6994047619047619
+
+Total valid loss 0.8123137149072829
+accuracy on Test 0.7291666666666666
+Best accuracy on Test 0.7619047619047619
+
+**** Epoch 17/20 ****
+18/33-(0.553)
+0/33-(0.113)
+15/33-(0.173)
+30/33-(0.449)
+
+=== Evaluating Model ===
+accuracy on Valid 0.7023809523809523
+
+Total valid loss 1.0564344546624593
+accuracy on Test 0.7113095238095238
+Best accuracy on Test 0.7619047619047619
+
+**** Epoch 18/20 ****
+12/33-(0.284)
+27/33-(0.069)
+9/33-(0.145)

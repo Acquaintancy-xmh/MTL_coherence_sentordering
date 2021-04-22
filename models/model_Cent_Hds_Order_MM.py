@@ -41,7 +41,7 @@ import copy
 
 logger = logging.getLogger()
 
-class Coh_Model_Cent_Hds_Order(models.model_base.BaseModel):
+class Coh_Model_Cent_Hds_Order_MM(models.model_base.BaseModel):
     def __init__(self, config, corpus_target, embReader):
         super().__init__(config)
 
@@ -572,56 +572,20 @@ class Coh_Model_Cent_Hds_Order(models.model_base.BaseModel):
         ### Sentence Ordering Task : list_score (BCELoss)
         ### avg_sents_repr : [batch_size, sent_num]
 
-        ## 如果是predict，则不用shuffle过程，直接得到Sentence Order Score
-        # def Gaussian_prob(data, avg, sig):
-        #     data = data.cpu()
-        #     sqrt_2pi = np.power(2 * np.pi, 0.5)
-        #     coef = 1 / (sqrt_2pi * sig)
-        #     powercoef = -1 / (2 * np.power(sig, 2))
-        #     mypow = powercoef * (np.power((data-avg), 2))
-        #     return coef * (np.exp(mypow)).cuda()
-            
-
-        # if mode == "predict":
-        #     batch_order_score = []
-        #     for batch_i in range(batch_size):
-        #         order_score = []
-        #         for sent_i in range(int(num_sents[batch_i].item())-1):
-        #             sent_embed_1 = encoded_sents[batch_i, sent_i]
-        #             sent_embed_2 = encoded_sents[batch_i, sent_i+1]
-        #             so_fc_out = self.so_linear_1(torch.cat((sent_embed_1, sent_embed_2), dim=0))
-        #             so_fc_out = self.so_linear_2(so_fc_out)
-        #             so_fc_out = self.so_linear_out(so_fc_out)
-        #             so_fc_out = self.sigmoid(so_fc_out)
-        #             order_score.append(so_fc_out)
-        #         if len(order_score) != 0:
-        #             sent_order_score = torch.mean(torch.stack(order_score), dim=0)
-        #         else: sent_order_score = torch.Tensor([0.]).cuda()
-        #         class_score = torch.cat((Gaussian_prob(sent_order_score, 0, 0.4), torch.cat((Gaussian_prob(sent_order_score, 0.5, 0.4), Gaussian_prob(sent_order_score, 1, 0.4)), dim=0)), dim=0)
-        #         batch_order_score.append(class_score)
-        #         print("sent_order_score: ", sent_order_score)
-        #     batch_order_score = torch.stack((batch_order_score), dim=0)
-        #     # print("batch_order_score", batch_order_score)
-        #     print("fc_out: ", fc_out)
-        #     fc_out += batch_order_score
-
-        #     outputs.append(fc_out)
-        #     return outputs
-
-
         ## Train过程
         order_label_list = []
         order_score_list = []
+        order_score_MaxMin_list = []
         for batch_i in range(batch_size):
             order_label = []
             order_score = []
+            order_right_score = []
+            order_score_MaxMin = []
             shuffled_sents = torch.randperm(int(num_sents[batch_i].item()))
             # print("shuffled_sents: ", len(shuffled_sents))
             for sent_i in range(shuffled_sents.shape[0]-1):
                 sent_embed_1 = encoded_sents[batch_i, shuffled_sents[sent_i].item()]
                 sent_embed_2 = encoded_sents[batch_i, shuffled_sents[sent_i+1].item()]
-                if shuffled_sents[sent_i].item() < shuffled_sents[sent_i+1].item() : order_label.append(1.0)
-                else : order_label.append(0.0)
                 so_fc_out = self.so_linear_1(torch.cat((sent_embed_1, sent_embed_2), dim=0))
                 # so_fc_out = self.leak_relu(so_fc_out)
                 # so_fc_out = self.dropout_layer(so_fc_out)
@@ -631,35 +595,36 @@ class Coh_Model_Cent_Hds_Order(models.model_base.BaseModel):
                 # so_fc_out = self.dropout_layer(so_fc_out)
 
                 so_fc_out = self.so_linear_out(so_fc_out)
-
                 so_fc_out = self.sigmoid(so_fc_out)
-                # print(so_fc_out)
+
                 order_score.append(so_fc_out)
 
-                # if order_score.shape[0] == 0: order_score = so_fc_out
-                # else : order_score = torch.cat((order_score, so_fc_out), dim=0)
-
+                if shuffled_sents[sent_i].item() < shuffled_sents[sent_i+1].item(): 
+                    order_label.append(1.0)
+                    order_right_score.append(so_fc_out)
+                else: 
+                    order_label.append(0.0)
+            
+            if len(order_right_score) != 0:
+                # order_score_MaxMin.append(max(order_right_score))
+                # order_score_MaxMin.append(min(order_right_score))
+                order_score_MaxMin.append(sum(order_right_score) / len(order_right_score))
+            
             order_label_list.append(order_label)
             order_score_list.append(order_score)
-            # print("order_label: ", order_label, sum(order_label))
-            # print("order_score: ", order_score)
-
-
-            # if order_score == 0: order_score = torch.Tensor([0.0]).cuda()
-            # if order_score_list.shape[0] == 0: 
-            #     order_score_list = order_score
-            # else:
-            #     order_score_list = torch.cat((order_score_list, order_score), dim=0)
-        # print(order_label_list) # [6, 8, 8, 6, 3, 8, 8, 7, 5, 6, 7, 12, 5, 4, 11, 4]
-        # print(order_score_list) # tensor([4.6839, 2.7560, 3.9098, 5.5054, 0.7618, 3.9745, 7.4416, 6.4322, 1.1115,2.5257, 2.6214, 6.3680, 1.9489, 3.5597, 6.2616, 1.5653],device='cuda:0', grad_fn=<CatBackward>)
+            order_score_MaxMin_list.append(order_score_MaxMin)
 
         if len(order_label_list) != len(order_score_list) :
             order_label_list = []
             order_score_list = []
+
+        if len(order_score_MaxMin_list) != batch_size:
+            order_score_MaxMin_list = []
         
         outputs.append(fc_out)
         outputs.append(order_label_list)
         outputs.append(order_score_list)
+        outputs.append(order_score_MaxMin_list)
 
         # return fc_out
         return outputs

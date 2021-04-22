@@ -1,0 +1,1390 @@
+Whole k-fold eval mode
+Source domain: 1, Target domain: 1, Cur_fold 0
+Corpus: TOEFL
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-spiece.model HTTP/1.1" 200 0
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-spiece.model from cache at /home/minghongxia/.cache/torch/transformers/dad589d582573df0293448af5109cb6981ca77239ed314e15ca63b7b8a318ddd.8b10bd978b5d01c21303cc761fc9ecd464419b3bf921864a355ba807cfbfafa8
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ewt     |
+=======================
+
+Use device: gpu
+Loading: tokenize
+Done loading processors!
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/xlnet-base-cased-config.json HTTP/1.1" 200 0
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Loading embeddings from: xlnet-base-cased
+Model: DIS_Simple Avg Plus Sentence Ordering
+Encoder: XLNet
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": true,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin from cache at /home/minghongxia/.cache/torch/transformers/24197ba0ce5dbfe23924431610704c88e2c0371afa49149360e4c823219ab474.7eac4fe898a021204e63c88c00ea68c60443c57f94b4bc3c02adbde6465745ac
+Starting new HTTPS connection (1): s3.amazonaws.com:443
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json from cache at /home/minghongxia/.cache/torch/transformers/c9cc6e53904f7f3679a31ec4af244f4419e25ebc8e71ebf8c558a31cbcf07fc8.69e5e35e0b798cab5e473f253752f8bf4d280ee37682281a23eed80f6e2d09c6
+Model config XLNetConfig {
+  "architectures": [
+    "XLNetLMHeadModel"
+  ],
+  "attn_type": "bi",
+  "bi_data": false,
+  "bos_token_id": 1,
+  "clamp_len": -1,
+  "d_head": 64,
+  "d_inner": 3072,
+  "d_model": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "end_n_top": 5,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "ff_activation": "gelu",
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "mem_len": null,
+  "model_type": "xlnet",
+  "n_head": 12,
+  "n_layer": 12,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 5,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "reuse_len": null,
+  "same_length": false,
+  "start_n_top": 5,
+  "summary_activation": "tanh",
+  "summary_last_dropout": 0.1,
+  "summary_type": "last",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 250
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "untie_r": true,
+  "use_bfloat16": false,
+  "vocab_size": 32000
+}
+
+Optimizer: adam
+Optimizer: adam
+**** Training Begins ****
+**** Epoch 0/25 ****
+Use CrossEntropyLoss
+15/33-(1.719)
+30/33-(1.308)
+12/33-(1.135)
+27/33-(1.328)
+
+=== Evaluating Model ===
+Order Accuracy : 0.9422558446455505
+Order Accuracy : 0.9328799849979518
+Order Accuracy : 0.9327139712110141
+Order Accuracy : 0.9239535017785792
+Order Accuracy : 0.9526133588633589
+Order Accuracy : 0.9157474827052032
+Order Accuracy : 0.9657275541795667
+Order Accuracy : 0.9355436944591357
+Order Accuracy : 0.9200720149733308
+Order Accuracy : 0.9580070141211445
+Order Accuracy : 0.9363996311243795
+Order Accuracy : 0.9643334256779637
+Order Accuracy : 0.9583953373015873
+Order Accuracy : 0.916483637277755
+Order Accuracy : 0.946460227574358
+Order Accuracy : 0.9307328016088658
+Order Accuracy : 0.9337558805573511
+Order Accuracy : 0.9140733755623461
+Order Accuracy : 0.9369744318181819
+Order Accuracy : 0.9320280352396888
+Order Accuracy : 0.9416704640388851
+Order Accuracy Total : 0.9282286212914486
+accuracy on Valid 0.5287009063444109
+
+Best accuracy on Valid 0.5287009063444109
+Order Accuracy : 0.9539336622807018
+Order Accuracy : 0.9510750891265597
+Order Accuracy : 0.9541196718586424
+Order Accuracy : 0.9486487470862471
+Order Accuracy : 0.9433165894562953
+Order Accuracy : 0.8595572894382879
+Order Accuracy : 0.9323361823361824
+Order Accuracy : 0.9253061321782717
+Order Accuracy : 0.9181212747413405
+Order Accuracy : 0.920092475249209
+Order Accuracy : 0.9057191752963811
+Order Accuracy : 0.9614269005847955
+Order Accuracy : 0.9139841664977535
+Order Accuracy : 0.9317880639891509
+Order Accuracy : 0.9334257756132756
+Order Accuracy : 0.93528350602328
+Order Accuracy : 0.9608375999001
+Order Accuracy : 0.9302116634697357
+Order Accuracy : 0.9242121695169296
+Order Accuracy : 0.9239549291938998
+Order Accuracy : 0.939966449099576
+Order Accuracy Total : 0.9284774023694603
+Total valid loss 0.984826263927278
+accuracy on Test 0.540785498489426
+Best accuracy on Test 0.540785498489426
+
+**** Epoch 0/25 ****
+9/33-(1.197)
+24/33-(0.867)
+6/33-(1.124)
+21/33-(1.015)
+
+=== Evaluating Model ===
+Order Accuracy : 0.9683053670186024
+Order Accuracy : 0.9561114317268409
+Order Accuracy : 0.9309989864730996
+Order Accuracy : 0.9897445820433437
+Order Accuracy : 0.9681089743589744
+Order Accuracy : 0.9527018477845683
+Order Accuracy : 0.9491553544494721
+Order Accuracy : 0.9555803571428572
+Order Accuracy : 0.9251891748602274
+Order Accuracy : 0.9466586704358444
+Order Accuracy : 0.954203907440169
+Order Accuracy : 0.9565051020408164
+Order Accuracy : 0.9690271278966132
+Order Accuracy : 0.9434707329707328
+Order Accuracy : 0.9781670934564157
+Order Accuracy : 0.9435060781689071
+Order Accuracy : 0.9379108309990662
+Order Accuracy : 0.9452694619514472
+Order Accuracy : 0.9712080627705628
+Order Accuracy : 0.9548951168949655
+Order Accuracy : 0.9444444444444445
+Order Accuracy Total : 0.9520069808027923
+accuracy on Valid 0.6676737160120846
+
+Best accuracy on Valid 0.6676737160120846
+Order Accuracy : 0.9429184941520468
+Order Accuracy : 0.9607105057932264
+Order Accuracy : 0.9662687139249639
+Order Accuracy : 0.9772759103641457
+Order Accuracy : 0.9380337391366803
+Order Accuracy : 0.943684508216242
+Order Accuracy : 0.9686243386243387
+Order Accuracy : 0.9589771093704159
+Order Accuracy : 0.9248586254754017
+Order Accuracy : 0.9566931652046784
+Order Accuracy : 0.9532927754435108
+Order Accuracy : 0.964103763682711
+Order Accuracy : 0.9245237703118139
+Order Accuracy : 0.9428166799810023
+Order Accuracy : 0.9586681547619047
+Order Accuracy : 0.9170388249143171
+Order Accuracy : 0.9446991186058524
+Order Accuracy : 0.9346414971991261
+Order Accuracy : 0.9558722326649958
+Order Accuracy : 0.9673532554047259
+Order Accuracy : 0.958505220269926
+Order Accuracy Total : 0.9453707766564282
+Total valid loss 0.7013019990353357
+accuracy on Test 0.6827794561933535
+Best accuracy on Test 0.6827794561933535
+
+**** Epoch 1/25 ****
+3/33-(0.611)
+18/33-(0.863)
+0/33-(0.773)
+15/33-(0.697)
+
+=== Evaluating Model ===
+Order Accuracy : 0.9662141779788839
+Order Accuracy : 0.9567454896978553
+Order Accuracy : 0.9610743469818758
+Order Accuracy : 0.9732077589807853
+Order Accuracy : 0.9587339743589743
+Order Accuracy : 0.9574199850394703
+Order Accuracy : 0.9713205966147143
+Order Accuracy : 0.9376283183728037
+Order Accuracy : 0.9524564616669879
+Order Accuracy : 0.9485449182460053
+Order Accuracy : 0.956953581871345
+Order Accuracy : 0.9778911564625851
+Order Accuracy : 0.970046247665733
+Order Accuracy : 0.9480725200725201
+Order Accuracy : 0.9632315902696338
+Order Accuracy : 0.9550509770372386
+Order Accuracy : 0.9754464285714286
+Order Accuracy : 0.9455248744311244
+Order Accuracy : 0.9626316738816739
+Order Accuracy : 0.9652125772124258
+Order Accuracy : 0.9656926406926406
+Order Accuracy Total : 0.9602966841186736
+accuracy on Valid 0.6616314199395771
+
+Order Accuracy : 0.9730034722222222
+Order Accuracy : 0.9483863715940921
+Order Accuracy : 0.9676476335483688
+Order Accuracy : 0.9663580115060378
+Order Accuracy : 0.9696388170652877
+Order Accuracy : 0.9827882506747638
+Order Accuracy : 0.9728703703703704
+Order Accuracy : 0.9685294531618902
+Order Accuracy : 0.9683342470760234
+Order Accuracy : 0.9610365941248293
+Order Accuracy : 0.9644570707070708
+Order Accuracy : 0.9423458676399854
+Order Accuracy : 0.962694540513834
+Order Accuracy : 0.9422391023653811
+Order Accuracy : 0.9821428571428572
+Order Accuracy : 0.955893856838634
+Order Accuracy : 0.973290701655156
+Order Accuracy : 0.9412423569549571
+Order Accuracy : 0.9268142777522614
+Order Accuracy : 0.9364540007922362
+Order Accuracy : 0.908304853041695
+Order Accuracy Total : 0.9552435278630979
+Total valid loss 0.7759722088064466
+accuracy on Test 0.6435045317220544
+Best accuracy on Test 0.6827794561933535
+
+**** Epoch 2/25 ****
+30/33-(0.861)
+12/33-(0.579)
+27/33-(0.585)
+9/33-(1.349)
+
+=== Evaluating Model ===
+Order Accuracy : 0.9784054487179488
+Order Accuracy : 0.9733954451345755
+Order Accuracy : 0.9797327124629757
+Order Accuracy : 0.9852521929824561
+Order Accuracy : 0.9576923076923077
+Order Accuracy : 0.9719494047619047
+Order Accuracy : 0.9753946706887884
+Order Accuracy : 0.9643294817927172
+Order Accuracy : 0.9779135338345865
+Order Accuracy : 0.9865454292084727
+Order Accuracy : 0.9916294642857143
+Order Accuracy : 0.9736894757903162
+Order Accuracy : 0.9935515873015873
+Order Accuracy : 0.9754102564102565
+Order Accuracy : 0.9749553444566232
+Order Accuracy : 0.9805905416393033
+Order Accuracy : 0.9764860751993105
+Order Accuracy : 0.977549793956044
+Order Accuracy : 0.9665855508870215
+Order Accuracy : 0.9602521929824561
+Order Accuracy : 0.9733100233100234
+Order Accuracy Total : 0.9760034904013961
+accuracy on Valid 0.6858006042296072
+
+Best accuracy on Valid 0.6858006042296072
+Order Accuracy : 0.9657679738562092
+Order Accuracy : 0.9843377976190476
+Order Accuracy : 0.956907242063492
+Order Accuracy : 0.962505437781173
+Order Accuracy : 0.9787581699346406
+Order Accuracy : 0.9804353632478633
+Order Accuracy : 0.9966666666666666
+Order Accuracy : 0.9731754658385092
+Order Accuracy : 0.9847756410256411
+Order Accuracy : 0.9662847021399653
+Order Accuracy : 0.9831893868658574
+Order Accuracy : 0.9566057627729455
+Order Accuracy : 0.9845932147562583
+Order Accuracy : 0.9774666305916306
+Order Accuracy : 0.9848958333333333
+Order Accuracy : 0.9775939640070075
+Order Accuracy : 0.9675363215538332
+Order Accuracy : 0.9760736140191862
+Order Accuracy : 0.978359778121775
+Order Accuracy : 0.9775752314814815
+Order Accuracy : 0.9842543077837196
+Order Accuracy Total : 0.9730144800351032
+Total valid loss 0.6430975979282743
+accuracy on Test 0.6948640483383686
+Best accuracy on Test 0.6948640483383686
+
+**** Epoch 3/25 ****
+24/33-(0.894)
+6/33-(0.628)
+21/33-(0.661)
+3/33-(0.687)
+
+=== Evaluating Model ===
+Order Accuracy : 0.975801282051282
+Order Accuracy : 0.9766526356919579
+Order Accuracy : 0.9670435862091873
+Order Accuracy : 0.9769782913165266
+Order Accuracy : 0.9875
+Order Accuracy : 0.9787946428571429
+Order Accuracy : 0.9881252149982801
+Order Accuracy : 0.9888830532212886
+Order Accuracy : 0.9636434837092731
+Order Accuracy : 0.9795673076923077
+Order Accuracy : 0.9880299707602339
+Order Accuracy : 0.9910714285714286
+Order Accuracy : 0.9555431547619048
+Order Accuracy : 0.9793490866432043
+Order Accuracy : 0.9879193722943723
+Order Accuracy : 0.9708741550846814
+Order Accuracy : 0.9705278585793291
+Order Accuracy : 0.9654800061050061
+Order Accuracy : 0.9753339460784314
+Order Accuracy : 0.9825951881515382
+Order Accuracy : 0.9584022038567493
+Order Accuracy Total : 0.9729493891797557
+accuracy on Valid 0.7371601208459214
+
+Best accuracy on Valid 0.7371601208459214
+Order Accuracy : 0.9810855263157894
+Order Accuracy : 0.9636363636363636
+Order Accuracy : 0.9879298941798942
+Order Accuracy : 0.988241792929293
+Order Accuracy : 0.9788995726495726
+Order Accuracy : 0.9196575483340189
+Order Accuracy : 1.0
+Order Accuracy : 0.97200708013065
+Order Accuracy : 0.9758771929824561
+Order Accuracy : 0.9652659292461924
+Order Accuracy : 0.9806382275132275
+Order Accuracy : 0.9843747276688453
+Order Accuracy : 0.9719696969696969
+Order Accuracy : 0.9841856060606061
+Order Accuracy : 0.9763122294372295
+Order Accuracy : 0.9716200832266251
+Order Accuracy : 0.977890114379085
+Order Accuracy : 0.9694238994224692
+Order Accuracy : 0.9727174170106639
+Order Accuracy : 0.9937789351851851
+Order Accuracy : 0.9712529988071783
+Order Accuracy Total : 0.974330846862659
+Total valid loss 0.5859045968169257
+accuracy on Test 0.7190332326283988
+Best accuracy on Test 0.7190332326283988
+
+**** Epoch 4/25 ****
+18/33-(0.249)
+0/33-(1.637)
+15/33-(0.577)
+30/33-(1.124)
+
+=== Evaluating Model ===
+Order Accuracy : 0.9739677601809955
+Order Accuracy : 0.9687003968253969
+Order Accuracy : 0.9770224048117271
+Order Accuracy : 0.9868589743589744
+Order Accuracy : 0.9885912698412699
+Order Accuracy : 0.9824346405228759
+Order Accuracy : 0.9692265795206972
+Order Accuracy : 0.9732580532212886
+Order Accuracy : 0.9686916154021417
+Order Accuracy : 0.9782884084514519
+Order Accuracy : 0.9841145833333333
+Order Accuracy : 0.9853316326530612
+Order Accuracy : 0.9786435786435786
+Order Accuracy : 0.9689886877828054
+Order Accuracy : 0.9512982779184068
+Order Accuracy : 0.9809615183792816
+Order Accuracy : 0.9695474664224664
+Order Accuracy : 0.9753100198412699
+Order Accuracy : 0.9735218253968254
+Order Accuracy : 0.9904605263157895
+Order Accuracy : 0.9677622085516823
+Order Accuracy Total : 0.9720767888307156
+accuracy on Valid 0.7341389728096677
+
+Order Accuracy : 0.9651909722222223
+Order Accuracy : 0.9830422794117647
+Order Accuracy : 0.9744680700563053
+Order Accuracy : 0.9657373366013071
+Order Accuracy : 0.9775641025641026
+Order Accuracy : 0.9216628959276019
+Order Accuracy : 0.9788888888888889
+Order Accuracy : 0.9473769341832843
+Order Accuracy : 0.988430611785875
+Order Accuracy : 0.9736378205128204
+Order Accuracy : 0.969296046410017
+Order Accuracy : 0.969883597883598
+Order Accuracy : 0.9782958662714097
+Order Accuracy : 0.9771340072970508
+Order Accuracy : 0.985218253968254
+Order Accuracy : 0.9722754831597711
+Order Accuracy : 0.9904119318181819
+Order Accuracy : 0.9825278340080972
+Order Accuracy : 0.9645799240748931
+Order Accuracy : 0.9659722222222222
+Order Accuracy : 0.9715500873395609
+Order Accuracy Total : 0.9710399297937692
+Total valid loss 0.5729496514513379
+accuracy on Test 0.7492447129909365
+Best accuracy on Test 0.7492447129909365
+
+**** Epoch 5/25 ****
+12/33-(0.562)
+27/33-(0.763)
+9/33-(0.632)
+24/33-(0.518)
+
+=== Evaluating Model ===
+Order Accuracy : 0.9748798076923078
+Order Accuracy : 0.9788031714662149
+Order Accuracy : 0.9652966917992494
+Order Accuracy : 0.9923611111111111
+Order Accuracy : 0.9851190476190477
+Order Accuracy : 0.9518060064935064
+Order Accuracy : 0.9522562691293341
+Order Accuracy : 0.9805745214752568
+Order Accuracy : 0.9624034043441938
+Order Accuracy : 0.978658524446568
+Order Accuracy : 0.9809027777777777
+Order Accuracy : 0.9952380952380953
+Order Accuracy : 0.975843253968254
+Order Accuracy : 0.9813775766716943
+Order Accuracy : 0.9791121826304893
+Order Accuracy : 0.9807247759550392
+Order Accuracy : 0.978297735760971
+Order Accuracy : 0.9849826388888889
+Order Accuracy : 0.9666247294372294
+Order Accuracy : 0.9717272120518687
+Order Accuracy : 0.9819003431443623
+Order Accuracy Total : 0.9731675392670157
+accuracy on Valid 0.7401812688821753
+
+Best accuracy on Valid 0.7401812688821753
+Order Accuracy : 0.9894188596491228
+Order Accuracy : 0.9585565476190476
+Order Accuracy : 0.9909060846560847
+Order Accuracy : 0.9884785353535354
+Order Accuracy : 0.956516981792717
+Order Accuracy : 0.9891278057275542
+Order Accuracy : 0.9897435897435898
+Order Accuracy : 0.9761624396135266
+Order Accuracy : 0.9612938596491228
+Order Accuracy : 0.9727391277023629
+Order Accuracy : 0.972698315437286
+Order Accuracy : 0.9424216095795044
+Order Accuracy : 0.9886363636363636
+Order Accuracy : 0.9732295783926219
+Order Accuracy : 0.9732717803030303
+Order Accuracy : 0.9463001783367917
+Order Accuracy : 0.9761074862637362
+Order Accuracy : 0.9907738095238096
+Order Accuracy : 0.957953999582289
+Order Accuracy : 0.9506059368191722
+Order Accuracy : 0.9839105339105338
+Order Accuracy Total : 0.9719175076788065
+Total valid loss 0.7455810265881675
+accuracy on Test 0.7039274924471299
+Best accuracy on Test 0.7492447129909365
+
+**** Epoch 6/25 ****
+6/33-(0.369)
+21/33-(0.558)
+3/33-(0.745)
+18/33-(1.298)
+0/33-(0.421)
+
+=== Evaluating Model ===
+Order Accuracy : 0.9958333333333333
+Order Accuracy : 0.9879125563268786
+Order Accuracy : 0.981048842461886
+Order Accuracy : 0.9834945820433436
+Order Accuracy : 0.9930555555555556
+Order Accuracy : 0.9876488095238095
+Order Accuracy : 0.9890608875129
+Order Accuracy : 0.9958333333333333
+Order Accuracy : 0.9717978841334104
+Order Accuracy : 0.9889423076923077
+Order Accuracy : 0.9867749183006536
+Order Accuracy : 0.9952380952380953
+Order Accuracy : 0.99375
+Order Accuracy : 0.9629181102122277
+Order Accuracy : 0.9881060213940649
+Order Accuracy : 0.9903973950026582
+Order Accuracy : 0.981875
+Order Accuracy : 0.9965277777777778
+Order Accuracy : 0.9883333333333333
+Order Accuracy : 0.99375
+Order Accuracy : 0.9803932178932179
+Order Accuracy Total : 0.9834205933682374
+accuracy on Valid 0.7341389728096677
+
+Order Accuracy : 0.9885110294117647
+Order Accuracy : 0.98984375
+Order Accuracy : 0.9976851851851851
+Order Accuracy : 0.9842203548085902
+Order Accuracy : 0.9869123931623932
+Order Accuracy : 0.9203001375988993
+Order Accuracy : 0.9966666666666666
+Order Accuracy : 0.9924107142857144
+Order Accuracy : 0.982165404040404
+Order Accuracy : 0.9796207264957265
+Order Accuracy : 0.9900793650793651
+Order Accuracy : 0.9897080610021786
+Order Accuracy : 0.9943181818181819
+Order Accuracy : 0.9888791763791764
+Order Accuracy : 0.9947916666666666
+Order Accuracy : 0.9947916666666666
+Order Accuracy : 0.98828125
+Order Accuracy : 0.9866325250836121
+Order Accuracy : 0.9821635200132685
+Order Accuracy : 0.9958333333333333
+Order Accuracy : 0.9808346624136098
+Order Accuracy Total : 0.9855199648968846
+Total valid loss 0.6181235639821916
+accuracy on Test 0.7280966767371602
+Best accuracy on Test 0.7492447129909365
+
+**** Epoch 7/25 ****
+15/33-(0.494)
+30/33-(0.874)
+12/33-(0.572)
+27/33-(0.710)
+
+=== Evaluating Model ===
+Order Accuracy : 0.9958333333333333
+Order Accuracy : 0.9884640269151139
+Order Accuracy : 0.9829596920289856
+Order Accuracy : 0.9880795739348371
+Order Accuracy : 0.9798611111111111
+Order Accuracy : 0.9729166666666667
+Order Accuracy : 0.9848245614035087
+Order Accuracy : 0.984375
+Order Accuracy : 0.9569000626566416
+Order Accuracy : 0.9855037625418059
+Order Accuracy : 0.9889450571895425
+Order Accuracy : 0.9794871794871796
+Order Accuracy : 0.9904119318181819
+Order Accuracy : 0.9898333333333333
+Order Accuracy : 0.9716021825396826
+Order Accuracy : 0.9719193197690683
+Order Accuracy : 0.984563492063492
+Order Accuracy : 0.9824404761904761
+Order Accuracy : 0.9807291666666667
+Order Accuracy : 0.9839236905669971
+Order Accuracy : 0.9593670218670219
+Order Accuracy Total : 0.9808027923211169
+accuracy on Valid 0.6465256797583081
+
+Order Accuracy : 0.9638203581871345
+Order Accuracy : 1.0
+Order Accuracy : 0.9838169642857143
+Order Accuracy : 0.9940340909090909
+Order Accuracy : 0.9815952021834375
+Order Accuracy : 0.9375
+Order Accuracy : 0.9766666666666667
+Order Accuracy : 0.9642204469507101
+Order Accuracy : 0.9862938596491229
+Order Accuracy : 0.98046875
+Order Accuracy : 0.9973958333333334
+Order Accuracy : 0.9835555555555556
+Order Accuracy : 0.9790464743589744
+Order Accuracy : 0.9896340072970509
+Order Accuracy : 0.9865203373015874
+Order Accuracy : 0.9847826086956522
+Order Accuracy : 0.9860681114551084
+Order Accuracy : 0.9838574968030691
+Order Accuracy : 0.9781656346749226
+Order Accuracy : 0.9744212962962964
+Order Accuracy : 0.98989898989899
+Order Accuracy Total : 0.9826678367705134
+Total valid loss 0.8233513463111151
+accuracy on Test 0.649546827794562
+Best accuracy on Test 0.7492447129909365
+
+**** Epoch 8/25 ****
+9/33-(0.596)
+24/33-(0.322)
+6/33-(0.241)
+21/33-(0.466)
+
+=== Evaluating Model ===
+Order Accuracy : 0.9885416666666667
+Order Accuracy : 0.982153640441684
+Order Accuracy : 0.9905064298446651
+Order Accuracy : 0.9885110294117647
+Order Accuracy : 0.9889423076923077
+Order Accuracy : 0.9620432263814618
+Order Accuracy : 0.9805228758169935
+Order Accuracy : 0.9846850198412698
+Order Accuracy : 0.9650743992849257
+Order Accuracy : 0.9775977796358231
+Order Accuracy : 0.9884672619047619
+Order Accuracy : 0.9910364145658264
+Order Accuracy : 0.9897321428571428
+Order Accuracy : 0.9948717948717949
+Order Accuracy : 0.9752059326304892
+Order Accuracy : 0.9713758208703063
+Order Accuracy : 0.9640178571428571
+Order Accuracy : 0.9872089460784313
+Order Accuracy : 0.9901041666666667
+Order Accuracy : 0.9728070897764833
+Order Accuracy : 0.9652292152292152
+Order Accuracy Total : 0.9801483420593369
+accuracy on Valid 0.5377643504531722
+
+Order Accuracy : 0.980391081871345
+Order Accuracy : 0.9797348484848485
+Order Accuracy : 0.9811207311207312
+Order Accuracy : 0.9786467617349971
+Order Accuracy : 0.9741109584859584
+Order Accuracy : 0.9913194444444444
+Order Accuracy : 0.9891666666666666
+Order Accuracy : 0.9769453071083506
+Order Accuracy : 0.9812682748538012
+Order Accuracy : 0.9761727919912904
+Order Accuracy : 0.9741135668525375
+Order Accuracy : 0.9761481481481483
+Order Accuracy : 0.9729603729603731
+Order Accuracy : 0.9611088045231267
+Order Accuracy : 0.9607695256132757
+Order Accuracy : 0.9885686663879598
+Order Accuracy : 0.9888980263157895
+Order Accuracy : 0.9902223389355742
+Order Accuracy : 0.9769337406015037
+Order Accuracy : 0.9703993055555555
+Order Accuracy : 0.9737782513324309
+Order Accuracy Total : 0.9754278192189557
+Total valid loss 1.1143325879460289
+accuracy on Test 0.5740181268882175
+Best accuracy on Test 0.7492447129909365
+
+**** Epoch 9/25 ****
+3/33-(0.112)
+18/33-(0.395)
+0/33-(0.458)
+15/33-(0.354)
+
+=== Evaluating Model ===
+Order Accuracy : 1.0
+Order Accuracy : 0.9931159420289855
+Order Accuracy : 0.9716357236674574
+Order Accuracy : 0.973390507518797
+Order Accuracy : 0.9632936507936507
+Order Accuracy : 0.9902529761904761
+Order Accuracy : 0.9768191721132898
+Order Accuracy : 0.9893849206349207
+Order Accuracy : 0.987202380952381
+Order Accuracy : 0.9833867521367521
+Order Accuracy : 0.9711061507936508
+Order Accuracy : 0.9952380952380953
+Order Accuracy : 1.0
+Order Accuracy : 0.9817000777000776
+Order Accuracy : 0.9803221386101821
+Order Accuracy : 0.9800132223942208
+Order Accuracy : 0.9663827838827839
+Order Accuracy : 0.9740924873737374
+Order Accuracy : 0.9725252525252526
+Order Accuracy : 0.9932383040935673
+Order Accuracy : 0.9524225774225775
+Order Accuracy Total : 0.9805846422338569
+accuracy on Valid 0.7462235649546828
+
+Best accuracy on Valid 0.7462235649546828
+Order Accuracy : 0.9817708333333334
+Order Accuracy : 0.984375
+Order Accuracy : 0.991859243697479
+Order Accuracy : 0.9870515513897867
+Order Accuracy : 0.9817040598290598
+Order Accuracy : 0.9921875
+Order Accuracy : 0.9966666666666666
+Order Accuracy : 0.9800314872325742
+Order Accuracy : 0.9860425804093567
+Order Accuracy : 0.9822302149604781
+Order Accuracy : 0.9848131613756614
+Order Accuracy : 0.9946666666666668
+Order Accuracy : 0.9607908886101821
+Order Accuracy : 0.9955357142857143
+Order Accuracy : 0.9921875
+Order Accuracy : 0.9829596920289856
+Order Accuracy : 0.987171052631579
+Order Accuracy : 0.9914402173913044
+Order Accuracy : 0.9566409897292251
+Order Accuracy : 0.9536441312636166
+Order Accuracy : 0.972488038277512
+Order Accuracy Total : 0.9833260201842914
+Total valid loss 0.6404370637167067
+accuracy on Test 0.7311178247734139
+Best accuracy on Test 0.7492447129909365
+
+**** Epoch 10/25 ****
+30/33-(0.336)
+12/33-(0.894)
+27/33-(0.573)
+9/33-(0.312)
+
+=== Evaluating Model ===
+Order Accuracy : 0.9664930555555555
+Order Accuracy : 0.9928183229813665
+Order Accuracy : 0.9851190476190477
+Order Accuracy : 0.9760950854700855
+Order Accuracy : 1.0
+Order Accuracy : 0.9770833333333333
+Order Accuracy : 0.9725696594427244
+Order Accuracy : 0.9963235294117647
+Order Accuracy : 0.9732207120365015
+Order Accuracy : 0.9677617521367521
+Order Accuracy : 0.9719089390142022
+Order Accuracy : 0.9615646258503402
+Order Accuracy : 0.9875
+Order Accuracy : 0.9808262108262108
+Order Accuracy : 0.9805745214752568
+Order Accuracy : 0.9796594350459482
+Order Accuracy : 0.9877976190476191
+Order Accuracy : 0.976758658008658
+Order Accuracy : 0.9719043374925728
+Order Accuracy : 0.9653548754811543
+Order Accuracy : 0.9862914862914863
+Order Accuracy Total : 0.9797120418848168
+accuracy on Valid 0.7401812688821753
+
+Order Accuracy : 0.9802083333333333
+Order Accuracy : 0.9847301136363636
+Order Accuracy : 0.9776396669779023
+Order Accuracy : 0.9932291666666667
+Order Accuracy : 0.9800420168067228
+Order Accuracy : 0.9862938596491229
+Order Accuracy : 0.9884259259259259
+Order Accuracy : 0.9763344048527114
+Order Accuracy : 0.9705043859649123
+Order Accuracy : 0.9885683760683761
+Order Accuracy : 0.9715114202246555
+Order Accuracy : 0.9918518518518519
+Order Accuracy : 0.9786695075757577
+Order Accuracy : 0.9758870214752569
+Order Accuracy : 0.9878224206349207
+Order Accuracy : 0.9792832214407502
+Order Accuracy : 0.972205546700032
+Order Accuracy : 0.9763324131910289
+Order Accuracy : 0.9866748366013072
+Order Accuracy : 0.975462962962963
+Order Accuracy : 0.9457667891104422
+Order Accuracy Total : 0.9787187362878456
+Total valid loss 0.6680192053318024
+accuracy on Test 0.7129909365558912
+Best accuracy on Test 0.7492447129909365
+
+**** Epoch 11/25 ****
+24/33-(0.519)
+6/33-(0.430)
+21/33-(0.159)
+3/33-(0.776)
+
+=== Evaluating Model ===
+Order Accuracy : 0.9739276960784313
+Order Accuracy : 0.9818064182194617
+Order Accuracy : 0.9700563398986597
+Order Accuracy : 0.9824346405228759
+Order Accuracy : 0.9642857142857143
+Order Accuracy : 0.9769841269841271
+Order Accuracy : 0.9560784313725489
+Order Accuracy : 0.9916294642857143
+Order Accuracy : 0.9483813700918964
+Order Accuracy : 0.9924107142857144
+Order Accuracy : 0.9849917763157895
+Order Accuracy : 0.9901360544217688
+Order Accuracy : 0.9916294642857143
+Order Accuracy : 0.9775527903469079
+Order Accuracy : 0.9845384084514519
+Order Accuracy : 0.9871430652680653
+Order Accuracy : 0.994375
+Order Accuracy : 0.9841707516339869
+Order Accuracy : 0.9800694444444444
+Order Accuracy : 0.9904605263157895
+Order Accuracy : 0.9829545454545454
+Order Accuracy Total : 0.9808027923211169
+accuracy on Valid 0.7009063444108762
+
+Order Accuracy : 0.981671665376677
+Order Accuracy : 0.9851190476190477
+Order Accuracy : 0.9431536345598845
+Order Accuracy : 0.9592825577200577
+Order Accuracy : 0.9719625350140055
+Order Accuracy : 0.9623889451192083
+Order Accuracy : 0.9842592592592593
+Order Accuracy : 0.99375
+Order Accuracy : 0.9782318376068376
+Order Accuracy : 0.9846354166666667
+Order Accuracy : 0.982925986050986
+Order Accuracy : 0.9585228758169936
+Order Accuracy : 0.990909090909091
+Order Accuracy : 0.9927083333333333
+Order Accuracy : 0.9835069444444444
+Order Accuracy : 0.9633978047740834
+Order Accuracy : 0.9786931818181819
+Order Accuracy : 0.9852658371040725
+Order Accuracy : 0.9849488304093568
+Order Accuracy : 0.986574074074074
+Order Accuracy : 0.9811004784688996
+Order Accuracy Total : 0.9787187362878456
+Total valid loss 0.8383945978823162
+accuracy on Test 0.7311178247734139
+Best accuracy on Test 0.7492447129909365
+
+**** Epoch 12/25 ****
+18/33-(0.571)
+0/33-(0.195)
+15/33-(0.528)
+30/33-(0.130)
+
+=== Evaluating Model ===
+Order Accuracy : 0.9702818627450981
+Order Accuracy : 0.9610279816801556
+Order Accuracy : 0.9751998960469355
+Order Accuracy : 0.9658097213244272
+Order Accuracy : 0.9806547619047619
+Order Accuracy : 0.9795386904761905
+Order Accuracy : 0.9388430225891526
+Order Accuracy : 0.9856770833333334
+Order Accuracy : 0.9568478487886383
+Order Accuracy : 0.957020757020757
+Order Accuracy : 0.9370131056808688
+Order Accuracy : 0.9428337243988505
+Order Accuracy : 0.97203037464986
+Order Accuracy : 0.9688376068376069
+Order Accuracy : 0.9339220165164102
+Order Accuracy : 0.9513974896255275
+Order Accuracy : 0.9729741704374057
+Order Accuracy : 0.9742683531746033
+Order Accuracy : 0.9724255952380952
+Order Accuracy : 0.9777125104427735
+Order Accuracy : 0.9696874762664236
+Order Accuracy Total : 0.9607329842931938
+accuracy on Valid 0.743202416918429
+
+Order Accuracy : 0.9726256127450981
+Order Accuracy : 0.9742456073338426
+Order Accuracy : 0.9546799622626828
+Order Accuracy : 0.9485398894406247
+Order Accuracy : 0.9470065269697623
+Order Accuracy : 0.9702380952380952
+Order Accuracy : 0.9933333333333334
+Order Accuracy : 0.9351783688597191
+Order Accuracy : 0.9772843567251461
+Order Accuracy : 0.9495736418724035
+Order Accuracy : 0.9819093556225909
+Order Accuracy : 0.9946666666666668
+Order Accuracy : 0.95084678304787
+Order Accuracy : 0.9608576978222119
+Order Accuracy : 0.9764835858585859
+Order Accuracy : 0.9653791257052127
+Order Accuracy : 0.9751916040615731
+Order Accuracy : 0.9492970087832704
+Order Accuracy : 0.9768064155486755
+Order Accuracy : 0.9843644781144781
+Order Accuracy : 0.9323641099182894
+Order Accuracy Total : 0.9616059675296182
+Total valid loss 0.7276548800014314
+accuracy on Test 0.7371601208459214
+Best accuracy on Test 0.7492447129909365
+
+**** Epoch 13/25 ****
+12/33-(0.541)
+27/33-(0.313)
+9/33-(0.294)
+24/33-(0.220)
+6/33-(0.938)
+
+=== Evaluating Model ===
+Order Accuracy : 0.9592548076923078
+Order Accuracy : 0.98647504456328
+Order Accuracy : 0.9771135727018081
+Order Accuracy : 0.993421052631579
+Order Accuracy : 0.9903273809523809
+Order Accuracy : 0.9593107413419915
+Order Accuracy : 0.9805228758169935
+Order Accuracy : 0.9709821428571429
+Order Accuracy : 0.9809549916457811
+Order Accuracy : 0.9752276105536974
+Order Accuracy : 0.9787326388888888
+Order Accuracy : 0.9887445887445888
+Order Accuracy : 0.9965277777777778
+Order Accuracy : 0.9623496503496504
+Order Accuracy : 0.9905861801242235
+Order Accuracy : 0.9765705100820232
+Order Accuracy : 0.977484243697479
+Order Accuracy : 0.990728021978022
+Order Accuracy : 0.9715625
+Order Accuracy : 0.9736897724383422
+Order Accuracy : 0.9952153110047847
+Order Accuracy Total : 0.9779668411867365
+accuracy on Valid 0.7009063444108762
+
+Order Accuracy : 0.9844709429824561
+Order Accuracy : 0.98359375
+Order Accuracy : 0.9850412387177093
+Order Accuracy : 0.9709280303030303
+Order Accuracy : 0.978619011707247
+Order Accuracy : 0.9442876404104152
+Order Accuracy : 0.9880555555555556
+Order Accuracy : 0.9873959127892193
+Order Accuracy : 0.9827531067251463
+Order Accuracy : 0.9641278057275542
+Order Accuracy : 0.9855196886446886
+Order Accuracy : 0.9855750487329435
+Order Accuracy : 0.9854700854700855
+Order Accuracy : 0.996875
+Order Accuracy : 0.9567640692640693
+Order Accuracy : 0.9871193910256411
+Order Accuracy : 0.9786382952380437
+Order Accuracy : 0.9787888071895425
+Order Accuracy : 0.9905357142857143
+Order Accuracy : 0.9873737373737375
+Order Accuracy : 0.9659223817118554
+Order Accuracy Total : 0.9778411584028083
+Total valid loss 1.3373028593403953
+accuracy on Test 0.6706948640483383
+Best accuracy on Test 0.7492447129909365
+
+**** Epoch 14/25 ****
+21/33-(0.147)
+3/33-(0.437)
+18/33-(0.181)
+0/33-(0.081)
+
+=== Evaluating Model ===
+Order Accuracy : 0.9958333333333333
+Order Accuracy : 1.0
+Order Accuracy : 0.9779135338345865
+Order Accuracy : 0.9834945820433436
+Order Accuracy : 1.0
+Order Accuracy : 0.9777529761904762
+Order Accuracy : 0.9683006535947712
+Order Accuracy : 0.9671130952380953
+Order Accuracy : 0.993421052631579
+Order Accuracy : 0.980654761904762
+Order Accuracy : 0.9835069444444444
+Order Accuracy : 0.9446428571428571
+Order Accuracy : 0.9928513071895425
+Order Accuracy : 0.9873717948717948
+Order Accuracy : 0.9772158698789134
+Order Accuracy : 0.9808812779497764
+Order Accuracy : 0.996875
+Order Accuracy : 0.9963235294117647
+Order Accuracy : 0.990952380952381
+Order Accuracy : 0.9972826086956521
+Order Accuracy : 0.9843073593073594
+Order Accuracy Total : 0.9864746945898778
+accuracy on Valid 0.7552870090634441
+
+Best accuracy on Valid 0.7552870090634441
+Order Accuracy : 0.9883771929824561
+Order Accuracy : 0.99296875
+Order Accuracy : 0.9602873977873978
+Order Accuracy : 0.9694173881673882
+Order Accuracy : 0.9743360805860806
+Order Accuracy : 0.9963235294117647
+Order Accuracy : 0.9875
+Order Accuracy : 0.9893499163879598
+Order Accuracy : 0.9714409722222223
+Order Accuracy : 0.9901400134952767
+Order Accuracy : 0.9933473389355743
+Order Accuracy : 0.9888888888888889
+Order Accuracy : 0.9923513986013986
+Order Accuracy : 0.9910326086956522
+Order Accuracy : 1.0
+Order Accuracy : 0.976172183173462
+Order Accuracy : 0.9887152777777778
+Order Accuracy : 0.983578085839599
+Order Accuracy : 0.9795123224728488
+Order Accuracy : 0.9677083333333334
+Order Accuracy : 0.9752791068580542
+Order Accuracy Total : 0.9846423870118473
+Total valid loss 0.7562569557201295
+accuracy on Test 0.7522658610271903
+Best accuracy on Test 0.7522658610271903
+
+**** Epoch 15/25 ****
+15/33-(0.143)
+30/33-(0.098)
+12/33-(0.303)
+27/33-(0.202)
+
+=== Evaluating Model ===
+Order Accuracy : 0.9963235294117647
+Order Accuracy : 0.984920634920635
+Order Accuracy : 0.9833020050125314
+Order Accuracy : 0.9867840557275542
+Order Accuracy : 0.9635416666666666
+Order Accuracy : 0.9900428921568628
+Order Accuracy : 0.9892592592592593
+Order Accuracy : 0.9777661064425771
+Order Accuracy : 0.9671760074720601
+Order Accuracy : 0.9895833333333334
+Order Accuracy : 0.9833026960784313
+Order Accuracy : 0.9564625850340136
+Order Accuracy : 0.9963235294117647
+Order Accuracy : 0.9669707329707329
+Order Accuracy : 0.9823062655943091
+Order Accuracy : 0.9862689393939394
+Order Accuracy : 0.9886151960784314
+Order Accuracy : 0.9878968253968254
+Order Accuracy : 0.9845486111111111
+Order Accuracy : 0.9904811381074168
+Order Accuracy : 0.9789815447710185
+Order Accuracy Total : 0.9825479930191972
+accuracy on Valid 0.7311178247734139
+
+Order Accuracy : 0.9774396929824561
+Order Accuracy : 0.9645220588235295
+Order Accuracy : 0.9909380260942762
+Order Accuracy : 0.9971590909090909
+Order Accuracy : 1.0
+Order Accuracy : 0.9963235294117647
+Order Accuracy : 0.9735185185185186
+Order Accuracy : 0.9889423076923077
+Order Accuracy : 0.989766081871345
+Order Accuracy : 0.9668184885290149
+Order Accuracy : 0.964465337902838
+Order Accuracy : 0.9893801169590642
+Order Accuracy : 0.9880208333333333
+Order Accuracy : 1.0
+Order Accuracy : 0.9869791666666667
+Order Accuracy : 0.9947916666666666
+Order Accuracy : 0.989561833505332
+Order Accuracy : 0.9862853028613898
+Order Accuracy : 0.9782383040935673
+Order Accuracy : 0.992003367003367
+Order Accuracy : 0.9797979797979799
+Order Accuracy Total : 0.9839842035980694
+Total valid loss 0.7816520524876458
+accuracy on Test 0.7462235649546828
+Best accuracy on Test 0.7522658610271903
+
+**** Epoch 16/25 ****
+9/33-(0.131)
+24/33-(0.314)
+6/33-(0.249)
+21/33-(0.077)
+
+=== Evaluating Model ===
+Order Accuracy : 0.9820512820512821
+Order Accuracy : 0.9970238095238095
+Order Accuracy : 0.9656566843244475
+Order Accuracy : 0.9797500562303194
+Order Accuracy : 1.0
+Order Accuracy : 0.9656622023809525
+Order Accuracy : 0.9818713450292399
+Order Accuracy : 0.9592963205095558
+Order Accuracy : 0.9811377401837929
+Order Accuracy : 0.9799412393162393
+Order Accuracy : 0.9881238553113554
+Order Accuracy : 0.9845429080723198
+Order Accuracy : 0.9873949579831933
+Order Accuracy : 0.9947692307692307
+Order Accuracy : 0.9790410412353348
+Order Accuracy : 0.9922462406015038
+Order Accuracy : 0.9975
+Order Accuracy : 0.9873737373737373
+Order Accuracy : 0.9764583333333333
+Order Accuracy : 0.9860604427037494
+Order Accuracy : 0.9906204906204906
+Order Accuracy Total : 0.9808027923211169
+accuracy on Valid 0.7583081570996979
+
+Best accuracy on Valid 0.7583081570996979
+Order Accuracy : 0.9810855263157894
+Order Accuracy : 0.9892922794117647
+Order Accuracy : 0.9916938997821351
+Order Accuracy : 0.9802940115440116
+Order Accuracy : 0.9707987682252388
+Order Accuracy : 0.9849583895636527
+Order Accuracy : 1.0
+Order Accuracy : 0.9901009316770186
+Order Accuracy : 0.9762444472559604
+Order Accuracy : 0.9733865412730545
+Order Accuracy : 0.9973958333333334
+Order Accuracy : 0.9891851851851852
+Order Accuracy : 0.9798611111111111
+Order Accuracy : 0.9763113414008554
+Order Accuracy : 0.9703124999999999
+Order Accuracy : 0.9972826086956521
+Order Accuracy : 0.9856042395104896
+Order Accuracy : 0.9851902173913043
+Order Accuracy : 0.9579183098678068
+Order Accuracy : 0.9930555555555556
+Order Accuracy : 0.9783237058778854
+Order Accuracy Total : 0.9804738920579201
+Total valid loss 1.0088156376566206
+accuracy on Test 0.7280966767371602
+Best accuracy on Test 0.7522658610271903
+
+**** Epoch 17/25 ****
+3/33-(0.733)
+18/33-(0.103)
+0/33-(0.162)
+15/33-(0.067)
+
+=== Evaluating Model ===
+Order Accuracy : 0.9855769230769231
+Order Accuracy : 0.9943064182194616
+Order Accuracy : 1.0
+Order Accuracy : 0.9915158371040724
+Order Accuracy : 0.9943181818181819
+Order Accuracy : 0.9809974747474748
+Order Accuracy : 0.9905228758169934
+Order Accuracy : 0.9842509920634921
+Order Accuracy : 0.9911889097744361
+Order Accuracy : 0.9924749163879598
+Order Accuracy : 0.9973958333333334
+Order Accuracy : 0.9935064935064936
+Order Accuracy : 0.9797348484848485
+Order Accuracy : 0.97814245014245
+Order Accuracy : 0.9977678571428572
+Order Accuracy : 0.98471557682084
+Order Accuracy : 0.9835831447963801
+Order Accuracy : 0.9680717719780221
+Order Accuracy : 0.9775694444444445
+Order Accuracy : 0.9903166644232064
+Order Accuracy : 0.9842171717171717
+Order Accuracy Total : 0.9853839441535777
+accuracy on Valid 0.7492447129909365
+
+Order Accuracy : 0.9781249999999999
+Order Accuracy : 1.0
+Order Accuracy : 0.99609375
+Order Accuracy : 0.9971590909090909
+Order Accuracy : 0.9941239316239316
+Order Accuracy : 0.99609375
+Order Accuracy : 0.9966666666666666
+Order Accuracy : 0.9617317314328184
+Order Accuracy : 0.9802083333333333
+Order Accuracy : 0.9828125000000001
+Order Accuracy : 0.9919560185185186
+Order Accuracy : 0.9928888888888889
+Order Accuracy : 0.9863687829380765
+Order Accuracy : 0.987887112887113
+Order Accuracy : 0.9890252976190477
+Order Accuracy : 0.9783854166666667
+Order Accuracy : 0.9670875999000998
+Order Accuracy : 0.9834735576923077
+Order Accuracy : 0.991859243697479
+Order Accuracy : 0.977304292929293
+Order Accuracy : 0.9952153110047847
+Order Accuracy Total : 0.9861781483106625
+Total valid loss 1.047441418681826
+accuracy on Test 0.7190332326283988
+Best accuracy on Test 0.7522658610271903
+
+**** Epoch 18/25 ****
+30/33-(0.237)
+12/33-(0.094)
+27/33-(0.330)
+9/33-(0.503)
+
+=== Evaluating Model ===
+Order Accuracy : 0.9951923076923077
+Order Accuracy : 0.9833937198067633
+Order Accuracy : 0.9971590909090909
+Order Accuracy : 0.9781784188034188
+Order Accuracy : 0.9951923076923077
+Order Accuracy : 0.9973958333333334
+Order Accuracy : 0.9794117647058823
+Order Accuracy : 0.991859243697479
+Order Accuracy : 0.993421052631579
+Order Accuracy : 0.9851794340924775
+Order Accuracy : 0.9831316572681704
+Order Accuracy : 0.9862745098039216
+Order Accuracy : 0.9858200571895426
+Order Accuracy : 0.9852991452991453
+Order Accuracy : 0.9859672492185281
+Order Accuracy : 0.9903846153846154
+Order Accuracy : 0.9827953296703297
+Order Accuracy : 0.9854333778966132
+Order Accuracy : 0.988452380952381
+Order Accuracy : 1.0
+Order Accuracy : 1.0
+Order Accuracy Total : 0.987565445026178
+accuracy on Valid 0.7583081570996979
+
+Best accuracy on Valid 0.7583081570996979
+Order Accuracy : 0.9774090557275541
+Order Accuracy : 0.9911931818181818
+Order Accuracy : 0.9900793650793651
+Order Accuracy : 0.9882478632478633
+Order Accuracy : 0.9939196832579186
+Order Accuracy : 0.9860681114551084
+Order Accuracy : 0.9911111111111112
+Order Accuracy : 0.9885912698412699
+Order Accuracy : 0.9932383040935673
+Order Accuracy : 0.9941239316239316
+Order Accuracy : 0.9869402622159975
+Order Accuracy : 0.978
+Order Accuracy : 0.9867424242424243
+Order Accuracy : 0.9819969752114892
+Order Accuracy : 0.9947916666666666
